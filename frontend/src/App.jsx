@@ -608,6 +608,7 @@ function TrendsDashboard() {
   const [loading, setLoading] = useState(false);
   const [loadingList, setLoadingList] = useState(false);
   const [error, setError] = useState(null);
+  const [showAllTrends, setShowAllTrends] = useState(false);
 
   // Load trends list on mount
   useEffect(() => {
@@ -746,6 +747,125 @@ function TrendsDashboard() {
         )}
       </div>
 
+      {/* Trending Hashtags Section */}
+      {trends.length > 0 && (
+        <div className="glass rounded-2xl p-8 hover-lift">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-cyan-400" />
+                Trending Now
+              </h3>
+              <p className="text-gray-400 text-sm">Top trending hashtags and memes from our dataset</p>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-gray-400">
+              <TrendingUp className="w-4 h-4 text-emerald-400" />
+              Live Updates
+            </div>
+          </div>
+
+          {/* Trending Hashtags Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {trends.slice(0, showAllTrends ? trends.length : 10).map((trend, idx) => {
+              // Calculate popularity score based on data points
+              const maxDataPoints = Math.max(...trends.map(t => t.data_points || 0));
+              const popularityPercent = ((trend.data_points || 0) / maxDataPoints) * 100;
+              
+              // Determine color based on archetype
+              let accentColor = 'cyan';
+              let bgGradient = 'linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.02) 100%)';
+              let borderColor = 'border-cyan-500/10';
+              
+              if (trend.archetype === 'viral_crash') {
+                accentColor = 'red';
+                bgGradient = 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)';
+                borderColor = 'border-red-500/10';
+              } else if (trend.archetype === 'controversy_spike') {
+                accentColor = 'amber';
+                bgGradient = 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%)';
+                borderColor = 'border-amber-500/10';
+              } else if (trend.archetype === 'slow_burn') {
+                accentColor = 'emerald';
+                bgGradient = 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%)';
+                borderColor = 'border-emerald-500/10';
+              } else if (trend.archetype === 'seasonal') {
+                accentColor = 'purple';
+                bgGradient = 'linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.02) 100%)';
+                borderColor = 'border-purple-500/10';
+              }
+
+              return (
+                <div
+                  key={idx}
+                  onClick={() => handleTrendSelect(trend.trend_name)}
+                  className={`relative overflow-hidden rounded-xl p-4 border ${borderColor} hover-lift transition-all cursor-pointer group`}
+                  style={{ background: bgGradient }}
+                >
+                  {/* Rank Badge */}
+                  <div className={`absolute top-2 right-2 w-6 h-6 rounded-full bg-${accentColor}-500/20 flex items-center justify-center`}>
+                    <span className={`text-xs font-bold text-${accentColor}-400`}>#{idx + 1}</span>
+                  </div>
+
+                  {/* Hashtag Name */}
+                  <div className="mb-3 pr-8">
+                    <div className={`text-base font-semibold text-white mb-1 truncate group-hover:text-${accentColor}-400 transition-colors`}>
+                      {trend.trend_name.startsWith('#') ? trend.trend_name : `#${trend.trend_name}`}
+                    </div>
+                    <div className="text-xs text-gray-400 capitalize">
+                      {trend.archetype ? trend.archetype.replace(/_/g, ' ') : 'trending'}
+                    </div>
+                  </div>
+
+                  {/* Popularity Bar */}
+                  <div className="mb-2">
+                    <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full bg-gradient-to-r from-${accentColor}-500 to-${accentColor}-400 rounded-full transition-all duration-500`}
+                        style={{ width: `${popularityPercent}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-gray-400">{trend.data_points} points</span>
+                    <span className={`text-${accentColor}-400 font-medium flex items-center gap-1`}>
+                      <TrendingUp className="w-3 h-3" />
+                      Hot
+                    </span>
+                  </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br from-${accentColor}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`}></div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Show More/Less Button */}
+          {trends.length > 10 && (
+            <div className="mt-6 text-center">
+              <button 
+                onClick={() => setShowAllTrends(!showAllTrends)}
+                className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium transition-all hover-lift border border-white/10 flex items-center gap-2 mx-auto"
+              >
+                {showAllTrends ? (
+                  <>
+                    <ChevronDown className="w-4 h-4 rotate-180" />
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <Eye className="w-4 h-4" />
+                    View All {trends.length} Trends
+                  </>
+                )}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Error Display */}
       {error && (
         <div className="glass rounded-2xl p-6 border-l-4 border-white/20">
@@ -850,44 +970,68 @@ function TrendsDashboard() {
 
               {/* AI Metric Explanations - NEW */}
               <div className="space-y-6 mt-8">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg glass">
-                      <Sparkles className="w-5 h-5 text-white" />
+                 {/* AI Metric Analysis Header */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/20">
+                      <Sparkles className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white">AI Metric Analysis</h4>
-                      <p className="text-sm text-gray-400">Detailed automated insights</p>
+                      <h4 className="text-2xl font-bold text-white">AI Metric Analysis</h4>
+                      <p className="text-sm text-gray-400">Detailed automated insights powered by machine learning</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Metrics Cards Grid */}
-                <div className="grid gap-5">
+                <div className="grid gap-6 mb-6">
                   {/* Velocity Analysis */}
-                  <div className="glass rounded-xl p-6 hover-lift">
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="relative overflow-hidden rounded-2xl p-6 border hover-lift transition-all"
+                       style={{
+                         background: (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 
+                           ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%)'
+                           : (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3
+                           ? 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%)'
+                           : 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)',
+                         borderColor: (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6
+                           ? 'rgba(16, 185, 129, 0.2)'
+                           : (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3
+                           ? 'rgba(245, 158, 11, 0.2)'
+                           : 'rgba(239, 68, 68, 0.2)'
+                       }}>
+                    <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                          <TrendingUp className="w-5 h-5 text-white" />
+                        <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                          <TrendingUp className="w-6 h-6 text-white" />
                         </div>
-                        <span className="font-semibold text-white text-lg">Velocity</span>
+                        <div>
+                          <span className="font-bold text-white text-xl">Velocity</span>
+                          <div className="text-3xl font-bold text-white mt-1">
+                            {((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}%
+                          </div>
+                        </div>
                       </div>
-                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
-                        {(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'Strong' :
-                          (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'Moderate' : 'Weak'}
+                      <span className={`px-4 py-2 rounded-full text-sm font-bold border-2 ${
+                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 
+                          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                          : (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3
+                          ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                          : 'bg-red-500/20 text-red-300 border-red-500/40'
+                      }`}>
+                        {(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? '✓ Strong' :
+                          (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? '~ Moderate' : '⚠ Weak'}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                      Velocity measures the speed of trend adoption and growth. Current reading shows {
+                    <p className="text-base text-gray-200 leading-relaxed mb-4">
+                      Velocity measures the speed of trend adoption and growth. Current reading shows <strong className="text-white">{
                         (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'strong momentum' :
                           (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'moderate pace' :
                             'declining interest'
-                      }.
+                      }</strong>.
                     </p>
-                    <div className="pt-3 border-t border-white/10">
-                      <p className="text-xs text-gray-400">
-                        <strong className="text-gray-300">Cause:</strong> {
+                    <div className="pt-4 border-t border-white/20">
+                      <p className="text-sm text-gray-300">
+                        <strong className="text-white">Cause: </strong>{
                           (trendAnalysis.decline_info.metrics?.velocity || 0) < 0.3
                             ? 'Reduced new user adoption and decreased content creation'
                             : 'Active community engagement and content virality'
@@ -897,66 +1041,115 @@ function TrendsDashboard() {
                   </div>
 
                   {/* Fatigue Analysis */}
-                  <div className="glass rounded-xl p-6 hover-lift">
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="relative overflow-hidden rounded-2xl p-6 border hover-lift transition-all"
+                       style={{
+                         background: (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4
+                           ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%)'
+                           : (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7
+                           ? 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%)'
+                           : 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)',
+                         borderColor: (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4
+                           ? 'rgba(16, 185, 129, 0.2)'
+                           : (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7
+                           ? 'rgba(245, 158, 11, 0.2)'
+                           : 'rgba(239, 68, 68, 0.2)'
+                       }}>
+                    <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                          <Activity className="w-5 h-5 text-white" />
+                        <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                          <Activity className="w-6 h-6 text-white" />
                         </div>
-                        <span className="font-semibold text-white text-lg">Fatigue</span>
+                        <div>
+                          <span className="font-bold text-white text-xl">Fatigue</span>
+                          <div className="text-3xl font-bold text-white mt-1">
+                            {((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%
+                          </div>
+                        </div>
                       </div>
-                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
-                        {(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'Low' :
-                          (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'Moderate' : 'High'}
+                      <span className={`px-4 py-2 rounded-full text-sm font-bold border-2 ${
+                        (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4
+                          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                          : (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7
+                          ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                          : 'bg-red-500/20 text-red-300 border-red-500/40'
+                      }`}>
+                        {(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? '✓ Low' :
+                          (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? '~ Moderate' : '⚠ High'}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                      Fatigue indicates audience saturation and repetition aversion. {
+                    <p className="text-base text-gray-200 leading-relaxed mb-4">
+                      Fatigue indicates audience saturation and repetition aversion. <strong className="text-white">{
                         (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7 ? 'High fatigue suggests content oversaturation' :
                           (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.4 ? 'Moderate fatigue indicates need for fresh content' :
                             'Low fatigue means audience is still engaged'
-                      }.
+                      }</strong>.
                     </p>
-                    <div className="pt-3 border-t border-white/10 space-y-2">
-                      <p className="text-xs text-gray-400">
-                        <strong className="text-gray-300">Cause:</strong> {
+                    <div className="pt-4 border-t border-white/20">
+                      <p className="text-sm text-gray-300 mb-3">
+                        <strong className="text-white">Cause: </strong>{
                           (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7
                             ? 'Oversaturation of similar content, declining novelty, repetitive messaging'
                             : 'Content remains fresh and engaging with audience'
                         }
                       </p>
                       {(trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.6 && (
-                        <p className="text-xs text-white bg-white/10 px-3 py-2 rounded-lg border border-white/20">
-                          <strong>Action:</strong> Introduce new creative angles, collaborate with fresh creators, or pivot messaging
-                        </p>
+                        <div className="bg-gradient-to-r from-amber-500/20 to-amber-500/5 px-4 py-3 rounded-xl border border-amber-500/30">
+                          <p className="text-sm text-white flex items-start gap-2">
+                            <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                            <span><strong>Action:</strong> Introduce new creative angles, collaborate with fresh creators, or pivot messaging</span>
+                          </p>
+                        </div>
                       )}
                     </div>
                   </div>
 
                   {/* Retention Analysis */}
-                  <div className="glass rounded-xl p-6 hover-lift">
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="relative overflow-hidden rounded-2xl p-6 border hover-lift transition-all"
+                       style={{
+                         background: (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7
+                           ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%)'
+                           : (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4
+                           ? 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%)'
+                           : 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)',
+                         borderColor: (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7
+                           ? 'rgba(16, 185, 129, 0.2)'
+                           : (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4
+                           ? 'rgba(245, 158, 11, 0.2)'
+                           : 'rgba(239, 68, 68, 0.2)'
+                       }}>
+                    <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                          <Shield className="w-5 h-5 text-white" />
+                        <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                          <Shield className="w-6 h-6 text-white" />
                         </div>
-                        <span className="font-semibold text-white text-lg">Retention</span>
+                        <div>
+                          <span className="font-bold text-white text-xl">Retention</span>
+                          <div className="text-3xl font-bold text-white mt-1">
+                            {((trendAnalysis.decline_info.metrics?.retention || 0) * 100).toFixed(0)}%
+                          </div>
+                        </div>
                       </div>
-                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
-                        {(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong' :
-                          (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair' : 'Poor'}
+                      <span className={`px-4 py-2 rounded-full text-sm font-bold border-2 ${
+                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7
+                          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                          : (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4
+                          ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                          : 'bg-red-500/20 text-red-300 border-red-500/40'
+                      }`}>
+                        {(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? '✓ Strong' :
+                          (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? '~ Fair' : '⚠ Poor'}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                      Retention tracks how well the trend keeps audience attention. {
+                    <p className="text-base text-gray-200 leading-relaxed mb-4">
+                      Retention tracks how well the trend keeps audience attention. <strong className="text-white">{
                         (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong retention indicates loyal community' :
                           (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair retention with room for improvement' :
                             'Poor retention suggests audience drop-off'
-                      }.
+                      }</strong>.
                     </p>
-                    <div className="pt-3 border-t border-white/10">
-                      <p className="text-xs text-gray-400">
-                        <strong className="text-gray-300">Cause:</strong> {
+                    <div className="pt-4 border-t border-white/20">
+                      <p className="text-sm text-gray-300">
+                        <strong className="text-white">Cause: </strong>{
                           (trendAnalysis.decline_info.metrics?.retention || 0) < 0.4
                             ? 'Weak community bonds, lack of ongoing value, or competing trends'
                             : 'Strong community engagement and consistent value delivery'
@@ -967,30 +1160,41 @@ function TrendsDashboard() {
                 </div>
 
                 {/* Causal Chain */}
-                <div className="glass rounded-xl p-6 hover-lift">
-                  <h5 className="text-base font-semibold text-white mb-4 flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                      <Zap className="w-5 h-5 text-white" />
+                <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 rounded-2xl p-6 border border-purple-500/20 hover-lift mb-6">
+                  <h5 className="text-lg font-bold text-white mb-4 flex items-center gap-3">
+                    <div className="p-3 rounded-xl bg-purple-500/20 border border-purple-500/30">
+                      <Zap className="w-5 h-5 text-purple-300" />
                     </div>
                     Causal Chain Analysis
                   </h5>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <p className="text-base text-gray-200 leading-relaxed">
                     {trendAnalysis.decline_info.state === 'Decline' ? (
                       <>
                         The trend entered decline due to a combination of factors:
-                        <strong className="text-white"> decreased velocity</strong> ({((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}%)
+                        <span className="inline-flex items-center gap-2 px-3 py-1 mx-2 rounded-lg bg-red-500/20 text-red-300 border border-red-500/30 font-semibold">
+                          decreased velocity {((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}%
+                        </span>
                         reduced new user adoption →
-                        <strong className="text-white"> increased fatigue</strong> ({((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%)
+                        <span className="inline-flex items-center gap-2 px-3 py-1 mx-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">
+                          increased fatigue {((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%
+                        </span>
                         from content oversaturation →
-                        <strong className="text-white"> dropping retention</strong> ({((trendAnalysis.decline_info.metrics?.retention || 0) * 100).toFixed(0)}%)
+                        <span className="inline-flex items-center gap-2 px-3 py-1 mx-2 rounded-lg bg-orange-500/20 text-orange-300 border border-orange-500/30 font-semibold">
+                          dropping retention {((trendAnalysis.decline_info.metrics?.retention || 0) * 100).toFixed(0)}%
+                        </span>
                         as audience attention shifted to newer trends. This cascade effect is typical of {trendAnalysis.decline_info.archetype || 'standard'} patterns.
                       </>
                     ) : (
                       <>
                         The trend shows signs of maturation with
-                        <strong className="text-white"> velocity</strong> at {((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}% and
-                        <strong className="text-white"> fatigue</strong> building to {((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%.
-                        Market saturation is approaching. Early intervention can prevent full decline.
+                        <span className="inline-flex items-center gap-2 px-3 py-1 mx-2 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold">
+                          velocity {((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}%
+                        </span>
+                        and
+                        <span className="inline-flex items-center gap-2 px-3 py-1 mx-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold">
+                          fatigue {((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%
+                        </span>
+                        building. Market saturation is approaching. Early intervention can prevent full decline.
                       </>
                     )}
                   </p>
@@ -998,29 +1202,29 @@ function TrendsDashboard() {
 
                 {/* Recovery Actions */}
                 {(trendAnalysis.decline_info.metrics?.velocity || 0) < 0.5 && (
-                  <div className="glass rounded-xl p-6 border-l-4 border-white/30 hover-lift">
-                    <h5 className="text-base font-semibold text-white mb-4 flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                        <CheckCircle className="w-5 h-5 text-white" />
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-2xl p-6 border-l-4 border-emerald-500/50 hover-lift mb-6">
+                    <h5 className="text-lg font-bold text-white mb-5 flex items-center gap-3">
+                      <div className="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/30">
+                        <CheckCircle className="w-5 h-5 text-emerald-300" />
                       </div>
                       Recovery Actions
                     </h5>
                     <ul className="space-y-3">
-                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
-                        Inject fresh creative angles - partner with new influencers or creators
+                      <li className="text-base text-gray-200 flex items-start gap-3 leading-relaxed p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <span>Inject fresh creative angles - partner with new influencers or creators</span>
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
-                        Launch limited-time campaigns to create urgency and re-engage audience
+                      <li className="text-base text-gray-200 flex items-start gap-3 leading-relaxed p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <span>Launch limited-time campaigns to create urgency and re-engage audience</span>
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
-                        Pivot messaging to address current audience interests and pain points
+                      <li className="text-base text-gray-200 flex items-start gap-3 leading-relaxed p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <span>Pivot messaging to address current audience interests and pain points</span>
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
-                        Reduce posting frequency to combat fatigue while maintaining quality
+                      <li className="text-base text-gray-200 flex items-start gap-3 leading-relaxed p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <span>Reduce posting frequency to combat fatigue while maintaining quality</span>
                       </li>
                     </ul>
                   </div>
@@ -1029,12 +1233,12 @@ function TrendsDashboard() {
 
               {/* Original AI Explanation */}
               {trendAnalysis.decline_info.investigation?.explanation && (
-                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
-                  <h4 className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4" />
+                <div className="bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl p-6 border border-cyan-500/20">
+                  <h4 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-cyan-400" />
                     AI Analysis
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {typeof trendAnalysis.decline_info.investigation.explanation === 'string'
                       ? trendAnalysis.decline_info.investigation.explanation.slice(0, 500)
                       : 'Analysis complete'}
