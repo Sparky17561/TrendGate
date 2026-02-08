@@ -7,3 +7,9 @@ langchain-groq
 langchain-community
 google-search-results
 python-dotenv
+fastapi
+uvicorn
+google-genai
+pytrends
+beautifulsoup4
+requests

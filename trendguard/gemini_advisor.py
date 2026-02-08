@@ -11,10 +11,24 @@ Uses Google Gemini 2.5 Flash with Google Search grounding to:
 import os
 import json
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Import helper utilities
+try:
+    from .utils import (
+        fetch_google_trends_metrics,
+        analyze_trends_decline_risk,
+        scrape_subreddit,
+        aggregate_reddit_metrics,
+        analyze_reddit_decline_risk
+    )
+    UTILS_AVAILABLE = True
+except ImportError:
+    UTILS_AVAILABLE = False
+    print("⚠️ Utils not available - Google Trends and Reddit features disabled")
 
 # Import Google GenAI
 try:
@@ -189,6 +203,11 @@ Return a JSON object with this structure:
                         "target_audience": target_audience,
                         "planned_duration_days": planned_duration_days
                     }
+                    
+                    # Enrich with additional metrics from Google Trends and Reddit
+                    additional_metrics = self._fetch_additional_metrics(topic, hashtags)
+                    result["additional_metrics"] = additional_metrics
+                    
                     return result
             except json.JSONDecodeError:
                 pass
@@ -206,6 +225,71 @@ Return a JSON object with this structure:
                 "error": str(e),
                 "analyzed_at": datetime.now().isoformat()
             }
+    
+    def _fetch_additional_metrics(
+        self, 
+        topic: str, 
+        hashtags: List[str],
+        subreddits: Optional[List[str]] = None
+    ) -> Dict[str, Any]:
+        """
+        Fetch additional metrics from Google Trends and Reddit.
+        
+        Args:
+            topic: Main topic/trend to analyze
+            hashtags: List of hashtags related to the trend
+            subreddits: Optional list of subreddits to scrape (defaults to generic ones)
+            
+        Returns:
+            Dictionary containing Google Trends and Reddit metrics
+        """
+        additional_metrics = {
+            "google_trends": None,
+            "reddit": None,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        if not UTILS_AVAILABLE:
+            additional_metrics["note"] = "Additional metrics unavailable - utils not installed"
+            return additional_metrics
+        
+        # Fetch Google Trends data
+        try:
+            trends_data = fetch_google_trends_metrics(topic)
+            if trends_data:
+                trends_risk = analyze_trends_decline_risk(trends_data)
+                additional_metrics["google_trends"] = {
+                    "metrics": trends_data,
+                    "risk_analysis": trends_risk
+                }
+        except Exception as e:
+            additional_metrics["google_trends"] = {"error": str(e)}
+        
+        # Fetch Reddit data
+        if subreddits is None:
+            # Default subreddits for general social media trends
+            subreddits = ["socialmedia", "marketing", "trending"]
+        
+        try:
+            all_posts = []
+            for subreddit in subreddits[:3]:  # Limit to 3 subreddits
+                posts = scrape_subreddit(subreddit, limit=50, delay=1.0)
+                all_posts.extend(posts)
+            
+            if all_posts:
+                reddit_metrics = aggregate_reddit_metrics(all_posts, window_days=30)
+                reddit_risk = analyze_reddit_decline_risk(reddit_metrics)
+                additional_metrics["reddit"] = {
+                    "metrics": reddit_metrics,
+                    "risk_analysis": reddit_risk,
+                    "subreddits_analyzed": subreddits[:3],
+                    "total_posts": len(all_posts)
+                }
+        except Exception as e:
+            additional_metrics["reddit"] = {"error": str(e)}
+        
+        return additional_metrics
+
     
     def check_trend_health(self, trend_name: str) -> Dict:
         """
@@ -256,6 +340,11 @@ Return a JSON object:
                 if start != -1 and end > start:
                     result = json.loads(response_text[start:end])
                     result["checked_at"] = datetime.now().isoformat()
+                    
+                    # Enrich with additional metrics
+                    additional_metrics = self._fetch_additional_metrics(trend_name, [trend_name])
+                    result["additional_metrics"] = additional_metrics
+                    
                     return result
             except json.JSONDecodeError:
                 pass
@@ -325,7 +414,25 @@ Return a JSON object:
                 start = response_text.find('{')
                 end = response_text.rfind('}') + 1
                 if start != -1 and end > start:
-                    return json.loads(response_text[start:end])
+                    result = json.loads(response_text[start:end])
+                    
+                    # Add Google Trends metrics for each hashtag
+                    try:
+                        hashtag_trends = {}
+                        if UTILS_AVAILABLE:
+                            for tag in hashtags[:5]:  # Limit to 5 hashtags
+                                trends_data = fetch_google_trends_metrics(tag)
+                                if trends_data:
+                                    hashtag_trends[tag] = {
+                                        "direction": trends_data["direction"],
+                                        "current_value": trends_data["current_value"],
+                                        "slope": trends_data["slope"]
+                                    }
+                        result["hashtag_trends_data"] = hashtag_trends
+                    except Exception as e:
+                        result["hashtag_trends_data"] = {"error": str(e)}
+                    
+                    return result
             except json.JSONDecodeError:
                 pass
             

@@ -1,10 +1,14 @@
+// TrendGuard v4.0 - Enhanced Frontend
+// Premium Black/White Theme with AI-Powered Insights
+
 import { useState, useEffect } from 'react';
-import { Rocket, TrendingUp, TrendingDown, Search, BarChart3, Zap, Shield, AlertTriangle, CheckCircle, Activity, PieChart, RefreshCw, ChevronDown } from 'lucide-react';
+import { Rocket, TrendingUp, TrendingDown, Search, BarChart3, Zap, Shield, AlertTriangle, CheckCircle, Activity, PieChart, RefreshCw, ChevronDown, Upload, Sparkles, Eye, Lightbulb, Clock } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, PieChart as RechartsPie, Pie, Cell, Legend, BarChart, Bar } from 'recharts';
 import api from './api/client';
+import PostUpload from './components/PostUpload';
 import './index.css';
 
-// --- CAMPAIGN FORM COMPONENT ---
+// --- CAMPAIGN FORM COMPONENT WITH POST UPLOAD ---
 function CampaignForm({ onSubmit, loading }) {
   const [formData, setFormData] = useState({
     topic: '',
@@ -16,51 +20,66 @@ function CampaignForm({ onSubmit, loading }) {
     additional_context: ''
   });
 
+  const [uploadedPost, setUploadedPost] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       ...formData,
-      hashtags: formData.hashtags.split(',').map(h => h.trim()).filter(h => h)
+      hashtags: formData.hashtags.split(',').map(h => h.trim()).filter(h => h),
+      uploaded_post_content: uploadedPost?.content || null
     };
     onSubmit(data);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Post Upload Section - NEW */}
+      <div className="p-6 bg-white/[0.02] rounded-xl border border-white/[0.05]">
+        <div className="flex items-center gap-2 mb-3">
+          <Upload className="w-5 h-5 text-white" />
+          <h3 className="text-lg font-semibold text-white">Upload Post (Optional)</h3>
+        </div>
+        <p className="text-sm text-gray-400 mb-4">
+          Upload an example post to get AI-powered insights tailored to your content
+        </p>
+        <PostUpload onPostExtracted={setUploadedPost} />
+      </div>
+
       {/* Topic */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-2">Campaign Topic *</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Campaign Topic *</label>
         <input
           type="text"
           required
           value={formData.topic}
           onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-          placeholder="e.g., Summer Fashion Collection 2025"
-          className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 transition-all"
+          placeholder="e.g., Summer Fashion Collection 2026"
+          className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 focus:ring-2 focus:ring-white/10 text-white placeholder-gray-500 transition-all"
         />
       </div>
 
       {/* Hashtags */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-2">Hashtags (comma-separated) *</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Hashtags (comma-separated) *</label>
         <input
           type="text"
           required
           value={formData.hashtags}
           onChange={(e) => setFormData({ ...formData, hashtags: e.target.value })}
-          placeholder="#SummerVibes, #OOTD, #Fashion2025"
-          className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 transition-all"
+          placeholder="#SummerVibes, #OOTD, #Fashion2026"
+          className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 focus:ring-2 focus:ring-white/10 text-white placeholder-gray-500 transition-all"
         />
       </div>
 
       {/* Platform & Duration */}
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">Platform *</label>
+          <label className="block text-sm font-medium text-gray-300 mb-2">Platform *</label>
           <select
             value={formData.platform}
             onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 text-white transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 text-white transition-all"
           >
             <option value="instagram">Instagram</option>
             <option value="tiktok">TikTok</option>
@@ -70,53 +89,53 @@ function CampaignForm({ onSubmit, loading }) {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">Duration (days)</label>
+          <label className="block text-sm font-medium text-gray-300 mb-2">Duration (days)</label>
           <input
             type="number"
             min="7"
             max="365"
             value={formData.planned_duration_days}
             onChange={(e) => setFormData({ ...formData, planned_duration_days: parseInt(e.target.value) })}
-            className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 text-white transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 text-white transition-all"
           />
         </div>
       </div>
 
       {/* Campaign Aim */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-2">Campaign Aim *</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Campaign Aim *</label>
         <input
           type="text"
           required
           value={formData.campaign_aim}
           onChange={(e) => setFormData({ ...formData, campaign_aim: e.target.value })}
           placeholder="e.g., Increase brand awareness, drive product sales"
-          className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 transition-all"
+          className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 focus:ring-2 focus:ring-white/10 text-white placeholder-gray-500 transition-all"
         />
       </div>
 
       {/* Target Audience */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-2">Target Audience *</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Target Audience *</label>
         <input
           type="text"
           required
           value={formData.target_audience}
           onChange={(e) => setFormData({ ...formData, target_audience: e.target.value })}
-          placeholder="e.g., 18-25 females interested in fashion"
-          className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 transition-all"
+          placeholder="e.g., 18-35 environmentally conscious consumers"
+          className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 focus:ring-2 focus:ring-white/10 text-white placeholder-gray-500 transition-all"
         />
       </div>
 
       {/* Additional Context */}
       <div>
-        <label className="block text-sm font-medium text-slate-300 mb-2">Additional Context</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Additional Context</label>
         <textarea
           value={formData.additional_context}
           onChange={(e) => setFormData({ ...formData, additional_context: e.target.value })}
           placeholder="Any other relevant information about your campaign..."
           rows={3}
-          className="w-full px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 focus:ring-2 focus:ring-white/10 text-white placeholder-gray-500 transition-all resize-none"
         />
       </div>
 
@@ -124,16 +143,16 @@ function CampaignForm({ onSubmit, loading }) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-lg transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full py-4 px-6 rounded-xl bg-[#6366f1] hover:bg-[#4f46e5] text-white font-semibold text-lg transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
       >
         {loading ? (
           <>
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <div className="loading-spinner" />
             Analyzing with AI...
           </>
         ) : (
           <>
-            <Rocket className="w-5 h-5" />
+            <Sparkles className="w-5 h-5" />
             Analyze Campaign
           </>
         )}
@@ -142,12 +161,12 @@ function CampaignForm({ onSubmit, loading }) {
   );
 }
 
-// --- VIABILITY SCORE COMPONENT ---
+//VIABILITY SCORE COMPONENT ---
 function ViabilityScore({ score }) {
   const getColor = () => {
-    if (score >= 70) return 'from-emerald-500 to-teal-500';
-    if (score >= 40) return 'from-amber-500 to-orange-500';
-    return 'from-red-500 to-rose-500';
+    if (score >= 70) return 'from-white to-gray-100';
+    if (score >= 40) return 'from-gray-300 to-gray-400';
+    return 'from-gray-500 to-gray-600';
   };
 
   const getLabel = () => {
@@ -162,9 +181,9 @@ function ViabilityScore({ score }) {
         <div className={`text-6xl font-bold bg-gradient-to-r ${getColor()} bg-clip-text text-transparent`}>
           {score}
         </div>
-        <div className="text-slate-400 text-sm uppercase tracking-wider mt-1">{getLabel()}</div>
+        <div className="text-gray-400 text-sm uppercase tracking-wider mt-1">{getLabel()}</div>
       </div>
-      <div className="h-3 bg-slate-800 rounded-full overflow-hidden">
+      <div className="h-3 bg-[#141414] rounded-full overflow-hidden">
         <div
           className={`h-full bg-gradient-to-r ${getColor()} transition-all duration-1000`}
           style={{ width: `${score}%` }}
@@ -177,16 +196,16 @@ function ViabilityScore({ score }) {
 // --- RISK FACTOR COMPONENT ---
 function RiskFactor({ risk, severity, mitigation }) {
   const severityStyles = {
-    high: 'risk-high',
-    medium: 'risk-medium',
-    low: 'risk-low'
+    high: 'bg-white/10 text-white border-white/20',
+    medium: 'bg-white/5 text-gray-300 border-white/10',
+    low: 'bg-white/5 text-gray-400 border-white/10'
   };
 
   return (
-    <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+    <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover-lift">
       <div className="flex items-start justify-between mb-2">
         <div className="flex items-center gap-2">
-          <AlertTriangle className="w-4 h-4 text-amber-400" />
+          <AlertTriangle className="w-4 h-4 text-white" />
           <span className="font-medium text-white">{risk}</span>
         </div>
         <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${severityStyles[severity] || severityStyles.medium}`}>
@@ -194,7 +213,7 @@ function RiskFactor({ risk, severity, mitigation }) {
         </span>
       </div>
       {mitigation && (
-        <p className="text-sm text-slate-400 mt-2">{mitigation}</p>
+        <p className="text-sm text-gray-400 mt-2">{mitigation}</p>
       )}
     </div>
   );
@@ -207,45 +226,45 @@ function AnalysisResults({ results }) {
   return (
     <div className="space-y-6 animate-fadeIn">
       {/* Viability Score Card */}
-      <div className="glass rounded-2xl p-6 text-center">
-        <h3 className="text-lg font-semibold text-slate-300 mb-4">Campaign Viability Score</h3>
+      <div className="glass rounded-2xl p-6 text-center hover-lift">
+        <h3 className="text-lg font-semibold text-gray-300 mb-4">Campaign Viability Score</h3>
         <ViabilityScore score={results.viability_score || 50} />
       </div>
 
       {/* Summary */}
       {results.summary && (
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 hover-lift">
           <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-            <Zap className="w-5 h-5 text-amber-400" />
+            <Zap className="w-5 h-5 text-white" />
             Executive Summary
           </h3>
-          <p className="text-slate-300 leading-relaxed">{results.summary}</p>
+          <p className="text-gray-300 leading-relaxed">{results.summary}</p>
         </div>
       )}
 
       {/* Key Metrics */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="glass rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-indigo-400">{results.predicted_lifecycle_days || '—'}</div>
-          <div className="text-sm text-slate-400">Predicted Days</div>
+        <div className="glass rounded-xl p-4 text-center hover-lift">
+          <div className="text-2xl font-bold text-white">{results.predicted_lifecycle_days || '—'}</div>
+          <div className="text-sm text-gray-400 mt-1">Predicted Days</div>
         </div>
-        <div className="glass rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-cyan-400 capitalize">{results.market_status || '—'}</div>
-          <div className="text-sm text-slate-400">Market Status</div>
+        <div className="glass rounded-xl p-4 text-center hover-lift">
+          <div className="text-2xl font-bold text-white capitalize">{results.market_status || '—'}</div>
+          <div className="text-sm text-gray-400 mt-1">Market Status</div>
         </div>
-        <div className="glass rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-purple-400 capitalize">
+        <div className="glass rounded-xl p-4 text-center hover-lift">
+          <div className="text-2xl font-bold text-white capitalize">
             {results.competitive_analysis?.market_saturation || '—'}
           </div>
-          <div className="text-sm text-slate-400">Saturation</div>
+          <div className="text-sm text-gray-400 mt-1">Saturation</div>
         </div>
       </div>
 
       {/* Risk Factors */}
       {results.risk_factors && results.risk_factors.length > 0 && (
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 hover-lift">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <Shield className="w-5 h-5 text-red-400" />
+            <Shield className="w-5 h-5 text-white" />
             Risk Factors
           </h3>
           <div className="space-y-3">
@@ -263,15 +282,15 @@ function AnalysisResults({ results }) {
 
       {/* Recommendations */}
       {results.recommendations && results.recommendations.length > 0 && (
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-6 hover-lift">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-emerald-400" />
+            <Lightbulb className="w-5 h-5 text-white" />
             Recommendations
           </h3>
           <ul className="space-y-3">
             {results.recommendations.slice(0, 5).map((rec, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-slate-300">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm flex items-center justify-center font-medium">
+              <li key={idx} className="flex items-start gap-3 text-gray-300">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 text-white text-sm flex items-center justify-center font-medium">
                   {idx + 1}
                 </span>
                 {rec}
@@ -283,9 +302,160 @@ function AnalysisResults({ results }) {
 
       {/* Optimal Launch Window */}
       {results.optimal_launch_window && (
-        <div className="glass rounded-2xl p-6 border-l-4 border-indigo-500">
-          <h3 className="text-lg font-semibold text-white mb-2">🚀 Optimal Launch Window</h3>
-          <p className="text-slate-300">{results.optimal_launch_window}</p>
+        <div className="glass rounded-2xl p-6 border-l-4 border-white hover-lift">
+          <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+            <Clock className="w-5 h-5" />
+            Optimal Launch Window
+          </h3>
+          <p className="text-gray-300">{results.optimal_launch_window}</p>
+        </div>
+      )}
+
+      {/* Additional Metrics (Google Trends + Reddit) */}
+      {results.additional_metrics && (
+        <div className="mt-2">
+          <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <BarChart3 className="w-6 h-6 text-white" />
+            Additional Market Intelligence
+          </h2>
+
+          {/* Google Trends */}
+          {results.additional_metrics.google_trends && results.additional_metrics.google_trends.metrics && (
+            <div className="glass rounded-2xl p-6 border-l-4 border-white/20 mb-4 hover-lift">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-white" />
+                📊 Google Trends Analysis
+              </h3>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Direction</div>
+                  <div className={`text-xl font-bold ${results.additional_metrics.google_trends.metrics.direction === 'rising' ? 'text-white' :
+                    results.additional_metrics.google_trends.metrics.direction === 'declining' ? 'text-gray-500' :
+                      'text-gray-400'
+                    }`}>
+                    {results.additional_metrics.google_trends.metrics.direction === 'rising' && '📈 Rising'}
+                    {results.additional_metrics.google_trends.metrics.direction === 'declining' && '📉 Declining'}
+                    {results.additional_metrics.google_trends.metrics.direction === 'stable' && '➡️ Stable'}
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Search Interest</div>
+                  <div className="text-xl font-bold text-white">
+                    {results.additional_metrics.google_trends.metrics.current_value.toFixed(0)}/100
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Slope</div>
+                  <div className={`text-xl font-bold ${results.additional_metrics.google_trends.metrics.slope > 0 ? 'text-white' : 'text-gray-500'
+                    }`}>
+                    {results.additional_metrics.google_trends.metrics.slope > 0 ? '+' : ''}{results.additional_metrics.google_trends.metrics.slope.toFixed(2)}
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Peak Value</div>
+                  <div className="text-xl font-bold text-white">
+                    {results.additional_metrics.google_trends.metrics.peak_value.toFixed(0)}
+                  </div>
+                </div>
+              </div>
+
+              {results.additional_metrics.google_trends.risk_analysis && (
+                <div className={`p-4 rounded-xl border-2 ${results.additional_metrics.google_trends.risk_analysis.risk_level === 'high' ? 'border-white/20 bg-white/5' :
+                  results.additional_metrics.google_trends.risk_analysis.risk_level === 'medium' ? 'border-white/10 bg-white/[0.02]' :
+                    'border-white/5 bg-white/[0.01]'
+                  }`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-medium text-white">
+                      Search Trend Risk: <span className="capitalize">{results.additional_metrics.google_trends.risk_analysis.risk_level}</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium text-white">
+                      Score: {results.additional_metrics.google_trends.risk_analysis.risk_score}/100
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300 mb-2">{results.additional_metrics.google_trends.risk_analysis.recommendation}</p>
+                  {results.additional_metrics.google_trends.risk_analysis.signals && results.additional_metrics.google_trends.risk_analysis.signals.length > 0 && (
+                    <div className="text-xs text-gray-400">
+                      Signals: {results.additional_metrics.google_trends.risk_analysis.signals.join(', ')}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Reddit */}
+          {results.additional_metrics.reddit && results.additional_metrics.reddit.metrics && (
+            <div className="glass rounded-2xl p-6 border-l-4 border-white/20 hover-lift">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-white" />
+                💬 Reddit Community Analysis
+              </h3>
+
+              <div className="mb-4 text-sm text-gray-400">
+                Scraped from old.reddit.com: {results.additional_metrics.reddit.subreddits_analyzed?.join(', ') || 'various subreddits'} • {results.additional_metrics.reddit.total_posts || 0} posts
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Avg Engagement</div>
+                  <div className="text-xl font-bold text-white">
+                    {results.additional_metrics.reddit.metrics.avg_engagement.toFixed(1)}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">upvotes + comments</div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Engagement Δ</div>
+                  <div className={`text-xl font-bold ${results.additional_metrics.reddit.metrics.engagement_velocity > 0 ? 'text-white' : 'text-gray-500'
+                    }`}>
+                    {results.additional_metrics.reddit.metrics.engagement_velocity > 0 ? '+' : ''}{(results.additional_metrics.reddit.metrics.engagement_velocity * 100).toFixed(1)}%
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Post Frequency Δ</div>
+                  <div className={`text-xl font-bold ${results.additional_metrics.reddit.metrics.post_velocity > 0 ? 'text-white' : 'text-gray-500'
+                    }`}>
+                    {results.additional_metrics.reddit.metrics.post_velocity > 0 ? '+' : ''}{(results.additional_metrics.reddit.metrics.post_velocity * 100).toFixed(1)}%
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Sentiment Shift</div>
+                  <div className={`text-xl font-bold ${results.additional_metrics.reddit.metrics.sentiment_shift > 0 ? 'text-white' : 'text-gray-500'
+                    }`}>
+                    {results.additional_metrics.reddit.metrics.sentiment_shift > 0 ? '+' : ''}{results.additional_metrics.reddit.metrics.sentiment_shift.toFixed(2)}
+                  </div>
+                </div>
+              </div>
+
+              {results.additional_metrics.reddit.risk_analysis && (
+                <div className={`p-4 rounded-xl border-2 ${results.additional_metrics.reddit.risk_analysis.risk_level === 'high' ? 'border-white/20 bg-white/5' :
+                  results.additional_metrics.reddit.risk_analysis.risk_level === 'medium' ? 'border-white/10 bg-white/[0.02]' :
+                    'border-white/5 bg-white/[0.01]'
+                  }`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-medium text-white">
+                      Community Risk: <span className="capitalize">{results.additional_metrics.reddit.risk_analysis.risk_level}</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium text-white">
+                      Score: {results.additional_metrics.reddit.risk_analysis.risk_score}/100
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300 mb-2">{results.additional_metrics.reddit.risk_analysis.recommendation}</p>
+                  {results.additional_metrics.reddit.risk_analysis.signals && results.additional_metrics.reddit.risk_analysis.signals.length > 0 && (
+                    <div className="text-xs text-gray-400">
+                      Signals: {results.additional_metrics.reddit.risk_analysis.signals.join(', ')}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -322,22 +492,22 @@ function TrendLifecycleChart({ data }) {
               <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
           <XAxis
             dataKey="date"
-            stroke="#64748b"
+            stroke="#737373"
             tick={{ fontSize: 12 }}
             tickFormatter={(val) => val ? val.slice(5, 10) : ''}
           />
-          <YAxis stroke="#64748b" tick={{ fontSize: 12 }} domain={[0, 1]} />
+          <YAxis stroke="#737373" tick={{ fontSize: 12 }} domain={[0, 1]} />
           <Tooltip
             contentStyle={{
-              backgroundColor: '#1e293b',
-              border: '1px solid #334155',
+              backgroundColor: '#141414',
+              border: '1px solid #2a2a2a',
               borderRadius: '12px',
-              color: '#f8fafc'
+              color: '#ffffff'
             }}
-            labelStyle={{ color: '#94a3b8' }}
+            labelStyle={{ color: '#a3a3a3' }}
           />
           <Area type="monotone" dataKey="velocity" stroke="#6366f1" strokeWidth={2} fill="url(#velocityGradient)" name="Velocity" />
           <Area type="monotone" dataKey="fatigue" stroke="#f59e0b" strokeWidth={2} fill="url(#fatigueGradient)" name="Fatigue" />
@@ -372,7 +542,7 @@ function StateDistributionChart({ distribution }) {
             paddingAngle={5}
             dataKey="value"
             label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-            labelLine={{ stroke: '#64748b' }}
+            labelLine={{ stroke: '#737373' }}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.color} />
@@ -380,10 +550,10 @@ function StateDistributionChart({ distribution }) {
           </Pie>
           <Tooltip
             contentStyle={{
-              backgroundColor: '#1e293b',
-              border: '1px solid #334155',
+              backgroundColor: '#141414',
+              border: '1px solid #2a2a2a',
               borderRadius: '12px',
-              color: '#f8fafc'
+              color: '#ffffff'
             }}
           />
         </RechartsPie>
@@ -441,18 +611,18 @@ function TrendsDashboard() {
   return (
     <div className="space-y-6">
       {/* Header with Trend Selector */}
-      <div className="glass rounded-2xl p-6">
+      <div className="glass rounded-2xl p-6 hover-lift">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold text-white">Trend Analytics Dashboard</h2>
-            <p className="text-slate-400 mt-1">Select a meme or hashtag to analyze its lifecycle</p>
+            <p className="text-gray-400 mt-1">Select a meme or hashtag to analyze its lifecycle</p>
           </div>
           <button
             onClick={loadTrends}
             disabled={loadingList}
-            className="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition-all"
+            className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
           >
-            <RefreshCw className={`w-5 h-5 text-slate-400 ${loadingList ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`w-5 h-5 text-gray-400 ${loadingList ? 'animate-spin' : ''}`} />
           </button>
         </div>
 
@@ -461,7 +631,7 @@ function TrendsDashboard() {
           <select
             value={selectedTrend || ''}
             onChange={(e) => handleTrendSelect(e.target.value)}
-            className="w-full px-6 py-4 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-indigo-500 text-white text-lg font-medium appearance-none cursor-pointer transition-all hover:bg-slate-700/80"
+            className="w-full px-6 py-4 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 text-white text-lg font-medium appearance-none cursor-pointer transition-all hover:bg-[#1a1a1a]"
           >
             <option value="">🔍 Select a Trend/Meme to Analyze...</option>
             {trends.map((trend, idx) => (
@@ -470,33 +640,33 @@ function TrendsDashboard() {
               </option>
             ))}
           </select>
-          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
         </div>
 
         {/* Quick Stats */}
         {trends.length > 0 && (
           <div className="grid grid-cols-4 gap-4 mt-6">
-            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-              <div className="text-3xl font-bold text-indigo-400">{trends.length}</div>
-              <div className="text-sm text-slate-400">Total Trends</div>
+            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
+              <div className="text-3xl font-bold text-white">{trends.length}</div>
+              <div className="text-sm text-gray-400 mt-1">Total Trends</div>
             </div>
-            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-              <div className="text-3xl font-bold text-emerald-400">
+            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
+              <div className="text-3xl font-bold text-white">
                 {trends.filter(t => t.archetype === 'viral_crash').length}
               </div>
-              <div className="text-sm text-slate-400">Viral Crashes</div>
+              <div className="text-sm text-gray-400 mt-1">Viral Crashes</div>
             </div>
-            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-              <div className="text-3xl font-bold text-amber-400">
+            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
+              <div className="text-3xl font-bold text-white">
                 {trends.filter(t => t.archetype === 'controversy_spike').length}
               </div>
-              <div className="text-sm text-slate-400">Controversies</div>
+              <div className="text-sm text-gray-400 mt-1">Controversies</div>
             </div>
-            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-              <div className="text-3xl font-bold text-purple-400">
+            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
+              <div className="text-3xl font-bold text-white">
                 {trends.reduce((sum, t) => sum + (t.data_points || 0), 0)}
               </div>
-              <div className="text-sm text-slate-400">Total Data Points</div>
+              <div className="text-sm text-gray-400 mt-1">Total Data Points</div>
             </div>
           </div>
         )}
@@ -504,18 +674,18 @@ function TrendsDashboard() {
 
       {/* Error Display */}
       {error && (
-        <div className="glass rounded-2xl p-6 border-l-4 border-red-500">
-          <h3 className="text-red-400 font-semibold mb-2">Error</h3>
-          <p className="text-slate-300">{error}</p>
+        <div className="glass rounded-2xl p-6 border-l-4 border-white/20">
+          <h3 className="text-white font-semibold mb-2">Error</h3>
+          <p className="text-gray-300">{error}</p>
         </div>
       )}
 
       {/* Loading State */}
       {loading && (
         <div className="glass rounded-2xl p-12 text-center pulse-glow">
-          <div className="w-16 h-16 mx-auto mb-4 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
+          <div className="w-16 h-16 mx-auto mb-4 border-4 border-white/20 border-t-white rounded-full animate-spin" />
           <h3 className="text-xl font-semibold text-white mb-2">Analyzing Trend</h3>
-          <p className="text-slate-400">Running HMM inference and investigating decline...</p>
+          <p className="text-gray-400">Running HMM inference and investigating decline...</p>
         </div>
       )}
 
@@ -523,18 +693,18 @@ function TrendsDashboard() {
       {!loading && trendAnalysis && (
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Lifecycle Chart */}
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-6 hover-lift">
             <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <Activity className="w-5 h-5 text-indigo-400" />
+              <Activity className="w-5 h-5 text-white" />
               Trend Lifecycle ({trendAnalysis.trend_name})
             </h3>
             <TrendLifecycleChart data={trendAnalysis.lifecycle_data} />
           </div>
 
           {/* State Distribution */}
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-6 hover-lift">
             <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <PieChart className="w-5 h-5 text-purple-400" />
+              <PieChart className="w-5 h-5 text-white" />
               HMM State Distribution
             </h3>
             <StateDistributionChart distribution={trendAnalysis.state_distribution} />
@@ -544,7 +714,7 @@ function TrendsDashboard() {
               {Object.entries(STATE_COLORS).map(([state, color]) => (
                 <div key={state} className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
-                  <span className="text-sm text-slate-400">{state}</span>
+                  <span className="text-sm text-gray-400">{state}</span>
                 </div>
               ))}
             </div>
@@ -552,38 +722,206 @@ function TrendsDashboard() {
 
           {/* Decline Detection */}
           {trendAnalysis.decline_detected && trendAnalysis.decline_info && (
-            <div className="glass rounded-2xl p-6 lg:col-span-2 border-l-4 border-red-500">
+            <div className="glass rounded-2xl p-6 lg:col-span-2 border-l-4 border-white/20 hover-lift">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <TrendingDown className="w-5 h-5 text-red-400" />
+                <TrendingDown className="w-5 h-5 text-white" />
                 ⚠️ Decline Detected on {trendAnalysis.decline_info.date}
               </h3>
 
               <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-slate-800/50 rounded-xl p-4">
-                  <div className="text-sm text-slate-400 mb-1">State</div>
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">State</div>
                   <div className="text-xl font-bold" style={{ color: STATE_COLORS[trendAnalysis.decline_info.state] }}>
                     {trendAnalysis.decline_info.state}
                   </div>
                 </div>
-                <div className="bg-slate-800/50 rounded-xl p-4">
-                  <div className="text-sm text-slate-400 mb-1">Velocity</div>
-                  <div className="text-xl font-bold text-indigo-400">
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Velocity</div>
+                  <div className="text-xl font-bold text-white">
                     {(trendAnalysis.decline_info.metrics?.velocity * 100).toFixed(1)}%
                   </div>
                 </div>
-                <div className="bg-slate-800/50 rounded-xl p-4">
-                  <div className="text-sm text-slate-400 mb-1">Fatigue</div>
-                  <div className="text-xl font-bold text-amber-400">
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <div className="text-sm text-gray-400 mb-1">Fatigue</div>
+                  <div className="text-xl font-bold text-white">
                     {(trendAnalysis.decline_info.metrics?.fatigue * 100).toFixed(1)}%
                   </div>
                 </div>
               </div>
 
-              {/* AI Explanation */}
+              {/* AI Metric Explanations - NEW */}
+              <div className="space-y-4 mt-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
+                  <h4 className="font-semibold text-white">AI Metric Analysis</h4>
+                  <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium text-white">
+                    Detailed Insights
+                  </span>
+                </div>
+
+                {/* Velocity Analysis */}
+                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-cyan-400" />
+                      <span className="font-medium text-white">Velocity</span>
+                    </div>
+                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'bg-green-500/20 text-green-300' :
+                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-red-500/20 text-red-300'
+                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
+                      {(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'Strong' :
+                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'Moderate' : 'Weak'}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">
+                    Velocity measures the speed of trend adoption and growth. Current reading shows {
+                      (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'strong momentum' :
+                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'moderate pace' :
+                          'declining interest'
+                    }.
+                  </p>
+                  <div className="text-xs text-gray-500 mt-2">
+                    <strong>Cause:</strong> {
+                      (trendAnalysis.decline_info.metrics?.velocity || 0) < 0.3
+                        ? 'Reduced new user adoption and decreased content creation'
+                        : 'Active community engagement and content virality'
+                    }
+                  </div>
+                </div>
+
+                {/* Fatigue Analysis */}
+                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <Activity className="w-4 h-4 text-amber-400" />
+                      <span className="font-medium text-white">Fatigue</span>
+                    </div>
+                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'bg-green-500/20 text-green-300' :
+                        (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-red-500/20 text-red-300'
+                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
+                      {(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'Low' :
+                        (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'Moderate' : 'High'}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">
+                    Fatigue indicates audience saturation and repetition aversion. {
+                      (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7 ? 'High fatigue suggests content oversaturation' :
+                        (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.4 ? 'Moderate fatigue indicates need for fresh content' :
+                          'Low fatigue means audience is still engaged'
+                    }.
+                  </p>
+                  <div className="text-xs text-gray-500 mt-2">
+                    <strong>Cause:</strong> {
+                      (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7
+                        ? 'Oversaturation of similar content, declining novelty, repetitive messaging'
+                        : 'Content remains fresh and engaging with audience'
+                    }
+                  </div>
+                  {(trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.6 && (
+                    <div className="text-xs text-green-400 mt-1">
+                      <strong>Action:</strong> Introduce new creative angles, collaborate with fresh creators, or pivot messaging
+                    </div>
+                  )}
+                </div>
+
+                {/* Retention Analysis */}
+                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-emerald-400" />
+                      <span className="font-medium text-white">Retention</span>
+                    </div>
+                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'bg-green-500/20 text-green-300' :
+                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-red-500/20 text-red-300'
+                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
+                      {(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong' :
+                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair' : 'Poor'}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">
+                    Retention tracks how well the trend keeps audience attention. {
+                      (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong retention indicates loyal community' :
+                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair retention with room for improvement' :
+                          'Poor retention suggests audience drop-off'
+                    }.
+                  </p>
+                  <div className="text-xs text-gray-500 mt-2">
+                    <strong>Cause:</strong> {
+                      (trendAnalysis.decline_info.metrics?.retention || 0) < 0.4
+                        ? 'Weak community bonds, lack of ongoing value, or competing trends'
+                        : 'Strong community engagement and consistent value delivery'
+                    }
+                  </div>
+                </div>
+
+                {/* Causal Chain */}
+                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
+                  <h5 className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-yellow-400" />
+                    Causal Chain Analysis
+                  </h5>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {trendAnalysis.decline_info.state === 'Decline' ? (
+                      <>
+                        The trend entered decline due to a combination of factors:
+                        <strong className="text-white"> decreased velocity</strong> ({((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}%)
+                        reduced new user adoption →
+                        <strong className="text-white"> increased fatigue</strong> ({((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%)
+                        from content oversaturation →
+                        <strong className="text-white"> dropping retention</strong> ({((trendAnalysis.decline_info.metrics?.retention || 0) * 100).toFixed(0)}%)
+                        as audience attention shifted to newer trends. This cascade effect is typical of {trendAnalysis.decline_info.archetype || 'standard'} patterns.
+                      </>
+                    ) : (
+                      <>
+                        The trend shows signs of maturation with
+                        <strong className="text-white"> velocity</strong> at {((trendAnalysis.decline_info.metrics?.velocity || 0) * 100).toFixed(0)}% and
+                        <strong className="text-white"> fatigue</strong> building to {((trendAnalysis.decline_info.metrics?.fatigue || 0) * 100).toFixed(0)}%.
+                        Market saturation is approaching. Early intervention can prevent full decline.
+                      </>
+                    )}
+                  </p>
+                </div>
+
+                {/* Recovery Actions */}
+                {(trendAnalysis.decline_info.metrics?.velocity || 0) < 0.5 && (
+                  <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
+                    <h5 className="text-sm font-medium text-green-300 mb-3 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4" />
+                      Recovery Actions
+                    </h5>
+                    <ul className="space-y-2">
+                      <li className="text-sm text-gray-300 flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        Inject fresh creative angles - partner with new influencers or creators
+                      </li>
+                      <li className="text-sm text-gray-300 flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        Launch limited-time campaigns to create urgency and re-engage audience
+                      </li>
+                      <li className="text-sm text-gray-300 flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        Pivot messaging to address current audience interests and pain points
+                      </li>
+                      <li className="text-sm text-gray-300 flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        Reduce posting frequency to combat fatigue while maintaining quality
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Original AI Explanation */}
               {trendAnalysis.decline_info.investigation?.explanation && (
-                <div className="bg-slate-800/30 rounded-xl p-4">
-                  <h4 className="text-sm font-medium text-slate-300 mb-2">AI Analysis</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">
+                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
+                  <h4 className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4" />
+                    AI Analysis
+                  </h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">
                     {typeof trendAnalysis.decline_info.investigation.explanation === 'string'
                       ? trendAnalysis.decline_info.investigation.explanation.slice(0, 500)
                       : 'Analysis complete'}
@@ -596,12 +934,12 @@ function TrendsDashboard() {
 
           {/* No Decline Message */}
           {trendAnalysis && !trendAnalysis.decline_detected && (
-            <div className="glass rounded-2xl p-6 lg:col-span-2 border-l-4 border-emerald-500">
+            <div className="glass rounded-2xl p-6 lg:col-span-2 border-l-4 border-white/20 hover-lift">
               <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-emerald-400" />
+                <TrendingUp className="w-5 h-5 text-white" />
                 ✅ No Decline Detected - Trend is Healthy!
               </h3>
-              <p className="text-slate-400 mt-2">This trend is still in a growth or peak phase.</p>
+              <p className="text-gray-400 mt-2">This trend is still in a growth or peak phase.</p>
             </div>
           )}
         </div>
@@ -610,9 +948,9 @@ function TrendsDashboard() {
       {/* Empty State */}
       {!loading && !trendAnalysis && !error && (
         <div className="glass rounded-2xl p-12 text-center">
-          <BarChart3 className="w-16 h-16 mx-auto text-slate-600 mb-4" />
-          <h3 className="text-xl font-semibold text-slate-400 mb-2">Select a Trend to Analyze</h3>
-          <p className="text-slate-500">Choose a meme or hashtag from the dropdown above to see its lifecycle analysis</p>
+          <BarChart3 className="w-16 h-16 mx-auto text-gray-600 mb-4" />
+          <h3 className="text-xl font-semibold text-gray-400 mb-2">Select a Trend to Analyze</h3>
+          <p className="text-gray-500">Choose a meme or hashtag from the dropdown above to see its lifecycle analysis</p>
         </div>
       )}
     </div>
@@ -642,17 +980,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0a0a]">
       {/* Header */}
-      <header className="border-b border-slate-800/50 backdrop-blur-xl sticky top-0 z-50">
+      <header className="border-b border-white/10 backdrop-blur-xl sticky top-0 z-50 bg-[#0a0a0a]/80">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white to-gray-400 flex items-center justify-center">
+              <TrendingUp className="w-6 h-6 text-black" />
             </div>
             <div>
-              <h1 className="text-xl font-bold gradient-text">TrendGuard</h1>
-              <p className="text-xs text-slate-500">AI Campaign Advisor</p>
+              <h1 className="text-xl font-bold text-white">TrendGuard</h1>
+              <p className="text-xs text-gray-500">AI Campaign Advisor v4.0</p>
             </div>
           </div>
 
@@ -661,8 +999,8 @@ function App() {
             <button
               onClick={() => setActiveTab('campaign')}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${activeTab === 'campaign'
-                  ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                ? 'bg-[#6366f1] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
             >
               <Rocket className="w-4 h-4 inline mr-2" />
@@ -671,8 +1009,8 @@ function App() {
             <button
               onClick={() => setActiveTab('trends')}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${activeTab === 'trends'
-                  ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                ? 'bg-[#6366f1] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
             >
               <BarChart3 className="w-4 h-4 inline mr-2" />
@@ -687,10 +1025,10 @@ function App() {
         {activeTab === 'campaign' && (
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left: Form */}
-            <div className="glass rounded-2xl p-8">
+            <div className="glass rounded-2xl p-8 hover-lift">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-white mb-2">Pre-Launch Campaign Analysis</h2>
-                <p className="text-slate-400">Get AI-powered predictions before you launch. Our system uses real-time market data to forecast success.</p>
+                <p className="text-gray-400">Get AI-powered predictions before you launch. Our system uses real-time market data to forecast success.</p>
               </div>
               <CampaignForm onSubmit={handleCampaignSubmit} loading={loading} />
             </div>
@@ -698,17 +1036,17 @@ function App() {
             {/* Right: Results */}
             <div>
               {error && (
-                <div className="glass rounded-2xl p-6 border-l-4 border-red-500 mb-6">
-                  <h3 className="text-red-400 font-semibold mb-2">Analysis Error</h3>
-                  <p className="text-slate-300">{error}</p>
+                <div className="glass rounded-2xl p-6 border-l-4 border-white/20 mb-6">
+                  <h3 className="text-white font-semibold mb-2">Analysis Error</h3>
+                  <p className="text-gray-300">{error}</p>
                 </div>
               )}
 
               {loading && (
                 <div className="glass rounded-2xl p-12 text-center pulse-glow">
-                  <div className="w-16 h-16 mx-auto mb-4 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
+                  <div className="w-16 h-16 mx-auto mb-4 border-4 border-white/20 border-t-white rounded-full animate-spin" />
                   <h3 className="text-xl font-semibold text-white mb-2">Analyzing Campaign</h3>
-                  <p className="text-slate-400">Searching real-time market data with Google...</p>
+                  <p className="text-gray-400">Searching real-time market data with Google...</p>
                 </div>
               )}
 
@@ -716,9 +1054,9 @@ function App() {
 
               {!loading && !results && !error && (
                 <div className="glass rounded-2xl p-12 text-center">
-                  <Search className="w-16 h-16 mx-auto text-slate-600 mb-4" />
-                  <h3 className="text-xl font-semibold text-slate-400 mb-2">Ready to Analyze</h3>
-                  <p className="text-slate-500">Fill out the campaign form to get AI-powered predictions</p>
+                  <Search className="w-16 h-16 mx-auto text-gray-600 mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Ready to Analyze</h3>
+                  <p className="text-gray-500">Fill out the campaign form to get AI-powered predictions</p>
                 </div>
               )}
             </div>
@@ -729,9 +1067,9 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/50 mt-16">
-        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-slate-500 text-sm">
-          TrendGuard v3.0 — Powered by Gemini AI with Google Search Grounding
+      <footer className="border-t border-white/10 mt-16">
+        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
+          TrendGuard v4.0 — Powered by Gemini AI with Google Search Grounding • Premium Black/White Edition
         </div>
       </footer>
     </div>

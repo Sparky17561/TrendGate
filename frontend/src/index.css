@@ -1,68 +1,259 @@
 @import "tailwindcss";
 
-/* Custom TrendGuard Theme */
+/* Premium Black/White Theme - TrendGuard v4.0 */
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #22d3ee;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --surface: #1e1b4b;
-  --surface-light: #312e81;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
+  /* Core Colors - Minimal Accent */
+  --color-canvas: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-elevated: #1a1a1a;
+  --color-border: #2a2a2a;
+  --color-border-subtle: #1f1f1f;
+
+  /* Typography */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-text-tertiary: #737373;
+  --color-text-muted: #525252;
+
+  /* Accent - Minimal Use Only */
+  --color-accent: #6366f1;
+  --color-accent-hover: #4f46e5;
+
+  /* Semantic Colors - White Based */
+  --color-success: #ffffff;
+  --color-warning: #ffffff;
+  --color-error: #ffffff;
+
+  /* Chart Gradients - Preserved */
+  --chart-emerald: #10b981;
+  --chart-cyan: #22d3ee;
+  --chart-purple: #8b5cf6;
+  --chart-amber: #f59e0b;
+  --chart-red: #ef4444;
+  --chart-indigo: #6366f1;
 }
 
 body {
-  @apply bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 min-h-screen text-white;
-  font-family: 'Inter', system-ui, sans-serif;
+  @apply bg-[#0a0a0a] min-h-screen text-white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glass morphism effect */
+/* Glass Morphism - Premium Edition */
 .glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+  @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05];
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass:hover {
+  @apply bg-white/[0.03] border-white/[0.08];
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-dark {
-  @apply bg-slate-900/50 backdrop-blur-xl border border-slate-700/50;
+  @apply bg-[#141414] backdrop-blur-xl border border-[#2a2a2a];
 }
 
-/* Gradient text */
+/* Gradient Text - Minimal Use */
 .gradient-text {
-  @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent;
 }
 
-/* Pulse animation for loading */
+/* Card Styles */
+.card {
+  @apply glass rounded-2xl p-6 transition-all duration-300;
+}
+
+.card-elevated {
+  @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-6;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  }
 }
 
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Score colors */
-.score-high { @apply text-emerald-400; }
-.score-medium { @apply text-amber-400; }
-.score-low { @apply text-red-400; }
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
 
-/* Risk badge colors */
-.risk-high { @apply bg-red-500/20 text-red-300 border-red-500/30; }
-.risk-medium { @apply bg-amber-500/20 text-amber-300 border-amber-500/30; }
-.risk-low { @apply bg-emerald-500/20 text-emerald-300 border-emerald-500/30; }
+  100% {
+    background-position: 1000px 0;
+  }
+}
 
-/* Smooth scrollbar */
+.skeleton {
+  background: linear-gradient(90deg,
+      #141414 0%,
+      #1a1a1a 50%,
+      #141414 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Score Colors - Keep Gradients */
+.score-high {
+  @apply text-emerald-400;
+}
+
+.score-medium {
+  @apply text-amber-400;
+}
+
+.score-low {
+  @apply text-red-400;
+}
+
+/* Risk Badges - Monochrome */
+.risk-high {
+  @apply bg-white/10 text-white border border-white/20;
+}
+
+.risk-medium {
+  @apply bg-white/5 text-gray-300 border border-white/10;
+}
+
+.risk-low {
+  @apply bg-white/5 text-gray-400 border border-white/10;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl bg-[#6366f1] hover:bg-[#4f46e5] text-white font-medium;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input Styles */
+input,
+textarea,
+select {
+  @apply bg-[#141414] border border-[#2a2a2a] text-white placeholder-gray-500;
+  @apply focus:border-white/20 focus:ring-2 focus:ring-white/10;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply bg-[#1a1a1a];
+}
+
+/* Tooltip */
+.tooltip {
+  @apply absolute z-50 px-3 py-2 text-sm bg-white text-black rounded-lg shadow-lg;
+  @apply invisible opacity-0 transition-all duration-200;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible opacity-100;
+}
+
+/* Scrollbar - Monochrome */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-800/50 rounded-full;
+  @apply bg-[#141414] rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-indigo-600/50 rounded-full hover:bg-indigo-500/70;
+  @apply bg-white/10 rounded-full hover:bg-white/20;
+}
+
+/* Selection */
+::selection {
+  @apply bg-white/20 text-white;
+}
+
+/* Focus Visible */
+:focus-visible {
+  @apply outline-none ring-2 ring-white/20 ring-offset-2 ring-offset-black;
+}
+
+/* Metric Cards */
+.metric-card {
+  @apply glass rounded-xl p-4;
+  @apply transition-all duration-300 hover:scale-[1.02];
+}
+
+.metric-value {
+  @apply text-2xl font-bold text-white;
+}
+
+.metric-label {
+  @apply text-sm text-gray-400 uppercase tracking-wide;
+}
+
+/* Divider */
+.divider {
+  @apply border-t border-white/10 my-6;
+}
+
+/* Loading States */
+.loading-spinner {
+  @apply w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  @apply bg-white/10 text-white border border-white/20;
+}
+
+/* Premium Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }

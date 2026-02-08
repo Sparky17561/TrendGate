@@ -20,6 +20,29 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 load_dotenv()
 
+# Helper function to resolve data file paths
+def get_data_file_path(filename: str) -> str:
+    """Get absolute path to data file, handling different working directories."""
+    # Try relative to current directory first
+    if os.path.exists(filename):
+        return filename
+    
+    # Try relative to parent directory (if running from backend/)
+    parent_path = os.path.join("..", filename)
+    if os.path.exists(parent_path):
+        return parent_path
+    
+    # Try relative to script directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(script_dir)
+    abs_path = os.path.join(parent_dir, filename)
+    if os.path.exists(abs_path):
+        return abs_path
+    
+    # Return original path as fallback
+    return filename
+
+
 # --- PYDANTIC SCHEMAS ---
 
 class CampaignInput(BaseModel):
@@ -215,34 +238,45 @@ async def list_trends():
     """
     List available trends from the dataset.
     """
-    analyzer = get_hmm_analyzer()
-    pd = analyzer["pd"]
-    
-    data_file = "data/trends_dataset.csv"
-    if not os.path.exists(data_file):
-        data_file = "data/trend_data.csv"
-    
-    if not os.path.exists(data_file):
-        return {"trends": [], "count": 0}
-    
-    df = pd.read_csv(data_file)
-    
-    if "trend_name" in df.columns:
-        trends = df.groupby("trend_name").agg({
-            "date": ["min", "max", "count"]
-        }).reset_index()
-        trends.columns = ["trend_name", "start_date", "end_date", "data_points"]
+    try:
+        analyzer = get_hmm_analyzer()
+        pd = analyzer["pd"]
         
-        if "archetype" in df.columns:
-            archetypes = df.groupby("trend_name")["archetype"].first().to_dict()
-            trends["archetype"] = trends["trend_name"].map(archetypes)
+        # Use helper to find data file
+        data_file = get_data_file_path("data/trends_dataset.csv")
+        if not os.path.exists(data_file):
+            data_file = get_data_file_path("data/trend_data.csv")
         
-        return {
-            "trends": trends.to_dict(orient="records"),
-            "count": len(trends)
-        }
+        if not os.path.exists(data_file):
+            return {"trends": [], "count": 0, "message": "No data files found"}
+        
+        df = pd.read_csv(data_file)
+        
+        if "trend_name" in df.columns:
+            trends = df.groupby("trend_name").agg({
+                "date": ["min", "max", "count"]
+            }).reset_index()
+            trends.columns = ["trend_name", "start_date", "end_date", "data_points"]
+            
+            if "archetype" in df.columns:
+                archetypes = df.groupby("trend_name")["archetype"].first().to_dict()
+                trends["archetype"] = trends["trend_name"].map(archetypes)
+            
+            return {
+                "trends": trends.to_dict(orient="records"),
+                "count": len(trends)
+            }
+        
+        return {"trends": [{"trend_name": "Default", "data_points": len(df)}], "count": 1}
     
-    return {"trends": [{"trend_name": "Default", "data_points": len(df)}], "count": 1}
+    except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"Error in list_trends: {error_details}")
+        raise HTTPException(
+            status_code=500, 
+            detail=f"Failed to load trends: {str(e)}"
+        )
 
 @app.post("/api/trends/analyze")
 async def analyze_trend(input: TrendAnalysisInput):
@@ -256,9 +290,9 @@ async def analyze_trend(input: TrendAnalysisInput):
         hmm = analyzer["hmm"]
         decoder = analyzer["decoder"]
         
-        data_file = "data/trends_dataset.csv"
+        data_file = get_data_file_path("data/trends_dataset.csv")
         if not os.path.exists(data_file):
-            data_file = "data/trend_data.csv"
+            data_file = get_data_file_path("data/trend_data.csv")
         
         if not os.path.exists(data_file):
             raise HTTPException(status_code=404, detail="No trend data found")
@@ -339,4 +373,4 @@ async def analyze_trend(input: TrendAnalysisInput):
 # --- RUN SERVER ---
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
