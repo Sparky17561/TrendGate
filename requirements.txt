@@ -1,0 +1,9 @@
+pandas
+numpy
+scipy
+plotly
+langchain
+langchain-groq
+langchain-community
+google-search-results
+python-dotenv

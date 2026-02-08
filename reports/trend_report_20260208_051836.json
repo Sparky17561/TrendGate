@@ -1,0 +1,1617 @@
+{
+  "generated_at": "2026-02-08T05:18:36.588593",
+  "total_trends_analyzed": 8,
+  "trends_with_decline": 8,
+  "trends": [
+    {
+      "trend_name": "#BookTok",
+      "archetype": "viral_crash",
+      "total_days": 31,
+      "state_sequence_summary": {
+        "Growth": 2,
+        "Decline": 20,
+        "Saturation": 1,
+        "Emerging": 5,
+        "Peak": 3
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 10,
+        "date": "2025-01-22",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.5858420178888714,
+          "fatigue": 0.4306893042326823,
+          "retention": 0.5584298147637834
+        },
+        "extended_metrics": {
+          "sentiment": 0.4602668050078796,
+          "engagement_rate": 0.1232688317290748,
+          "content_originality": 0.5150717716228164
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#BookTok",
+        "decline_date": "2025-01-22",
+        "generated_at": "2026-02-08T05:17:16.418556",
+        "metrics_snapshot": {
+          "velocity": 0.5858420178888714,
+          "fatigue": 0.4306893042326823,
+          "retention": 0.5584298147637834,
+          "sentiment": 0.4602668050078796,
+          "engagement_rate": 0.1232688317290748,
+          "content_originality": 0.5150717716228164
+        },
+        "archetype": "viral_crash",
+        "web_context": {
+          "trend_name": "#BookTok",
+          "decline_date": "2025-01-22",
+          "investigated_at": "2026-02-08T05:17:16.418556",
+          "news_coverage": [
+            {
+              "title": "Neutrogena taps into \u2018steamy\u2019 #BookTok trend with sultry short stories",
+              "link": "https://www.marketingdive.com/news/neutrogena-embraces-glow-sultry-short-stories/756748/",
+              "snippet": "Dive Brief: \u00b7 Neutrogena launched its new Vitamin C serum with a steamy campaign featuring media personality and content creator Serena Kerrigan...",
+              "source": "Marketing Dive",
+              "date": "Aug 5, 2025"
+            },
+            {
+              "title": "Romantasy: #BookTok was the catalyst for me to write",
+              "link": "https://www.bbc.com/news/articles/c5yl0x032eno",
+              "snippet": "On Saturday, over 50 fantasy authors will descend on Belfast for a book signing followed by a fae, or fairy, themed ball.",
+              "source": "BBC",
+              "date": "Jun 27, 2025"
+            },
+            {
+              "title": "Barnes & Noble opening 3 new Connecticut stores in wake of #BookTok trend",
+              "link": "https://www.ctinsider.com/living/article/barnes-noble-ct-new-locations-booktok-20151246.php",
+              "snippet": "Barnes & Noble announces opening dates for 3 new CT stores in wake of #BookTok trend ... Barnes & Noble at Milford Crossing, in Milford Conn.",
+              "source": "CT Insider",
+              "date": "Feb 7, 2025"
+            },
+            {
+              "title": "TikTok's #BookTok trend 'literally changed my life'",
+              "link": "https://www.bbc.com/news/uk-england-67555175",
+              "snippet": "#BookTok has over 200 billion views on TikTok, the equivalent of everyone in the world viewing it 25 times. It has become a community of book...",
+              "source": "BBC",
+              "date": "Dec 2, 2023"
+            },
+            {
+              "title": "#BookTok: A hashtag changing the book industry",
+              "link": "https://www.dw.com/en/booktok-a-hashtag-changing-the-book-industry/a-63490273",
+              "snippet": "Young people are posting about their favorite books on TikTok. Publishers and the Frankfurt Book Fair are now picking up on the influential trend.",
+              "source": "DW.com",
+              "date": "Oct 19, 2022"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "Luke Bateman went viral and got a book deal. Then the tide turned",
+              "link": "https://www.abc.net.au/news/2025-06-05/luke-bateman-booktok-fantasy-book-deal-controversy/105359130",
+              "snippet": "Bateman hopped on TikTok to announce he had signed a two-book deal for a fantasy series with Atria Books Australia, an imprint of publishing house Simon &...",
+              "source": "Australian Broadcasting Corporation",
+              "date": "Jun 4, 2025"
+            },
+            {
+              "title": "If BookTok Has Taken Over Your FYP Say \u201cI\u201d",
+              "link": "https://www.strikemagazines.com/blog-2-1/if-booktok-has-taken-over-your-fyp-say-i",
+              "snippet": "If I were to explain the term \u201cBookTok'' to the creator of books, they would definitely be extremely confused about what it means\u2014they would...",
+              "source": "Strike Magazines",
+              "date": "Feb 19, 2025"
+            },
+            {
+              "title": "'I couldn't buy groceries': Luke Bateman admits 'debilitating' gambling addiction",
+              "link": "https://www.abc.net.au/news/2025-09-04/luke-bateman-booktok-nrl-gambling-addiction/105730690",
+              "snippet": "When Luke Bateman was at the peak of his NRL career in 2019, his life outwardly exemplified the dream of many young Australian men,...",
+              "source": "Australian Broadcasting Corporation",
+              "date": "Sep 3, 2025"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What's the new \u201cbooktok\u201d? : r/RomanceBooks",
+                "link": "https://www.reddit.com/r/RomanceBooks/comments/1i0j4l8/whats_the_new_booktok/",
+                "snippet": "BookTok people will start using Bookstagram or BookTube as their primary account. The FYP organic reach of TikTok is irreplaceable by all ...",
+                "position": 1
+              },
+              {
+                "title": "BookTok: A reading revolution or \"the end of the world\"?",
+                "link": "https://www.reddit.com/r/books/comments/199ozb0/booktok_a_reading_revolution_or_the_end_of_the/",
+                "snippet": "One criticism levelled at BookTok is that it primarily lifts up fiction that's of a lesser quality than the works critics rave about.",
+                "position": 2
+              },
+              {
+                "title": "popular booktok books that are actually worth reading?",
+                "link": "https://www.reddit.com/r/Booktokreddit/comments/1kwc01t/popular_booktok_books_that_are_actually_worth/",
+                "snippet": "I love me some psychological horror. House of Leaves, I'm Thinking of Ending Things, Tender is the Flesh, and Ghost Wall are a few I really enjoyed.",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "\"#Booktok\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23Booktok&src=hashtag_click",
+                "snippet": "Results for \"#Booktok\" on X (Twitter). Find the latest posts, discussions, and updates about #Booktok. 19 results found.",
+                "position": 1
+              },
+              {
+                "title": "\"#booktok\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23booktok",
+                "snippet": "Results for \"#booktok\" on X (Twitter). Find the latest posts, discussions, and updates about #booktok. 19 results found.",
+                "position": 2
+              },
+              {
+                "title": "\"#BookTok\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23BookTok&src=typed_query",
+                "snippet": "Results for \"#BookTok\" on X (Twitter). Find the latest posts, discussions, and updates about #BookTok. 19 results found.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "#bookish #book #booksofinstagram #book #BookTok",
+                "link": "https://www.instagram.com/reel/DTC3iXGjSPz/?hl=en",
+                "snippet": "The dead don't always stay dead, not do their secrets stay buried... EVER DYING When the characters in a book become so real you want II EL ...",
+                "position": 1
+              },
+              {
+                "title": "BookTok: A reading revolution or \"the end of the world\"?",
+                "link": "https://www.reddit.com/r/books/comments/199ozb0/booktok_a_reading_revolution_or_the_end_of_the/",
+                "snippet": "The tag #BookTok has over 200 billion views as content creators ... dead authors, snobs complained about every new book as if it were ...",
+                "position": 2
+              },
+              {
+                "title": "My kindle dying would be a blessing for my TBR #booktok ...",
+                "link": "https://www.instagram.com/p/DT1jRjJDG2s/",
+                "snippet": "My kindle dying would be a blessing for my TBR #booktok #tbr #kindle #winterstorm #books. more. beingbookishpod. I was thinking exactly ...",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "Can Anything Replace BookTok? : r/romancelandia",
+              "link": "https://www.reddit.com/r/romancelandia/comments/1i3o3sq/publishers_and_authors_wonder_can_anything/",
+              "snippet": "What I'm saying is that BookTok is less organic and less of the reason for the boom than it seems, and as such it can be duplicated and ...",
+              "position": 1
+            },
+            {
+              "title": "New Year, New BookTok Trends - by Alyssa Morris",
+              "link": "https://romancingthephone.substack.com/p/new-year-new-booktok-trends",
+              "snippet": "Reread, Rewrite, Burn ... This is, by far, the most prevalent new trend. And for good reason. What a perfect lens through which to discuss popular ...",
+              "position": 2
+            },
+            {
+              "title": "Is BookTok the Cause of Reading Slumps?",
+              "link": "https://www.theteenmagazine.com/is-booktok-the-cause-of-reading-slumps",
+              "snippet": "BookTok amplifies the emotional drama of reading, as opposed to the cognitive work of reading. It lends platform to the books that cause ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Neutrogena taps into \u2018steamy\u2019 #BookTok trend with sultry short stories: Dive Brief: \u00b7 Neutrogena launched its new Vitamin C serum with a steamy campaign featuring media personality and content creator Serena Kerrigan...\n- Romantasy: #BookTok was the catalyst for me to write: On Saturday, over 50 fantasy authors will descend on Belfast for a book signing followed by a fae, or fairy, themed ball.\n- Barnes & Noble opening 3 new Connecticut stores in wake of #BookTok trend: Barnes & Noble announces opening dates for 3 new CT stores in wake of #BookTok trend ... Barnes & Noble at Milford Crossing, in Milford Conn.\n\nControversy/Drama:\n- Luke Bateman went viral and got a book deal. Then the tide turned: Bateman hopped on TikTok to announce he had signed a two-book deal for a fantasy series with Atria Books Australia, an imprint of publishing house Simon &...\n- If BookTok Has Taken Over Your FYP Say \u201cI\u201d: If I were to explain the term \u201cBookTok'' to the creator of books, they would definitely be extremely confused about what it means\u2014they would...\n\nReddit Discussions:\n- What's the new \u201cbooktok\u201d? : r/RomanceBooks\n- BookTok: A reading revolution or \"the end of the world\"?"
+        },
+        "decline_signals": [],
+        "explanation": "{\n    \"explanation\": \"The #BookTok trend is declining due to a combination of factors, including fatigue, decreased content originality, and controversy surrounding some of its creators. The trend's velocity has slowed down significantly, with a current velocity of 0.586, indicating a loss of momentum. Additionally, the fatigue metric is at 0.431, suggesting that users are becoming increasingly disinterested in the trend. The content originality metric is also relatively low at 0.515, implying that the trend is becoming stale and repetitive. Furthermore, recent controversies, such as the backlash against Luke Bateman's book deal, have likely contributed to the decline in sentiment, which is currently at 0.460. The trend's engagement rate has also plummeted to 0.123, indicating a significant decrease in user interaction. While the trend has had a positive impact on the book industry, with Barnes & Noble opening new stores and authors benefiting from the trend, its decline is likely due to its inability to sustain itself in the long term.\",\n    \n    \"The trend's decline can also be attributed to its over-commercialization, with brands like Neutrogena tapping into the trend with sultry short stories. This over-commercialization can lead to a sense of inauthenticity and may have alienated some users who initially joined the trend for its grassroots, community-driven nature. The trend's retention rate is at 0.558, which is relatively low, indicating that users are not sticking around for long. Overall, the decline of #BookTok is a complex issue with multiple factors at play.\",\n    \n    \"Despite the decline, the trend has had a lasting impact on the book industry, with many authors and publishers benefiting from its popularity. However, stakeholders must be aware of the trend's limitations and take steps to revitalize it or move on to new trends. This can involve creating more original content, engaging with users in a more authentic way, and avoiding over-commercialization. By doing so, stakeholders can help to sustain the trend's positive impact on the book industry and prevent its decline from having a negative impact on sales and engagement.\",\n    \n    \"confidence\": 0.8,\n    \n    \"key_factors\": [\"fatigue\", \"decreased content originality\", \"controversy\", \"over-commercialization\"],\n    \n    \"recommendations\": [\n        \"Create more original and diverse content to revitalize the trend and attract new users\",\n        \"Engage with users in a more authentic way, avoiding over-commercialization and focusing on community-driven initiatives\",\n        \"Monitor and respond to controversy and criticism in a timely and transparent manner to maintain user trust and sentiment\",\n        \"Diversify marketing strategies to reach a broader audience and prevent over-reliance on a single trend\",\n        \"Collaborate with authors, publishers, and other stakeholders to create new and innovative content that builds on the trend's positive impact on the book industry\"\n    ],\n    \n    \"evidence\": [\n        \"Velocity metric at 0.586, indicating a significant decline in trend momentum\",\n        \"Fatigue metric at 0.431, suggesting user disinterest and boredom with the trend\",\n        \"Content originality metric at 0.515, implying a lack of fresh and innovative content\",\n        \"Controversy surrounding Luke Bateman's book deal and other creators, contributing to a decline in sentiment\",\n        \"Over-commercialization of the trend by brands like Neutrogena, potentially alienating users and contributing to the decline\"\n    ]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "Mannequin Challenge",
+      "archetype": "slow_burn",
+      "total_days": 63,
+      "state_sequence_summary": {
+        "Growth": 9,
+        "Decline": 17,
+        "Saturation": 6,
+        "Emerging": 19,
+        "Peak": 12
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 40,
+        "date": "2025-02-22",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.6684739834627778,
+          "fatigue": 0.634104663085636,
+          "retention": 0.7963403086546716
+        },
+        "extended_metrics": {
+          "sentiment": 0.8474305831086717,
+          "engagement_rate": 0.1543870454079751,
+          "content_originality": 0.4300344591962497
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Mannequin Challenge",
+        "decline_date": "2025-02-22",
+        "generated_at": "2026-02-08T05:17:27.335397",
+        "metrics_snapshot": {
+          "velocity": 0.6684739834627778,
+          "fatigue": 0.634104663085636,
+          "retention": 0.7963403086546716,
+          "sentiment": 0.8474305831086717,
+          "engagement_rate": 0.1543870454079751,
+          "content_originality": 0.4300344591962497
+        },
+        "archetype": "slow_burn",
+        "web_context": {
+          "trend_name": "Mannequin Challenge",
+          "decline_date": "2025-02-22",
+          "investigated_at": "2026-02-08T05:17:27.335397",
+          "news_coverage": [
+            {
+              "title": "Which 2016 social media trend do you miss the most?",
+              "link": "https://www.prweek.co.uk/article/1946343/2016-social-media-trend-miss-most",
+              "snippet": "As 2016 nostalgia takes over social media, fond memories come to mind of Pok\u00e9mon Go, the Mannequin Challenge and Snapchat's 'puppy dog'...",
+              "source": "PR Week UK",
+              "date": "1 week ago"
+            },
+            {
+              "title": "It\u2019s 2026. Why Is 2016 Trending?",
+              "link": "https://www.vogue.com/article/its-2026-why-is-2016-trending",
+              "snippet": "Over the holidays, the first trend of 2026 emerged: the year 2016. \u201c2026 is the new 2016,\u201d users declared, in captions waxing poetic about...",
+              "source": "Vogue",
+              "date": "3 weeks ago"
+            },
+            {
+              "title": "Stop, don't move! Mannequin Challenge is the new viral video trend of the year",
+              "link": "https://www.stomp.sg/youthphoria/stop-dont-move-mannequin-challenge-is-the-new-viral-video-trend-of-the-year",
+              "snippet": "Have you heard? The Mannequin Challenge is social media's newest craze. The Mannequin Challenge is a viral Internet video trend where people remain...",
+              "source": "Stomp",
+              "date": "May 19, 2025"
+            },
+            {
+              "title": "5 sensational internet throwbacks you've probably done",
+              "link": "https://www.redandblack.com/culture/5-sensational-internet-throwbacks-youve-probably-done/article_9fbaf7fc-aabe-11e6-a0b9-5fd54f9e4a3d.html",
+              "snippet": "The Mannequin Challenge consists of a group of people freezing in strange and often challenging positions\u2014 as if they are literal mannequins\u2014...",
+              "source": "The Red & Black",
+              "date": "Nov 16, 2016"
+            },
+            {
+              "title": "The Library of Congress Mannequin Challenge and Emerging Traditions",
+              "link": "https://blogs.loc.gov/folklife/2016/12/library-of-congress-mannequin-challenge/",
+              "snippet": "The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.",
+              "source": "Library of Congress (.gov)",
+              "date": "Dec 2, 2016"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "White Helmets backlash after Mannequin Challenge video",
+              "link": "https://www.bbc.com/news/world-middle-east-38066791",
+              "snippet": "The White Helmets face a backlash after video emerges of volunteers staging a Mannequin Challenge in Syria.",
+              "source": "BBC",
+              "date": "Nov 24, 2016"
+            },
+            {
+              "title": "The Library of Congress Mannequin Challenge and Emerging Traditions",
+              "link": "https://blogs.loc.gov/folklife/2016/12/library-of-congress-mannequin-challenge/",
+              "snippet": "The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.",
+              "source": "The Library of Congress (.gov)",
+              "date": "Dec 2, 2016"
+            },
+            {
+              "title": "Chinese period drama mannequin challenge is worth stopping to take a look at \u3010Video\u3011",
+              "link": "https://soranews24.com/2016/12/12/chinese-period-drama-mannequin-challenge-is-worth-stopping-to-take-a-look-at-%E3%80%90video%E3%80%91/",
+              "snippet": "The mannequin challenge features participants striking a pose as a camera weaves in, around and through the scene.",
+              "source": "SoraNews24",
+              "date": "Dec 12, 2016"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What is the Mannequin Challenge and where does it come ...",
+                "link": "https://www.reddit.com/r/OutOfTheLoop/comments/5bibro/what_is_the_mannequin_challenge_and_where_does_it/",
+                "snippet": "The mannequin challenge is when you take a group of people (it seems really popular among sports teams for whatever reason) and have them adopt complicated ...",
+                "position": 1
+              },
+              {
+                "title": "What is the mannequin challenge? : r/OutOfTheLoop",
+                "link": "https://www.reddit.com/r/OutOfTheLoop/comments/5ef2zn/what_is_the_mannequin_challenge/",
+                "snippet": "It's a trend that's growing in popularity on Twitter where a group of people freeze in place like mannequins, as if time was suddenly stopped.",
+                "position": 2
+              },
+              {
+                "title": "The mannequin challenge was just...so perfect",
+                "link": "https://www.reddit.com/r/TheCircleTV/comments/mw9wmu/the_mannequin_challenge_was_justso_perfect/",
+                "snippet": "It was quite entertaining. I think Jack was getting by a bit too easily until then. Just being passive and sweet isn't going to win you the game.",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "\"#mannequinchallenge\" - Results on X | Live Posts & ...",
+                "link": "https://x.com/search?q=%23mannequinchallenge&src=typd",
+                "snippet": "Results for \"#mannequinchallenge\" on X (Twitter). Find the latest posts, discussions, and updates about #mannequinchallenge. 19 results found.",
+                "position": 1
+              },
+              {
+                "title": "grok and me making mannequin challenge videos like it's ...",
+                "link": "https://x.com/nonieengel/status/2013143069877768683",
+                "snippet": "Leonie Engel (@nonieengel). 24 likes 975 views. grok and me making mannequin challenge videos like it's 2016.",
+                "position": 2
+              },
+              {
+                "title": "Back to the mannequin challenge #NCTWISH",
+                "link": "https://x.com/nctwishofficial/status/1917928164430676234",
+                "snippet": "NCT WISH. \u2713 Affiliate badge. nctwishofficial. May 1. Back to the mannequin challenge #NCTWISH. TikTok \u00b7 NCT Official. www.tiktok.com.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Mannequin Challenge",
+                "link": "https://en.wikipedia.org/wiki/Mannequin_Challenge",
+                "snippet": "^ \"Pitt football team, packed plane take on Mannequin Challenge after win over Clemson\". WXPI News. November 13, 2016. Archived from the original on ...",
+                "position": 1
+              },
+              {
+                "title": "The Mannequin Challenge went viral in 2016, freezing people ...",
+                "link": "https://www.instagram.com/reel/DUbzxAUDcHf/",
+                "snippet": "In 2016, the Mannequin Challenge took over the internet, with groups of people freezing in place while a camera moved through the scene as ...",
+                "position": 2
+              },
+              {
+                "title": "Is this what they call the mannequin challenge? : r/DeadSpace",
+                "link": "https://www.reddit.com/r/DeadSpace/comments/1qtji4n/is_this_what_they_call_the_mannequin_challenge/",
+                "snippet": "Is this what they call the mannequin challenge? Bug. This video cannot ... You can only enter this room after the cutscene is already over.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "The Mannequin Challenge was a viral trend that exploded ...",
+              "link": "https://www.instagram.com/reel/DTWvVtUjVUW/",
+              "snippet": "The Mannequin Challenge was a viral trend that exploded online in late 2016. It involved groups of people freezing in place like mannequins ...",
+              "position": 1
+            },
+            {
+              "title": "Mannequin Challenge Returns in 2026: Join the Fun!",
+              "link": "https://www.tiktok.com/@raesremmurd/video/7590861897306524983",
+              "snippet": "This challenge really came back with us into 2026 #mannequinchallenge. Mannequin Challenge Returns in 2026: Join the Fun! Experience the ...",
+              "position": 2
+            },
+            {
+              "title": "5 sensational internet throwbacks you've probably done",
+              "link": "https://www.redandblack.com/culture/5-sensational-internet-throwbacks-youve-probably-done/article_9fbaf7fc-aabe-11e6-a0b9-5fd54f9e4a3d.html",
+              "snippet": "The Mannequin Challenge consists of a group of people freezing in strange and often challenging positions\u2014 as if they are literal mannequins\u2014 ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Which 2016 social media trend do you miss the most?: As 2016 nostalgia takes over social media, fond memories come to mind of Pok\u00e9mon Go, the Mannequin Challenge and Snapchat's 'puppy dog'...\n- It\u2019s 2026. Why Is 2016 Trending?: Over the holidays, the first trend of 2026 emerged: the year 2016. \u201c2026 is the new 2016,\u201d users declared, in captions waxing poetic about...\n- Stop, don't move! Mannequin Challenge is the new viral video trend of the year: Have you heard? The Mannequin Challenge is social media's newest craze. The Mannequin Challenge is a viral Internet video trend where people remain...\n\nControversy/Drama:\n- White Helmets backlash after Mannequin Challenge video: The White Helmets face a backlash after video emerges of volunteers staging a Mannequin Challenge in Syria.\n- The Library of Congress Mannequin Challenge and Emerging Traditions: The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.\n\nReddit Discussions:\n- What is the Mannequin Challenge and where does it come ...\n- What is the mannequin challenge? : r/OutOfTheLoop"
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.634104663085636,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The Mannequin Challenge trend is declining due to a combination of factors, primarily driven by audience fatigue and a lack of original content. The trend, which originated in 2016, has seen a resurgence in 2026, but the data suggests that the audience is becoming saturated with the same type of content. The fatigue metric is at 0.634, indicating a medium level of fatigue, while the content originality metric is at 0.430, suggesting a lack of new and innovative ideas. Additionally, the engagement rate is relatively low at 0.154, indicating that the trend is not generating as much interest and participation as it once did. The recent nostalgia for 2016 trends and the emergence of '2016 is the new 2016' may have contributed to the temporary resurgence, but it is not enough to sustain the trend's popularity.\",\n    \n    \"The trend's decline is also influenced by the controversy surrounding the White Helmets' Mannequin Challenge video, which may have negatively impacted the trend's perception and appeal. Furthermore, the trend's lack of evolution and innovation has led to a sense of stagnation, making it less appealing to audiences who are constantly looking for new and exciting content.\",\n    \n    \"The data suggests that the trend is experiencing a slow burn decline, with a velocity of 0.668, indicating a gradual decrease in popularity. The retention metric is at 0.796, suggesting that while the trend still has a dedicated audience, it is not enough to offset the decline. The sentiment metric is at 0.847, indicating a generally positive perception of the trend, but this is not enough to counteract the overall decline.\",\n    \n    \"confidence\": 0.85,\n    \n    \"key_factors\": [\"audience fatigue\", \"lack of original content\", \"controversy\", \"slow burn decline\"],\n    \n    \"recommendations\": [\n        \"Encourage creators to develop new and innovative content that builds upon the Mannequin Challenge concept, such as incorporating new themes, music, or challenges\",\n        \"Engage with the audience and solicit feedback to understand what they want to see more of and what they are tired of, and adjust the content strategy accordingly\",\n        \"Consider partnering with influencers or brands to create fresh and exciting content that can help revitalize the trend and attract new audiences\",\n        \"Monitor and address any controversy or negative perception surrounding the trend, and work to promote a positive and respectful community around the Mannequin Challenge\",\n        \"Develop a strategy to evolve the trend and incorporate new elements, such as new challenges, themes, or technologies, to keep the content fresh and exciting\"\n    ],\n    \n    \"evidence\": [\n        \"Fatigue metric at 0.634, indicating medium level of audience fatigue\",\n        \"Content originality metric at 0.430, suggesting lack of new and innovative ideas\",\n        \"Engagement rate at 0.154, indicating relatively low audience participation\",\n        \"Controversy surrounding White Helmets' Mannequin Challenge video\",\n        \"Slow burn decline with velocity at 0.668, indicating gradual decrease in popularity\"\n    ]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "#OOTD",
+      "archetype": "controversy_spike",
+      "total_days": 51,
+      "state_sequence_summary": {
+        "Growth": 9,
+        "Decline": 12,
+        "Saturation": 14,
+        "Emerging": 11,
+        "Peak": 5
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 25,
+        "date": "2025-02-07",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.5942934338217376,
+          "fatigue": 0.3929254689634151,
+          "retention": 0.6524198696731301
+        },
+        "extended_metrics": {
+          "sentiment": 0.89849534607883,
+          "engagement_rate": 0.1279167330454194,
+          "content_originality": 0.4640801044638291
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#OOTD",
+        "decline_date": "2025-02-07",
+        "generated_at": "2026-02-08T05:17:38.201499",
+        "metrics_snapshot": {
+          "velocity": 0.5942934338217376,
+          "fatigue": 0.3929254689634151,
+          "retention": 0.6524198696731301,
+          "sentiment": 0.89849534607883,
+          "engagement_rate": 0.1279167330454194,
+          "content_originality": 0.4640801044638291
+        },
+        "archetype": "controversy_spike",
+        "web_context": {
+          "trend_name": "#OOTD",
+          "decline_date": "2025-02-07",
+          "investigated_at": "2026-02-08T05:17:38.201499",
+          "news_coverage": [
+            {
+              "title": "The economy of #OOTD",
+              "link": "https://www.vogue.com/article/the-economy-of-ootd",
+              "snippet": "For brands, 'outfit of the day' content is a key revenue driver on TikTok. But it's becoming more costly as creators understand their power.",
+              "source": "Vogue",
+              "date": "Jun 17, 2024"
+            },
+            {
+              "title": "Quarantine Fashion Trend: Dressing Up As BTS Hardcovers",
+              "link": "https://www.euphoriazine.com/blog/2020/04/fashion-quarantine-fashion-trend-dressing-up-as-bts-hardcovers/",
+              "snippet": "With most of the world under lockdown, the BTS Army are sharing some fire fashion looks based on the band's hardcovers on Twitter.",
+              "source": "EUPHORIA. Magazine",
+              "date": "Apr 21, 2020"
+            },
+            {
+              "title": "#OOTD: Rita Ora takes on the beret trend",
+              "link": "https://www.ellecanada.com/fashion/celebrity-style/ootd-rita-ora-takes-on-the-beret-trend",
+              "snippet": "In what may be our favourite beret-topped look yet, the singer styled her \u201cAnarchy\u201d hat with the ultimate cool-girl outfit.",
+              "source": "ELLE Canada Magazine",
+              "date": "Apr 6, 2017"
+            },
+            {
+              "title": "From #BamaRush To #MadeMeBuyIt: What Does A Fashion Brand Need To Go Viral On TikTok?",
+              "link": "https://www.refinery29.com/en-us/2021/08/10638397/tiktok-fashion-brand-viral-trend",
+              "snippet": "Now, it's TikTok that has the ability to make a label go viral in an instant. But, thanks to its algorithm that prioritizes discovery rather...",
+              "source": "Refinery29",
+              "date": "Aug 20, 2021"
+            },
+            {
+              "title": "[Infographic] #OOTD: Upgrade Your F/W Wardrobe with Gear S3 and Gear S2",
+              "link": "https://news.samsung.com/global/infographic-ootd-upgrade-your-fw-wardrobe-with-gear-s3-and-gear-s2",
+              "snippet": "With the fall season in full swing and winter weather at our doorstep, now is the perfect.",
+              "source": "samsung.com",
+              "date": "Oct 24, 2016"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "The shocking allegations around Queer Eye star Jonathan Van Ness",
+              "link": "https://www.scmp.com/magazines/style/entertainment/article/3254598/shocking-allegations-about-queer-eyes-jonathan-van-ness-rolling-stone-just-released-report-sources",
+              "snippet": "Queer Eye's Jonathan Van Ness has recently been accused of being 'abusive' and having 'rage issues', as revealed in a new expos\u00e9 published...",
+              "source": "South China Morning Post",
+              "date": "Mar 8, 2024"
+            },
+            {
+              "title": "Use These 'Queen's Gambit' Captions For Grandmaster Status On Your Feed",
+              "link": "https://www.elitedaily.com/p/22-the-queens-gambit-instagram-captions-for-grandmaster-status-42405933",
+              "snippet": "Mastering the game of chess takes time, but marathon-watching Netflix's latest miniseries, The Queen's Gambit, can take you just one weekend...",
+              "source": "Elite Daily",
+              "date": "Nov 9, 2020"
+            },
+            {
+              "title": "Stassi Schroeder \"Can't Believe\" She's Finally Telling This Cringeworthy Story in Her New Book",
+              "link": "https://www.bravotv.com/the-daily-dish/stassi-schroeder-book-next-level-basic-excerpt",
+              "snippet": "Stassi Schroeder has never been one to hold anything back in seven seasons of Vanderpump Rules, whether it's opening up about her own life...",
+              "source": "Bravo",
+              "date": "Apr 16, 2019"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "ootd! : r/fashion",
+                "link": "https://www.reddit.com/r/fashion/comments/1pehpcx/ootd/",
+                "snippet": "168 votes, 13 comments. Clock that shit. Perfect tone matching to your complexion and hair color.",
+                "position": 1
+              },
+              {
+                "title": "OOTD origins : r/vanderpumprules",
+                "link": "https://www.reddit.com/r/vanderpumprules/comments/gi3jre/ootd_origins/",
+                "snippet": "YES, all the early bloggers and instagrammers were doing OTDs and originally they didn't add the \"o\" in for of. She didn't not invent \"outfit of ...",
+                "position": 2
+              },
+              {
+                "title": "OOTD: 2024 Hits : r/bigmenfashionadvice",
+                "link": "https://www.reddit.com/r/bigmenfashionadvice/comments/1jisnln/ootd_2024_hits/",
+                "snippet": "I said I would post some of the old stuff, so here are some of my favorites from last year. Fit: Hat - Paul Smith, Ralph Lauren Purple Label ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "ootd.com (@OOTD) / Posts / X",
+                "link": "https://x.com/OOTD",
+                "snippet": "ootd.com (@OOTD) - Posts - Bringing outfits to X. Over 450 million hashtags on Instagram. Over 160 Billion views on TikTok. | X (formerly Twitter)",
+                "position": 1
+              },
+              {
+                "title": "#OOTD: New Patagonia Edition \ud83c\udf04",
+                "link": "https://x.com/VUmedicine/status/2009712560807776589",
+                "snippet": "#OOTD: New Patagonia Edition. Four students in coats smile and pose while holding up the VU hand symbol. Four students in coats smile and ...",
+                "position": 2
+              },
+              {
+                "title": "#OOTD Kaos abu-abu dan celana jeans biru sudah jadi ...",
+                "link": "https://x.com/lazadaid/status/716807548607705088",
+                "snippet": "Lazada (@LazadaID). #OOTD Kaos abu-abu dan celana jeans biru sudah jadi gaya andalan Mark Zuckerberg sehari-hari. #LazadaID.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "It's never over\ud83d\ude14 #fashion #ootd #relatable #70s #styleinspo",
+                "link": "https://www.instagram.com/reel/DUTHiZQjtMH/",
+                "snippet": "It's never over \u00b7 Ahh thank you!!! \u00b7 Everything needs to stop touching my body RIIIIGHT NOWWWWW \u00b7 I'm so glad you're finally here welcome to ...",
+                "position": 1
+              },
+              {
+                "title": "Dead or alive, I want to be in @rixo !!!!! #ootd #rixo #patterns",
+                "link": "https://www.instagram.com/reel/DUNp7_MACA6/",
+                "snippet": "Dead or alive, I want to be in @rixo !!!!! #ootd #rixo #patterns ... Color combinations I'm loving lately \u2728 #reels #recos #inspo #ootd #closet.",
+                "position": 2
+              },
+              {
+                "title": "Can't get over this outfit - #OOTD - #fyp - #outfitinspo",
+                "link": "https://www.facebook.com/page6boutique/videos/cant-get-over-this-outfit-ootd-fyp-outfitinspo-pinterestoutfit/2920707931459025/",
+                "snippet": "Can't get over this outfit #OOTD #fyp #outfitinspo #pinterestoutfit \u00b7 Beth Bryan Nagy.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "The Evolution of OOTD: Instagram, TikTok & Beyond",
+              "link": "https://hespokestyle.com/ootd-meaning/?srsltid=AfmBOoojwi8NrIfNbhdyyOHRi-sWS3GtI6xoWQL8Im4IW-KY4JHLsS58",
+              "snippet": "The term OOTD has been replaced with Big Fit, Fit Check or just Fit. The idea is the same, though, and it's really just a further abbreviation ...",
+              "position": 1
+            },
+            {
+              "title": "Elevate Your Style: Minimalist Substitute OOTD Ideas",
+              "link": "https://www.lemon8-app.com/@chelsea_knox0/7344385087468995077?region=us",
+              "snippet": "A substitute OOTD can effortlessly showcase your personal style while embracing current trends. Utilize staple pieces like oversized blazers, ...",
+              "position": 2
+            },
+            {
+              "title": "The Vogue Business TikTok Trend Tracker",
+              "link": "https://www.vogue.com/article/the-vogue-business-tiktok-trend-tracker",
+              "snippet": "Leaning into the alt of it all, TikTokers are bringing #GothFashion to the FYPs of the masses, with OOTDs and styling inspo growing 48% week-on- ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- The economy of #OOTD: For brands, 'outfit of the day' content is a key revenue driver on TikTok. But it's becoming more costly as creators understand their power.\n- Quarantine Fashion Trend: Dressing Up As BTS Hardcovers: With most of the world under lockdown, the BTS Army are sharing some fire fashion looks based on the band's hardcovers on Twitter.\n- #OOTD: Rita Ora takes on the beret trend: In what may be our favourite beret-topped look yet, the singer styled her \u201cAnarchy\u201d hat with the ultimate cool-girl outfit.\n\nControversy/Drama:\n- The shocking allegations around Queer Eye star Jonathan Van Ness: Queer Eye's Jonathan Van Ness has recently been accused of being 'abusive' and having 'rage issues', as revealed in a new expos\u00e9 published...\n- Use These 'Queen's Gambit' Captions For Grandmaster Status On Your Feed: Mastering the game of chess takes time, but marathon-watching Netflix's latest miniseries, The Queen's Gambit, can take you just one weekend...\n\nReddit Discussions:\n- ootd! : r/fashion\n- OOTD origins : r/vanderpumprules"
+        },
+        "decline_signals": [],
+        "explanation": "The #OOTD trend is declining due to a combination of factors, including increased controversy and drama surrounding influencers and celebrities, as well as a rise in fatigue and decreased originality in content. The recent allegations against Jonathan Van Ness, a popular figure in the fashion and lifestyle space, may have contributed to a decline in enthusiasm for the trend. Additionally, the increasing cost of creating 'outfit of the day' content on TikTok, as well as the growing awareness of creators' power and demands for fair compensation, may have led to a decrease in the quality and frequency of #OOTD posts. The metrics support this analysis, with a low engagement rate of 0.128 and a content originality score of 0.464, indicating a lack of fresh and exciting content. The fatigue score of 0.393 also suggests that the trend may be becoming stale and overdone.",
+        "confidence_score": 0.8,
+        "recommendations": [
+          "Diversify content to include more niche or specialized fashion topics, such as sustainable fashion or plus-size fashion",
+          "Collaborate with up-and-coming creators or influencers who can bring a fresh perspective to the trend",
+          "Focus on creating high-quality, engaging content that showcases unique and creative outfits, rather than relying on celebrity endorsements or trendy items",
+          "Consider partnering with brands or organizations that align with the values and interests of the #OOTD community, such as fashion education or body positivity initiatives"
+        ],
+        "evidence": [
+          "Recent news articles highlighting the increasing cost of creating 'outfit of the day' content on TikTok",
+          "Metrics showing a decline in engagement rate and content originality",
+          "Reddit discussions and social media posts indicating a growing sense of fatigue and oversaturation with the trend",
+          "Controversy and drama surrounding influencers and celebrities, such as the allegations against Jonathan Van Ness"
+        ]
+      }
+    },
+    {
+      "trend_name": "Tide Pod Challenge",
+      "archetype": "algorithm_killed",
+      "total_days": 34,
+      "state_sequence_summary": {
+        "Growth": 2,
+        "Emerging": 10,
+        "Decline": 17,
+        "Peak": 5
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 17,
+        "date": "2025-02-13",
+        "state": "Decline",
+        "metrics": {
+          "velocity": 0.0244722261612243,
+          "fatigue": 0.693132584914214,
+          "retention": 0.0910918320104042
+        },
+        "extended_metrics": {
+          "sentiment": -0.0527040467222285,
+          "engagement_rate": 0.0447167121308292,
+          "content_originality": 0.1641963138441773
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Tide Pod Challenge",
+        "decline_date": "2025-02-13",
+        "generated_at": "2026-02-08T05:17:47.757158",
+        "metrics_snapshot": {
+          "velocity": 0.0244722261612243,
+          "fatigue": 0.693132584914214,
+          "retention": 0.0910918320104042,
+          "sentiment": -0.0527040467222285,
+          "engagement_rate": 0.0447167121308292,
+          "content_originality": 0.1641963138441773
+        },
+        "archetype": "algorithm_killed",
+        "web_context": {
+          "trend_name": "Tide Pod Challenge",
+          "decline_date": "2025-02-13",
+          "investigated_at": "2026-02-08T05:17:47.757463",
+          "news_coverage": [
+            {
+              "title": "2018 Tide Pod challenge",
+              "link": "https://bowdoinorient.com/2025/04/25/2018-tide-pod-challenge/",
+              "snippet": "Tide Pods aren't for consumption. To live is not to feel required to consume only what is clean, to wash your mouth with soap and speak as a \u201ccleaner version...",
+              "source": "The Bowdoin Orient",
+              "date": "Apr 25, 2025"
+            },
+            {
+              "title": "From Tide Pods To Blackouts: The TikTok Challenges Putting Kids In Real Danger",
+              "link": "https://www.chipchick.com/2025/11/from-tide-pods-to-blackouts-the-tiktok-challenges-putting-kids-in-real-danger",
+              "snippet": "New research highlights five dangerous TikTok challenges linked to teen injuries and deaths, from the Blackout Challenge to Tide Pods.",
+              "source": "Chip Chick",
+              "date": "Nov 24, 2025"
+            },
+            {
+              "title": "What is the Tide pod challenge and how did it start?",
+              "link": "https://www.seattletimes.com/nation-world/what-is-the-tide-pod-challenge-and-how-did-it-start/",
+              "snippet": "Videos circulating on social media are showing kids biting into brightly colored liquid laundry-detergent packets. Or cooking them in frying...",
+              "source": "The Seattle Times",
+              "date": "Jan 13, 2018"
+            },
+            {
+              "title": "Why teenagers eat Tide pods",
+              "link": "https://www.health.harvard.edu/blog/why-teenagers-eat-tide-pods-2018013013241",
+              "snippet": "It's difficult to understand why teenagers would willingly engage in risky behavior like the Tide Pod Challenge. It's due to the combination...",
+              "source": "Harvard Health",
+              "date": "Jan 30, 2018"
+            },
+            {
+              "title": "Teens are daring each other to eat Tide pods. We don\u2019t need to tell you that\u2019s a bad idea.",
+              "link": "https://www.washingtonpost.com/news/to-your-health/wp/2018/01/13/teens-are-daring-each-other-to-eat-tide-pods-we-dont-need-to-tell-you-thats-a-bad-idea/",
+              "snippet": "Teens are biting into the liquid laundry detergent pods, or cooking them and chewing them before spitting them out.",
+              "source": "The Washington Post",
+              "date": "Jan 13, 2018"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "Why teenagers eat Tide pods",
+              "link": "https://www.health.harvard.edu/blog/why-teenagers-eat-tide-pods-2018013013241",
+              "snippet": "It's difficult to understand why teenagers would willingly engage in risky behavior like the Tide Pod Challenge. It's due to the combination...",
+              "source": "Harvard Health",
+              "date": "Jan 30, 2018"
+            },
+            {
+              "title": "Brand Crisis Management: Responding to the Tide Pod Challenge",
+              "link": "https://knowledge.wharton.upenn.edu/podcast/knowledge-at-wharton-podcast/fallout-tide-pod-challenge/",
+              "snippet": "Wharton's Americus Reed, Drexel's Robert Field and the University of Maryland's Jen Golbeck discuss the marketing lessons from the Tide pod challenge.",
+              "source": "Knowledge at Wharton",
+              "date": "Jan 25, 2018"
+            },
+            {
+              "title": "Tide Pods: Despite 'The Challenge,' P&G doubles down on detergent pouches",
+              "link": "https://www.cincinnati.com/story/money/2018/02/08/despite-challengep-g-tide-pods-challenge/1079932001/",
+              "snippet": "Tide Pods are a $2 billion a year business for P&G - and not because teens are eating them.",
+              "source": "Cincinnati Enquirer",
+              "date": "Feb 8, 2018"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "How exactly did the tide pod challenge begin?",
+                "link": "https://www.reddit.com/r/stupidquestions/comments/1de5cfk/how_exactly_did_the_tide_pod_challenge_begin/",
+                "snippet": "It was a twitter and YouTube challenge. My reason for saying so: The Tide Pod Challenge went viral in December 2017 and was a big news story in ...",
+                "position": 1
+              },
+              {
+                "title": "Gen Z is sometimes referred to as the \u201cTide Pod generation ...",
+                "link": "https://www.reddit.com/r/generationology/comments/143rbwm/gen_z_is_sometimes_referred_to_as_the_tide_pod/",
+                "snippet": "Gen X/ Millennials used to smoke bananas hoping they would get high. We also used to jump off roofs to jump on or into anything like early parkour.",
+                "position": 2
+              },
+              {
+                "title": "How many deaths did the \"Tide Pod Challenge\" actually ...",
+                "link": "https://www.reddit.com/r/morbidquestions/comments/1imqs1o/how_many_deaths_did_the_tide_pod_challenge/",
+                "snippet": "TIL of eight deaths related to ingesting liquid laundry packets (i.e. Tide Pods) in the U.S. between 2012 and early 2017 that have been reported ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "What should Tide PODs be used for? DOING LAUNDRY ...",
+                "link": "https://x.com/tide/status/951940660499755008",
+                "snippet": "DOING LAUNDRY. Nothing else. Eating a Tide POD is a BAD IDEA, and we asked our friend @RobGronkowski to help explain.",
+                "position": 1
+              },
+              {
+                "title": "While the Tide Pod Challenge may have started as a joke ...",
+                "link": "https://x.com/MNpoisoncenter/status/951916108726128640?ref_src=twsrc%5Etfw",
+                "snippet": "While the Tide Pod Challenge may have started as a joke, it is extremely dangerous! Even if the entire pod is not swallowed, ingesting just ...",
+                "position": 2
+              },
+              {
+                "title": "'Tide pod challenge' videos trigger warnings against ...",
+                "link": "https://x.com/todayshow/status/952306876733149184",
+                "snippet": "'Tide pod challenge' videos trigger warnings against eating laundry detergent on.today.com/2mxirxw \u00b7 TODAY's Image on X.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Consumption of Tide Pods",
+                "link": "https://en.wikipedia.org/wiki/Consumption_of_Tide_Pods",
+                "snippet": "In early 2018, their presence in Internet memes led to the \"Tide Pod Challenge\", which involved a dare to intentionally consume the pods. ... \"Warning over ...",
+                "position": 1
+              },
+              {
+                "title": "Are Colorado Kids Falling for the Tide Pod Challenge?",
+                "link": "https://www.coloradohealthinstitute.org/blog/are-colorado-kids-falling-tide-pod-challenge",
+                "snippet": "Nationally, the number of calls to U.S. poison control centers due to exposure to laundry pods has gone down from over 14,000 calls in 2016 to ...",
+                "position": 2
+              },
+              {
+                "title": "The Tragic Side of Tide Pods",
+                "link": "https://fortune.com/longform/tide-pod-poisoning-injuries-epidemic/",
+                "snippet": "... Tide Pod Challenge. That cultural episode cast laundry-pod poisoning ... Over the next eight years, the company would later boast, P&G ...",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "List of Internet challenges",
+              "link": "https://en.wikipedia.org/wiki/List_of_Internet_challenges",
+              "snippet": "... trend, with The Daily Dot suggesting that the trend started as a way to ... Tide Pod Challenge \u2013 Similar to other eating challenges, this saw people ...",
+              "position": 1
+            },
+            {
+              "title": "Dangerous Social Media Challenges",
+              "link": "https://poisoncontrol.utah.edu/news/2022/12/dangerous-social-media-challenges",
+              "snippet": "The Tide Pod challenge is when a person eats a laundry detergent packet as part of a dare.10 Laundry packets contain detergents and chemicals ...",
+              "position": 2
+            },
+            {
+              "title": "The 'choking game' and other challenges amplified by ...",
+              "link": "https://theconversation.com/the-choking-game-and-other-challenges-amplified-by-social-media-can-come-with-deadly-consequences-242174",
+              "snippet": "There's more, unfortunately: The Skullbreaker Challenge, the Tide Pod Challenge and Car Surfing are but a few of the deadly games ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- 2018 Tide Pod challenge: Tide Pods aren't for consumption. To live is not to feel required to consume only what is clean, to wash your mouth with soap and speak as a \u201ccleaner version...\n- From Tide Pods To Blackouts: The TikTok Challenges Putting Kids In Real Danger: New research highlights five dangerous TikTok challenges linked to teen injuries and deaths, from the Blackout Challenge to Tide Pods.\n- What is the Tide pod challenge and how did it start?: Videos circulating on social media are showing kids biting into brightly colored liquid laundry-detergent packets. Or cooking them in frying...\n\nControversy/Drama:\n- Why teenagers eat Tide pods: It's difficult to understand why teenagers would willingly engage in risky behavior like the Tide Pod Challenge. It's due to the combination...\n- Brand Crisis Management: Responding to the Tide Pod Challenge: Wharton's Americus Reed, Drexel's Robert Field and the University of Maryland's Jen Golbeck discuss the marketing lessons from the Tide pod challenge.\n\nReddit Discussions:\n- How exactly did the tide pod challenge begin?\n- Gen Z is sometimes referred to as the \u201cTide Pod generation ..."
+        },
+        "decline_signals": [
+          {
+            "signal": "LOW_VELOCITY",
+            "severity": "high",
+            "value": 0.0244722261612243,
+            "description": "Engagement speed has dropped significantly"
+          },
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.693132584914214,
+            "description": "Audience showing signs of content saturation"
+          },
+          {
+            "signal": "INFLUENCER_EXODUS",
+            "severity": "high",
+            "value": 0.0910918320104042,
+            "description": "Key creators abandoning the trend"
+          },
+          {
+            "signal": "CONTENT_STAGNATION",
+            "severity": "medium",
+            "value": 0.1641963138441773,
+            "description": "Mostly reposts, lacking fresh content"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The Tide Pod Challenge trend is declining due to a combination of factors, including a significant drop in engagement speed (LOW_VELOCITY), audience content saturation (HIGH_FATIGUE), and a lack of fresh content (CONTENT_STAGNATION). The trend's velocity has decreased to 0.024, indicating a substantial slowdown in user participation. Furthermore, the fatigue level of 0.693 suggests that the audience is becoming increasingly disinterested in the trend. The influencer exodus (INFLUENCER_EXODUS) has also contributed to the decline, as key creators are abandoning the trend, leading to a lack of new and engaging content. The real-world context, including news articles and Reddit discussions, highlights the dangers and controversies surrounding the trend, which may have also contributed to its decline.\",\n    \n    \"The trend's decline can also be attributed to the negative sentiment surrounding it, with a sentiment score of -0.053. This suggests that users are not only losing interest in the trend but also viewing it in a negative light. The engagement rate of 0.045 and content originality score of 0.164 further support the notion that the trend is struggling to maintain user interest and provide fresh content.\",\n    \n    \"The decline of the Tide Pod Challenge trend presents an opportunity for stakeholders to re-evaluate their content strategies and focus on creating more engaging and safe content. By analyzing the decline of this trend, stakeholders can gain valuable insights into what drives user engagement and what types of content are likely to resonate with their audience. This can help inform future content creation and marketing strategies, ultimately leading to more successful and sustainable trends.\",\n    \n    \"confidence\": 0.85,\n    \n    \"key_factors\": [\n        \"LOW_VELOCITY\",\n        \"HIGH_FATIGUE\",\n        \"INFLUENCER_EXODUS\",\n        \"CONTENT_STAGNATION\",\n        \"NEGATIVE_SENTIMENT\"\n    ],\n    \n    \"recommendations\": [\n        \"Shift focus to creating safe and engaging content that promotes positive user interactions\",\n        \"Collaborate with influencers and content creators to develop new and innovative content that resonates with the target audience\",\n        \"Implement strategies to increase content originality and reduce fatigue, such as introducing new challenges or themes\",\n        \"Monitor user sentiment and adjust content strategies accordingly to maintain a positive and engaging user experience\"\n    ],\n    \n    \"evidence\": [\n        \"Velocity score of 0.024, indicating a significant drop in engagement speed\",\n        \"Fatigue level of 0.693, suggesting audience content saturation\",\n        \"Influencer exodus, with key creators abandoning the trend\",\n        \"Negative sentiment score of -0.053, indicating a negative user perception of the trend\",\n        \"News articles and Reddit discussions highlighting the dangers and controversies surrounding the trend\"\n    ]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "#Viral",
+      "archetype": "saturated_death",
+      "total_days": 36,
+      "state_sequence_summary": {
+        "Growth": 3,
+        "Decline": 12,
+        "Saturation": 3,
+        "Emerging": 8,
+        "Peak": 10
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 21,
+        "date": "2025-02-06",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.7935441996623225,
+          "fatigue": 0.7914319030152442,
+          "retention": 0.7257808210674078
+        },
+        "extended_metrics": {
+          "sentiment": 0.638927732453098,
+          "engagement_rate": 0.1431893654412937,
+          "content_originality": 0.5068229362986264
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#Viral",
+        "decline_date": "2025-02-06",
+        "generated_at": "2026-02-08T05:18:00.063912",
+        "metrics_snapshot": {
+          "velocity": 0.7935441996623225,
+          "fatigue": 0.7914319030152442,
+          "retention": 0.7257808210674078,
+          "sentiment": 0.638927732453098,
+          "engagement_rate": 0.1431893654412937,
+          "content_originality": 0.5068229362986264
+        },
+        "archetype": "saturated_death",
+        "web_context": {
+          "trend_name": "#Viral",
+          "decline_date": "2025-02-06",
+          "investigated_at": "2026-02-08T05:18:00.063912",
+          "news_coverage": [
+            {
+              "title": "New online trend features women in drag lip syncing to 'Hamilton'",
+              "link": "https://www.yahoo.com/entertainment/articles/online-trend-features-women-drag-193810803.html",
+              "snippet": "All the trend requires is a drawn-on goatee, a colonial style blouse, an overcoat, and some cheating.",
+              "source": "Yahoo",
+              "date": "Aug 11, 2025"
+            },
+            {
+              "title": "\u2018Let's Go Run 26.2 Miles\u2019: Women Are Asking Their Boyfriends If They Wish They Were \u2018Athletic.\u2019 Their Responses Are Hilarious",
+              "link": "https://brobible.com/culture/article/do-you-wish-you-were-athletic-trend/",
+              "snippet": "A viral trend has women asking men in their lives, including many current and former pro athletes, if they wish if they were athletic.",
+              "source": "BroBible",
+              "date": "Sep 15, 2025"
+            },
+            {
+              "title": "The 'Blue Shirt Guy Dancing Salsa' meme explained",
+              "link": "https://www.indy100.com/tiktok/blue-shirt-guy-dancing-salsa-meme-explained",
+              "snippet": "There is a new viral dance on social media inspired by a clip of a man wearing a blue shirt and dancing the salsa - here is everything you...",
+              "source": "Indy100",
+              "date": "May 24, 2025"
+            },
+            {
+              "title": "\u2018Bathroom Camping\u2019 Is A Growing New Trend Among Gen Z, For A Variety Of Reasons",
+              "link": "https://brobible.com/culture/article/bathroom-camping-trend-gen-z/",
+              "snippet": "Member of Gen Z are reportedly taking repeated bathroom breaks throughout their day without actually needing to use the facilities, or doing anything once they...",
+              "source": "BroBible",
+              "date": "Jul 7, 2025"
+            },
+            {
+              "title": "Four high-school boys fall victim to infectious laughter in addictively wholesome 'spit take challenge'",
+              "link": "https://www.upworthy.com/four-boys-spit-take-challenge",
+              "snippet": "In a hilarious and wholesome TikTok trend, teenagers are bringing random household items to school, gathering with their friends, plopping their selections...",
+              "source": "Upworthy",
+              "date": "2 weeks ago"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "B-P drama students going #VIRAL",
+              "link": "https://www.tauntongazette.com/story/entertainment/2018/03/13/b-p-drama-students-going/13000178007/",
+              "snippet": "This is the theme of \u201c#VIRAL,\u201d a play set to be performed by members of the Bristol-Plymouth Regional Technical High School Performing Arts Club...",
+              "source": "Taunton Daily Gazette",
+              "date": "Mar 13, 2018"
+            },
+            {
+              "title": "GloRilla Applauded For Removing R-Word From New Song Following Backlash",
+              "link": "https://hiphopdx.com/news/glorilla-applauded-removing-r-word/",
+              "snippet": "GloRilla responded to a budding controversy by listening and responding to criticism \u2014 and got a ton of praise in return...",
+              "source": "HipHopDX",
+              "date": "Aug 26, 2024"
+            },
+            {
+              "title": "TikTokers are cancelling US travel plans following Trump's immigration crackdown",
+              "link": "https://www.indy100.com/news/donald-trump-immigration-crackdown-america-trips-cancelled-2671641252",
+              "snippet": "TikTokers have compared Donald Trump's immigration crackdown to North Korea, with some cancelling their travel plans to America...",
+              "source": "Indy100",
+              "date": "Mar 31, 2025"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "Unforgettable \ud83e\udd8b #viral #mask #trending #fyp #dark #art",
+                "link": "https://www.reddit.com/r/rockmusic/comments/1qw21pm/schmidt_customs_on_instagram_unforgettable_viral/",
+                "snippet": "Schmidt_Customs on Instagram: \"Unforgettable #viral #mask #trending #fyp #dark #art\" \u00b7 Comments Section \u00b7 Community Info Section \u00b7 More posts you ...",
+                "position": 1
+              },
+              {
+                "title": "Heated Rivalry BUT make it ACTUALLY about Hockey ...",
+                "link": "https://www.reddit.com/r/heatedrivalry/comments/1qvg6t7/heated_rivalry_but_make_it_actually_about_hockey/",
+                "snippet": "Welcome to your unofficial zone for all things Heated Rivalry, from Rachel Reid's beloved Game Changers book series and the TV show it ...",
+                "position": 2
+              },
+              {
+                "title": "Walking Away Doesn't Make You Cold In Relationship #shorts ...",
+                "link": "https://www.reddit.com/r/LivingAlone/comments/1qyhsdx/walking_away_doesnt_make_you_cold_in_relationship/",
+                "snippet": "Walking Away Doesn't Make You Cold In Relationship #shorts #shortsviral #viral #relationship. New to living alone. Play. True facts .",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "\"#viral\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23viral&src=hashtag_click",
+                "snippet": "Biwi ko kuttey ne kaat liya \u0938\u091a\u094d\u091a\u0940 \u0918\u091f\u0928\u093e\u0913\u0902 \u092a\u0930 \u0906\u0927\u093e\u0930\u093f\u0924 \u0909\u0924\u094d\u0924\u0930 \u092a\u094d\u0930\u0926\u0947\u0936 \u0915\u0947 \u090f\u0915 \u091c\u093f\u0932\u0947 \u092e\u0947\u0902 \u0907\u0938 \u0914\u0930\u0924 \u0915\u094b reel \u092c\u0928\u093e\u0915\u0930 \u0921\u093e\u0902\u0938 \u0915\u0930\u0928\u0947 \u0915\u093e \u092c\u0939\u0941\u0924 \u0936\u094c\u0915 \u0925\u093e | \u092e\u093e\u0930\u094d\u0915\u093f\u091f \u0938\u0947 \u0938\u092c\u094d\u091c\u0940 \u0932\u093e\u0924\u0947 \u0939\u0941\u090f \u0907\u0938\u0915\u094b \u090f\u0915 \u0915\u0941\u0924\u094d\u0924\u0947 \u0928\u0947 \u0915\u093e\u091f \u0932\u093f\u092f\u093e \u0905\u092c, ...",
+                "position": 1
+              },
+              {
+                "title": "The Viral Hits (@Theviralhits_th) / Posts / X",
+                "link": "https://x.com/Theviralhits_th",
+                "snippet": "\u0e2d\u0e2d\u0e01\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e17\u0e38\u0e01\u0e27\u0e31\u0e19\u0e28\u0e38\u0e01\u0e23\u0e4c \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e40\u0e01\u0e32\u0e2b\u0e25\u0e35 \u0e40\u0e23\u0e34\u0e48\u0e21\u0e15\u0e2d\u0e19\u0e41\u0e23\u0e01 13 \u0e01\u0e38\u0e21\u0e20\u0e32\u0e1e\u0e31\u0e19\u0e18\u0e4c\u0e19\u0e35\u0e49 \u0e23\u0e31\u0e1a\u0e0a\u0e21\u0e17\u0e32\u0e07 TrueVisions \u0e0a\u0e48\u0e2d\u0e07 True X-Zyte \u0e40\u0e27\u0e25\u0e32 18.20 \u0e19. \u0e41\u0e25\u0e30\u0e17\u0e32\u0e07\u0e41\u0e2d\u0e1b\u0e1e\u0e25\u0e34\u0e40\u0e04\u0e0a\u0e31\u0e19 TrueVisions NOW \u0e40\u0e27\u0e25\u0e32 20.00 \u0e19. \u0e40\u0e15\u0e23\u0e35\u0e22\u0e21\u0e40\u0e1b\u0e34\u0e14\u0e43\u0e08 ...",
+                "position": 2
+              },
+              {
+                "title": "Viral Takes (@viraltakes) / Posts / X",
+                "link": "https://x.com/viraltakes",
+                "snippet": "Viral Takes is your go-to source for the latest trending and viral news. Posts. Viral Takes profile. Viral Takes. \u2713. viraltakes. Feb 1. Bad Bunny and Ros\u00e9 ...",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "I thought it was game over \ud83d\ude33\ud83d\udc0a #fishing #shocking #viral",
+                "link": "https://www.facebook.com/FOODbible/posts/i-thought-it-was-game-over-fishing-shocking-viral/921648916876405/",
+                "snippet": "I thought it was game over #fishing #shocking #viral \u00b7 Lisa ... 4y \u00b7 Public \u00b7 I was completely shocked this morning when I turned on the news ...",
+                "position": 1
+              },
+              {
+                "title": "Revealing my art I made about death. #art #artist #painting ...",
+                "link": "https://www.instagram.com/reel/DUd_cT7ALii/",
+                "snippet": "#art #artist #painting #artreveal #viral. more. 7 minutes ago. Transcript. I've been down for seemed like my soul was dead. OCR. Revealing my ...",
+                "position": 2
+              },
+              {
+                "title": "1 Dead, Several Injured As Swing Collapses At Surajkund ...",
+                "link": "https://x.com/CNNnews18/status/2020152501056479560",
+                "snippet": "News18 (@CNNnews18). #Viral | 1 Dead, Several Injured As Swing Collapses At Surajkund Fair In Faridabad.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "#fyp #pyf #viral #trend #replace",
+              "link": "https://www.tiktok.com/@allensegoale/video/7547706445555436818",
+              "snippet": "Dance TikTok Trend 2025 Viral Shaking \u00b7 Going Viral in 2025 \u00b7 2025 TikTok Dances Trend \u00b7 Dancing Trends 2025 New. 6688Likes. 582Comments. 883 ...",
+              "position": 1
+            },
+            {
+              "title": "Replacement..? . . . . . . #fyp #viral #new #trending # ...",
+              "link": "https://www.instagram.com/reel/DQy7GQsiOgB/",
+              "snippet": "162 likes, 23 comments - prem.17._ on November 8, 2025: \"Replacement..? . . . . . . #fyp #viral #new #trending #trend #foryou #explore ...",
+              "position": 2
+            },
+            {
+              "title": "Once replaced, now entertained \u201d #fyp #foryou #viral ...",
+              "link": "https://www.instagram.com/reel/DTiBp1tk1eA/",
+              "snippet": "Once replaced, now entertained \u201d #fyp #foryou #viral #trending #tiktok newtrend newtrending. Instagram. Log in \u00b7 Open app.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- New online trend features women in drag lip syncing to 'Hamilton': All the trend requires is a drawn-on goatee, a colonial style blouse, an overcoat, and some cheating.\n- \u2018Let's Go Run 26.2 Miles\u2019: Women Are Asking Their Boyfriends If They Wish They Were \u2018Athletic.\u2019 Their Responses Are Hilarious: A viral trend has women asking men in their lives, including many current and former pro athletes, if they wish if they were athletic.\n- The 'Blue Shirt Guy Dancing Salsa' meme explained: There is a new viral dance on social media inspired by a clip of a man wearing a blue shirt and dancing the salsa - here is everything you...\n\nControversy/Drama:\n- B-P drama students going #VIRAL: This is the theme of \u201c#VIRAL,\u201d a play set to be performed by members of the Bristol-Plymouth Regional Technical High School Performing Arts Club...\n- GloRilla Applauded For Removing R-Word From New Song Following Backlash: GloRilla responded to a budding controversy by listening and responding to criticism \u2014 and got a ton of praise in return...\n\nReddit Discussions:\n- Unforgettable \ud83e\udd8b #viral #mask #trending #fyp #dark #art\n- Heated Rivalry BUT make it ACTUALLY about Hockey ..."
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.7914319030152442,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "The #Viral trend is declining due to a combination of factors, primarily driven by audience fatigue and a lack of original content. The 'saturated_death' pattern detected suggests that the trend has reached a point of oversaturation, where the audience is no longer finding the content engaging or fresh. This is supported by the high fatigue metric (0.791) and low engagement rate (0.143). Additionally, the trend's reliance on repetitive and unoriginal content, as evidenced by the low content originality metric (0.507), has likely contributed to the decline. The real-world context, with multiple new trends emerging and gaining traction, further supports the idea that the #Viral trend is no longer captivating its audience.",
+        "confidence_score": 0.85,
+        "recommendations": [
+          "Refresh the content strategy to focus on more original and engaging content",
+          "Encourage creators to experiment with new formats and ideas to revitalize the trend",
+          "Consider collaborating with other trends or influencers to bring in fresh perspectives and audiences"
+        ],
+        "evidence": [
+          "High fatigue metric (0.791) indicating audience saturation",
+          "Low engagement rate (0.143) suggesting a decline in audience interest",
+          "Low content originality metric (0.507) indicating a lack of fresh content",
+          "Emergence of new trends, such as the 'Hamilton' lip syncing trend and the 'Blue Shirt Guy Dancing Salsa' meme, which may be drawing attention away from the #Viral trend"
+        ]
+      }
+    },
+    {
+      "trend_name": "Oh No Sound",
+      "archetype": "seasonal",
+      "total_days": 56,
+      "state_sequence_summary": {
+        "Growth": 3,
+        "Decline": 21,
+        "Saturation": 2,
+        "Emerging": 21,
+        "Peak": 9
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 33,
+        "date": "2025-02-26",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.6347911682517361,
+          "fatigue": 0.6558774606110896,
+          "retention": 0.6764788638454378
+        },
+        "extended_metrics": {
+          "sentiment": 0.676081949992892,
+          "engagement_rate": 0.1077253788950625,
+          "content_originality": 0.4244498893033525
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Oh No Sound",
+        "decline_date": "2025-02-26",
+        "generated_at": "2026-02-08T05:18:09.384626",
+        "metrics_snapshot": {
+          "velocity": 0.6347911682517361,
+          "fatigue": 0.6558774606110896,
+          "retention": 0.6764788638454378,
+          "sentiment": 0.676081949992892,
+          "engagement_rate": 0.1077253788950625,
+          "content_originality": 0.4244498893033525
+        },
+        "archetype": "seasonal",
+        "web_context": {
+          "trend_name": "Oh No Sound",
+          "decline_date": "2025-02-26",
+          "investigated_at": "2026-02-08T05:18:09.384626",
+          "news_coverage": [
+            {
+              "title": "Young kids are bringing TikTok memes to the playground",
+              "link": "https://www.washingtonpost.com/technology/2023/03/09/tiktok-memes-kids/",
+              "snippet": "TikTok memes are being picked up and spread by elementary-age children, despite never using the app themselves.",
+              "source": "The Washington Post",
+              "date": "Mar 9, 2023"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "GPT-5 Backlash + Perplexity C.E.O. Aravind Srinivas on the Browser Wars + Hot Mess Express",
+              "link": "https://www.nytimes.com/2025/08/15/podcasts/hardfork-gpt5-perplexity.html",
+              "snippet": "OpenAI spent the week responding to outcry from users who miss the behavior of the old ChatGPT, before the latest flagship model was...",
+              "source": "The New York Times",
+              "date": "Aug 15, 2025"
+            },
+            {
+              "title": "\u2018The History Of Sound\u2019 Trailer: Josh O\u2019Connor And Paul Mescal Lead Queer Historical Drama This September",
+              "link": "https://punchdrunkcritics.com/2025/07/the-history-of-sound-trailer-josh-oconnor-and-paul-mescal-lead-queer-historical-drama-this-september/",
+              "snippet": "Looking for an indie drama that has \u201cawards season darling\u201d all over it? Look no further than The History of Sound, which stars two of the...",
+              "source": "Punch Drunk Critics",
+              "date": "Jul 24, 2025"
+            },
+            {
+              "title": "Star Trek: Khan \u2013 Naveen Andrews on Audio Drama Expanding Khan Story",
+              "link": "https://bleedingcool.com/tv/star-trek-khan-naveen-andrews-on-audio-drama-expanding-khan-story/",
+              "snippet": "Naveen Andrews (Last Days) spoke with Bleeding Cool about his role in the audio drama Star Trek: Khan, expanding Khan's legacy, and more.",
+              "source": "Bleeding Cool News",
+              "date": "Sep 8, 2025"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "Robotic/emotionless/badly acted \"oh no\" audio meme",
+                "link": "https://www.reddit.com/r/HelpMeFind/comments/1adwday/roboticemotionlessbadly_acted_oh_no_audio_meme/",
+                "snippet": "Lois Lane is the definition of the \"Oh no! Anyway\" meme. I expected so much more destruction and death in metropolis. The fight kinda bored me.",
+                "position": 1
+              },
+              {
+                "title": "Is anybody else tired of the \"oh no\" song on every damn tik ...",
+                "link": "https://www.reddit.com/r/DoesAnybodyElse/comments/ldrjd7/is_anybody_else_tired_of_the_oh_no_song_on_every/",
+                "snippet": "I absolutely hate that song. Makes me want to rip out my eardrums. Absolutely the most annoying shit I've seen herd in my life.",
+                "position": 2
+              },
+              {
+                "title": "[TOMT][Audio Clip] Somebody saying \"oh nooo. That's a... ...",
+                "link": "https://www.reddit.com/r/tipofmytongue/comments/1gm23cx/tomtaudio_clip_somebody_saying_oh_nooo_thats_a/",
+                "snippet": "I have this voice stuck in my head of somebody saying something along the lines of \"oh no. That's a... noo.\" in a kind of worried tone, ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "I finally found the song from the new #Cadillac ...",
+                "link": "https://x.com/MissAllyWhite/status/1920311335696388514",
+                "snippet": "Biig Piig - Oh No (Audio). Biig Piig - Oh No (Official Audio) Listen to 'Oh No' & 'Liahr' here: https://smarturl.it/OhNo-LiahrSpotify ...",
+                "position": 1
+              },
+              {
+                "title": "@turntdais why does this video have no sound?? oh nvm ...",
+                "link": "https://x.com/neeqola/status/1397273543377883137",
+                "snippet": "why does this video have no sound?? oh nvm my bluetooth was still connected to my 2021 Lamborghini Hurac\u00e1n EVO Spyder (Starts at $293,695) ...",
+                "position": 2
+              },
+              {
+                "title": "Oh no. Sound Sultan \ud83d\ude22",
+                "link": "https://x.com/LadiPoe/status/1414163421638049794",
+                "snippet": "LADIPOE (@LadiPoe). 187 likes 5 replies. Oh no. Sound Sultan.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Free Oh No Sound Effects Download",
+                "link": "https://pixabay.com/sound-effects/search/oh%20no/",
+                "snippet": "Royalty-free oh no sound effects. Download a sound effect to use in your next project. ... Over 5.9 million+ high quality stock images, videos and music shared by ...",
+                "position": 1
+              },
+              {
+                "title": "Free Oh No Sound Effect MP3 Download",
+                "link": "https://poppop.ai/sound-effects/oh-no-sound",
+                "snippet": "Check out our wide range of high-quality oh no sound effects ... Over Sound EffectGhost Sound EffectHappy Sound EffectHonk Sound EffectSwipe Sound Effect.",
+                "position": 2
+              },
+              {
+                "title": "Oh No! (Voice Line) - Sound Effect for editing",
+                "link": "https://www.youtube.com/watch?v=sPUyfiOOi4E",
+                "snippet": "... over 1000 sounds each! Don't forget that this channel is constantly ... No , Oh no Sound Effects All Sounds. All Sounds\u2022350K views \u00b7 10:11.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "Hmm No Sound",
+              "link": "https://www.tiktok.com/discover/hmm-no-sound?lang=en",
+              "snippet": "15 oh no sound variations in 30 seconds #ohno #soundvariations #fyb #trending #viral #trend \u00b7 original sound - SuperSoundFX \u00b7 Oh No Brainrot ...",
+              "position": 1
+            },
+            {
+              "title": "oh no no no",
+              "link": "https://www.tiktok.com/@smosh/video/7133608966445305134?lang=en",
+              "snippet": "You've likely heard the Oh No sound all over your feed, but do you know the story behind it? Here's how the infamous sample behind the viral ...",
+              "position": 2
+            },
+            {
+              "title": "I absolutely cannot stand this cringe trend of putting text ...",
+              "link": "https://www.reddit.com/r/unpopularopinion/comments/pkt6aj/i_absolutely_cannot_stand_this_cringe_trend_of/",
+              "snippet": "They just use even shittier remixes of the oh no sound instead ... It's the new trend and new cringe. It'll come and go, the next will also ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Young kids are bringing TikTok memes to the playground: TikTok memes are being picked up and spread by elementary-age children, despite never using the app themselves.\n\nControversy/Drama:\n- GPT-5 Backlash + Perplexity C.E.O. Aravind Srinivas on the Browser Wars + Hot Mess Express: OpenAI spent the week responding to outcry from users who miss the behavior of the old ChatGPT, before the latest flagship model was...\n- \u2018The History Of Sound\u2019 Trailer: Josh O\u2019Connor And Paul Mescal Lead Queer Historical Drama This September: Looking for an indie drama that has \u201cawards season darling\u201d all over it? Look no further than The History of Sound, which stars two of the...\n\nReddit Discussions:\n- Robotic/emotionless/badly acted \"oh no\" audio meme\n- Is anybody else tired of the \"oh no\" song on every damn tik ..."
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.6558774606110896,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The Oh No Sound trend is declining due to a combination of factors, primarily driven by audience fatigue. The trend's velocity and engagement rate have decreased, indicating a loss of momentum. The high fatigue signal detected suggests that the audience is experiencing content saturation, with the same meme being repeatedly used across various platforms. Additionally, the trend's sentiment and retention rates, although still relatively high, are not sufficient to counterbalance the declining velocity and engagement. The real-world context, including the spread of TikTok memes to younger audiences and the backlash against overused content, further supports this analysis. The recent controversy surrounding the overuse of the 'oh no' song on TikTok, as seen on Reddit discussions, also contributes to the decline.\",\n    \n    \"The trend's decline can also be attributed to the lack of originality in content, with a content originality score of 0.424. This suggests that creators are not innovating or adapting the trend in new and exciting ways, leading to a stale and repetitive experience for the audience. As a result, the trend is becoming less engaging and less appealing to its original audience.\",\n    \n    \"The decline of the Oh No Sound trend is not unique to this particular trend, but rather a symptom of a larger issue with social media content. The spread of memes and trends across platforms, as well as the increasing sophistication of audiences, has created an environment where content must be constantly evolving and adapting to remain relevant. The Oh No Sound trend, having been around for some time, has failed to adapt and innovate, leading to its decline.\",\n    \n    \"confidence\": 0.85,\n    \n    \"key_factors\": [\"audience fatigue\", \"lack of content originality\", \"overuse of the trend\"],\n    \n    \"recommendations\": [\"Encourage creators to innovate and adapt the trend in new and exciting ways\", \"Diversify content to avoid repetition and saturation\", \"Monitor audience feedback and adjust content strategy accordingly\"],\n    \n    \"evidence\": [\"HIGH_FATIGUE signal detected\", \"content originality score of 0.424\", \"Reddit discussions about the overuse of the 'oh no' song on TikTok\", \"declining velocity and engagement rate\"]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "#GRWM",
+      "archetype": "influencer_exodus",
+      "total_days": 47,
+      "state_sequence_summary": {
+        "Growth": 2,
+        "Decline": 19,
+        "Saturation": 3,
+        "Emerging": 17,
+        "Peak": 6
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 25,
+        "date": "2025-01-26",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 1.0,
+          "fatigue": 0.6431225030287565,
+          "retention": 0.3547664266858959
+        },
+        "extended_metrics": {
+          "sentiment": 1.0,
+          "engagement_rate": 0.1560259121096328,
+          "content_originality": 0.5171606302853006
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#GRWM",
+        "decline_date": "2025-01-26",
+        "generated_at": "2026-02-08T05:18:19.473272",
+        "metrics_snapshot": {
+          "velocity": 1.0,
+          "fatigue": 0.6431225030287565,
+          "retention": 0.3547664266858959,
+          "sentiment": 1.0,
+          "engagement_rate": 0.1560259121096328,
+          "content_originality": 0.5171606302853006
+        },
+        "archetype": "influencer_exodus",
+        "web_context": {
+          "trend_name": "#GRWM",
+          "decline_date": "2025-01-26",
+          "investigated_at": "2026-02-08T05:18:19.473272",
+          "news_coverage": [
+            {
+              "title": "TikTok Skin Care Routines Are Harmful and Expensive, Researchers Say",
+              "link": "https://www.healthline.com/health-news/tiktok-beauty-routines-may-cause-skin-allergies-irritation",
+              "snippet": "New research shows the potential health harms of TikTok skin care videos touting \"lighter, brighter skin\" marketed toward young girls ages 7...",
+              "source": "Healthline",
+              "date": "Jun 10, 2025"
+            },
+            {
+              "title": "\u2018Get Ready With Me\u2019 Videos Are a Comforting Phenomenon",
+              "link": "https://www.vogue.com/article/tiktok-get-ready-with-me-videos",
+              "snippet": "\u201cGet ready with me\u201d videos have taken over TikTok. Creators have been posting clips that invite complete strangers in on their getting-ready processes.",
+              "source": "Vogue",
+              "date": "Jan 4, 2023"
+            },
+            {
+              "title": "General Mills responds to #GRWM, maximalism trends with new cereal",
+              "link": "https://www.campaignlive.com/article/general-mills-responds-grwm-maximalism-trends-new-cereal/1860447",
+              "snippet": "General Mills has put its own twist on the viral #GRWM \u2014 \u201cget ready with me\u201d \u2014 trend on TikTok. The CPG giant is dropping limited-edition \u201cGet...",
+              "source": "Campaign US",
+              "date": "Feb 6, 2024"
+            },
+            {
+              "title": "TikTok influencers Greta Rolli, Alix Earle and other #GRWM creators are changing social media",
+              "link": "https://www.cbsnews.com/news/tiktok-influencer-get-ready-with-me-viral-trend/",
+              "snippet": "Hashtags like #GRWM\u200b have opened new opportunities for anyone to become a TikTok influencer. Brands are noticing.",
+              "source": "CBS News",
+              "date": "Feb 1, 2023"
+            },
+            {
+              "title": "Just the Numbers: The Rise of Self-Care Through Beauty",
+              "link": "https://beautymatter.com/articles/the-rise-of-self-care-through-beauty",
+              "snippet": "A survey by Ulta Beauty and Bread Financial, featuring 1849 U.S. consumers, reveals that 74% integrate self-care into their beauty...",
+              "source": "BeautyMatter",
+              "date": "Mar 6, 2025"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "Dresses over jeans are, unfortuanately, making a comback",
+              "link": "https://www.her.ie/fashion/back-from-the-90s-dresses-jeans-588968",
+              "snippet": "Some 90s trends should stay dead, like low rise denim, but dresses over jeans have decided to make a comeback no one wanted.",
+              "source": "Her.ie",
+              "date": "Sep 26, 2023"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What Does GRWM Mean? | Get Ready With Me. ...",
+                "link": "https://www.reddit.com/r/savedyouaclick/comments/12zjzl7/what_does_grwm_mean_get_ready_with_me_apparently/",
+                "snippet": "GRWM mean? Get ready with me. Apparently people make videos of themselves putting on makeup and other people watch them.",
+                "position": 1
+              },
+              {
+                "title": "Why is Grown Woman spelled like that (GRWM)? : r/lorde",
+                "link": "https://www.reddit.com/r/lorde/comments/1lll2gs/why_is_grown_woman_spelled_like_that_grwm/",
+                "snippet": "The song title was a bit of a bait and switch for me, but does anyone has speculations about why it's called that and not Grown Woman?",
+                "position": 2
+              },
+              {
+                "title": "Group GRWM?? : r/MakeupAddiction",
+                "link": "https://www.reddit.com/r/MakeupAddiction/comments/1l2jwr0/group_grwm/",
+                "snippet": "A way to connect with other makeup lovers and chit chat and get ready together on a designated day of the week, via zoom, FaceTime, or whatever other platform ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "GRWM Everyday Makeup Look * NEW Makeup * Chit Chat ...",
+                "link": "https://x.com/joylilacbeauty/status/2014713393878294903",
+                "snippet": "Let's do some makeup!! I haven't done a long form GRWM (Get Ready with Me) in a long time so I was really excited and a little nervous! Hope ...",
+                "position": 1
+              },
+              {
+                "title": "\"#GRWM\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23GR%EF%BC%B7%EF%BC%AD&src=hashtag_click&f=live",
+                "snippet": "Results for \"#GRWM\" on X (Twitter). Find the latest posts, discussions, and updates about #GRWM. 20 results found.",
+                "position": 2
+              },
+              {
+                "title": "The makeup Tutorial for this GRWM look is up on my ...",
+                "link": "https://x.com/goddess4ever1/status/1961626823252746599",
+                "snippet": "The makeup Tutorial for this GRWM look is up on my YouTube channel.Make sure to check it out.Also don't forget to like,comment,share ...",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Trends that are dying in 2026 do you agree? #grwm ...",
+                "link": "https://www.instagram.com/reel/DUTUgmyEfTx/",
+                "snippet": "That I think are dying in twenty twenty-six. First thing is TikTok houses. I think that they're going to like kind of get a lot less popular ...",
+                "position": 1
+              },
+              {
+                "title": "Sick days over \ud83e\udd27Reset mode: ON \u2728 #grwm #grwmroutine ...",
+                "link": "https://www.instagram.com/reel/DUJMOH3CPlw/",
+                "snippet": "13 likes, 4 comments - sandra_salkic on January 30, 2026: \"Sick days over Reset mode: ON \u2728 #grwm #grwmroutine #grwmmakeup #makeup #glowup ...",
+                "position": 2
+              },
+              {
+                "title": "How to get over your fear of posting #grwm #contentcreator ...",
+                "link": "https://www.youtube.com/shorts/Ay7VXsfcYuY",
+                "snippet": "How to get over your fear of posting #grwm #contentcreator #contenttips #makeup #dayinthelife ... This content isn't available.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "GRWM videos are getting personal: What happens next?",
+              "link": "https://www.mamamia.com.au/grwm-videos-confessional-trend/",
+              "snippet": "'Get Ready With Me' (GRWM) videos have become deeply personal. And they're way more than sharing your beauty routine. They've become a space to share deeply ...",
+              "position": 1
+            },
+            {
+              "title": "The Vogue Business TikTok Trend Tracker",
+              "link": "https://www.vogue.com/article/the-vogue-business-tiktok-trend-tracker",
+              "snippet": "The trend originated from a viral video by user Jason Gyamfi, who joked, \u201cWe don't do Nike Tech. We don't do coffee. It's straight quarter zips ...",
+              "position": 2
+            },
+            {
+              "title": "GRWM Content: A Goldmine For Brands and Marketers",
+              "link": "https://bbtv.com/blog/grwm-content-a-goldmine-for-brands-and-marketers",
+              "snippet": "Get Ready With Me (most commonly known as GRWM) content is a pervasive trend spanning platforms, genres, audience types, and interests.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- TikTok Skin Care Routines Are Harmful and Expensive, Researchers Say: New research shows the potential health harms of TikTok skin care videos touting \"lighter, brighter skin\" marketed toward young girls ages 7...\n- \u2018Get Ready With Me\u2019 Videos Are a Comforting Phenomenon: \u201cGet ready with me\u201d videos have taken over TikTok. Creators have been posting clips that invite complete strangers in on their getting-ready processes.\n- General Mills responds to #GRWM, maximalism trends with new cereal: General Mills has put its own twist on the viral #GRWM \u2014 \u201cget ready with me\u201d \u2014 trend on TikTok. The CPG giant is dropping limited-edition \u201cGet...\n\nControversy/Drama:\n- Dresses over jeans are, unfortuanately, making a comback: Some 90s trends should stay dead, like low rise denim, but dresses over jeans have decided to make a comeback no one wanted.\n\nReddit Discussions:\n- What Does GRWM Mean? | Get Ready With Me. ...\n- Why is Grown Woman spelled like that (GRWM)? : r/lorde"
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.6431225030287565,
+            "description": "Audience showing signs of content saturation"
+          },
+          {
+            "signal": "INFLUENCER_EXODUS",
+            "severity": "medium",
+            "value": 0.3547664266858959,
+            "description": "Key creators abandoning the trend"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The #GRWM trend is declining due to a combination of factors, including audience fatigue and the exodus of key influencers. The 'HIGH_FATIGUE' signal, with a medium severity, indicates that the audience is showing signs of content saturation, which is further supported by the low 'retention' metric of 0.355. This suggests that viewers are becoming less engaged with the content and are not returning to watch more. Additionally, the 'INFLUENCER_EXODUS' signal, also with a medium severity, implies that key creators are abandoning the trend, which can lead to a decline in the trend's overall popularity. The recent news about the potential health harms of TikTok skin care videos and the controversy surrounding certain fashion trends may have also contributed to the decline, as they may have led to a negative perception of the trend among some viewers.\",\n    \n    \"The trend's decline is also reflected in its metrics, with a low 'engagement_rate' of 0.156 and a moderate 'content_originality' score of 0.517. This suggests that the content is not resonating with viewers and is not fresh or original enough to keep them engaged. Furthermore, the fact that some brands, such as General Mills, are trying to capitalize on the trend with limited-edition products may be seen as inauthentic or opportunistic, which could further contribute to the trend's decline.\",\n    \n    \"Overall, the decline of the #GRWM trend is a result of a combination of factors, including audience fatigue, influencer exodus, and negative perceptions. To reverse this decline, stakeholders will need to find ways to refresh the content, engage with their audience, and address the concerns surrounding the trend.\",\n    \n    \"confidence\": 0.8,\n    \n    \"key_factors\": [\"audience fatigue\", \"influencer exodus\", \"negative perceptions\"],\n    \n    \"recommendations\": [\n        \"Refresh the content by introducing new formats, themes, or collaborations to keep the audience engaged\",\n        \"Engage with the audience by responding to comments, asking for feedback, and creating a sense of community around the trend\",\n        \"Address the concerns surrounding the trend by promoting positive and inclusive content, and by partnering with influencers who align with these values\"\n    ],\n    \n    \"evidence\": [\n        \"HIGH_FATIGUE signal with a medium severity\",\n        \"INFLUENCER_EXODUS signal with a medium severity\",\n        \"Low 'retention' metric of 0.355\",\n        \"Low 'engagement_rate' of 0.156\",\n        \"Moderate 'content_originality' score of 0.517\",\n        \"Recent news about the potential health harms of TikTok skin care videos\",\n        \"Controversy surrounding certain fashion trends\"\n    ]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "About Damn Time",
+      "archetype": "competitor_replaced",
+      "total_days": 68,
+      "state_sequence_summary": {
+        "Growth": 4,
+        "Decline": 31,
+        "Saturation": 4,
+        "Emerging": 15,
+        "Peak": 14
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 33,
+        "date": "2025-03-04",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.6723770499505753,
+          "fatigue": 0.7117654327997007,
+          "retention": 0.7901696595773368
+        },
+        "extended_metrics": {
+          "sentiment": 0.7563975932226867,
+          "engagement_rate": 0.1431101683794197,
+          "content_originality": 0.4468886309710738
+        }
+      },
+      "investigation_report": {
+        "trend_name": "About Damn Time",
+        "decline_date": "2025-03-04",
+        "generated_at": "2026-02-08T05:18:27.559221",
+        "metrics_snapshot": {
+          "velocity": 0.6723770499505753,
+          "fatigue": 0.7117654327997007,
+          "retention": 0.7901696595773368,
+          "sentiment": 0.7563975932226867,
+          "engagement_rate": 0.1431101683794197,
+          "content_originality": 0.4468886309710738
+        },
+        "archetype": "competitor_replaced",
+        "web_context": {
+          "trend_name": "About Damn Time",
+          "decline_date": "2025-03-04",
+          "investigated_at": "2026-02-08T05:18:27.559221",
+          "news_coverage": [
+            {
+              "title": "The TikTok Dance Is Back, Thanks to Lizzo\u2019s \u2018About Damn Time\u2019",
+              "link": "https://www.rollingstone.com/culture/culture-news/lizzo-about-damn-time-tiktok-dance-podcast-1356772/",
+              "snippet": "On the new episode of 'Don't Let This Flop', the hosts discuss why the TikTok dance seemed to die down and how Lizzo brought it back to...",
+              "source": "Rolling Stone",
+              "date": "May 22, 2022"
+            },
+            {
+              "title": "Lizzo rocked the 'About Damn Time' TikTok trend at the BET Awards",
+              "link": "https://mashable.com/video/lizzo-about-damn-time-bet-awards",
+              "snippet": "The singer put her classical flute training to good use in a dazzling performance of her hit \"About Damn Time.\" She also performed part of the song's viral...",
+              "source": "Mashable",
+              "date": "Jun 26, 2022"
+            },
+            {
+              "title": "Lizzo Wants You to Know You\u2019re Doing The Viral \u2018About Damn Time\u2019 TikTok Dance Wrong: \u2018I\u2019m Tired Of Seeing It\u2019",
+              "link": "https://www.billboard.com/music/music-news/lizzo-about-damn-time-tiktok-dance-wrong-1235070207/",
+              "snippet": "Lizzo gave her own tutorial for the viral TikTok dance to her single \"About Damn Time,\" saying she's tired of seeing people do it wrong.",
+              "source": "Billboard",
+              "date": "May 12, 2022"
+            },
+            {
+              "title": "Lizzo tells fans they\u2019re doing the viral \u2018About Damn Time\u2019 TikTok dance wrong",
+              "link": "https://www.nme.com/news/music/lizzo-tells-fans-theyre-doing-viral-about-damn-time-tiktok-dance-all-wrong-3225216",
+              "snippet": "Lizzo has told fans they're doing the viral 'About Damn Time' TikTok dance wrong in a new post on social media.",
+              "source": "NME",
+              "date": "May 13, 2022"
+            },
+            {
+              "title": "Lizzo Wants To Collab With Selena Gomez Because Of This TikTok",
+              "link": "https://www.elitedaily.com/entertainment/selena-gomez-lizzo-about-damn-time-tiktok-collab",
+              "snippet": "The \u201cDe Una Vez\u201d singer filmed a TikTok dancing to Lizzo's hit single \u201cAbout Damn Time,\u201d which dropped on April 14 ahead of her upcoming Special album.",
+              "source": "Elite Daily",
+              "date": "May 17, 2022"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "Lizzo Says She Has \u201cGood Genes\u201d Like Sydney Sweeney In New Song Snippet",
+              "link": "https://www.rap-up.com/article/lizzo-sydney-sweeney-good-genes-lyric",
+              "snippet": "Lizzo shared a song snippet where she referenced Sydney Sweeney's controversial American Eagle campaign. Check it out at Rap-Up.",
+              "source": "Rap-Up",
+              "date": "Aug 7, 2025"
+            },
+            {
+              "title": "Rhea Seehorn wins first Golden Globe for 'Pluribus' \u2014 and 'Better Call Saul' fans know it's about damn time!",
+              "link": "https://decider.com/2026/01/11/golden-globes-2026-rhea-seehorn-speech-pluribus/",
+              "snippet": "Rhea Seehorn's moment has finally arrived, and let me just say, it's about damn time! During the 83rd Golden Globes on Sunday, January 11,...",
+              "source": "Decider",
+              "date": "4 weeks ago"
+            },
+            {
+              "title": "Lizzo Issues Scathing Response to \u201cStill Bad\u201d Critics: \u201cNobody\u2019s Doing It Like Me For Us\u201d",
+              "link": "https://www.vibe.com/news/entertainment/lizzo-still-bad-criticism-response-1235054167/",
+              "snippet": "Lizzo fires back at \"Still Bad\" critics who attacked her brand of \"poptimism.\"",
+              "source": "VIBE.com",
+              "date": "Mar 18, 2025"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "Lizzo - About Damn Time : r/popheads",
+                "link": "https://www.reddit.com/r/popheads/comments/u3sjrr/lizzo_about_damn_time/",
+                "snippet": "ABOUT DAMN TIME. FINALLY SOME GOOD FUCKING FOOD! I've been obsessed with lizzo's vibe since rumors and this is an incredible follow up. this ...",
+                "position": 1
+              },
+              {
+                "title": "Lizzo - About Damn Time (Purple Disco Machine Remix)",
+                "link": "https://www.reddit.com/r/popheads/comments/us6x54/lizzo_about_damn_time_purple_disco_machine_remix/",
+                "snippet": "Lizzo - About Damn Time (Purple Disco Machine Remix) ... Lizzo - Special / 2 Be Loved / About Damn Time (Medley) [Live at the BRIT Awards 2023].",
+                "position": 2
+              },
+              {
+                "title": "Lizzo Wins Record of the Year for \u201cAbout Damn Time\u201d at ...",
+                "link": "https://www.reddit.com/r/Music/comments/10uxg7o/lizzo_wins_record_of_the_year_for_about_damn_time/",
+                "snippet": "Lizzo Wins Record of the Year for \u201cAbout Damn Time\u201d at 2023 Grammys. article.",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "Lizzo - About Damn Time [Official Video]",
+                "link": "https://x.com/BeatriceLacy/status/2018003429172314164",
+                "snippet": "Lizzo - About Damn Time [Official Video]Download/Stream: https://Lizzo.lnk.to/AboutDamnTimeIDLizzo's new album 'Special' is available now!",
+                "position": 1
+              },
+              {
+                "title": "About damn time\u2026 \ud83d\ude05",
+                "link": "https://x.com/jamieleenapier/status/1883562554196472286",
+                "snippet": "Jamielee Napier (@jamieleenapier). 145 likes 4 replies. About damn time\u2026",
+                "position": 2
+              },
+              {
+                "title": "It's about damn time \ud83c\udfb6 Lizzo joins #NBCSongsAndStories ...",
+                "link": "https://x.com/nbc/status/1965158204486091012",
+                "snippet": "It's about damn time Lizzo joins #NBCSongsAndStories with Kelly Clarkson | NBC and @peacock \u00b7 NBC Entertainment's Image 1 on X.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Lizzo - About Damn Time [Official Video]",
+                "link": "https://www.youtube.com/watch?v=IXXxciRUMzE",
+                "snippet": "Lizzo - About Damn Time [Official Video] Download/Stream: https ... over 5 billion global streams and a platinum selling debut album to ...",
+                "position": 1
+              },
+              {
+                "title": "Lizzo \u2013 About Damn Time Lyrics",
+                "link": "https://genius.com/Lizzo-about-damn-time-lyrics",
+                "snippet": "About Damn Time ... As the track's title already suggests, Lizzo reveals her excitement and relief over releasing her long-awaited studio album through this Disco ...",
+                "position": 2
+              },
+              {
+                "title": "About Damn Time",
+                "link": "https://en.wikipedia.org/wiki/About_Damn_Time",
+                "snippet": "About Damn Time. Article \u00b7 Talk. Language; Loading\u2026 Download PDF; Watch \u00b7 Edit ... Retrieved September 7, 2022. ^ \"Lizzo Chart History (Canada CHR ...",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "IT\u2019S ABOUT DAMN TIME we do this trend \ud83d\udc4f @lizzo | about ...",
+              "link": "https://www.tiktok.com/@oldgays/video/7096491714025639211?lang=en",
+              "snippet": "Showtime Dance Trend \u00b7 Volleyball Player Lip Synching Lizzo about Damn Time \u00b7 Pink Lizzo Dance Routine \u00b7 About Damn Time.",
+              "position": 1
+            },
+            {
+              "title": "Top TikTok Songs Of 2022: The Ultimate Playlist",
+              "link": "https://presensi.perpusnas.go.id/press/1lgbhzh/perpusnas-top-tiktok-songs-of-2022-the-ultimate-playlist-1764809299",
+              "snippet": "\u201cAbout Damn Time\u201d - Lizzo; \u201cRunning Up That Hill (A Deal with God)\u201d - Kate Bush; \u201cSunroof\u201d - Nicky Youre & dazy; \u201cFirst Class\u201d - Jack Harlow ...",
+              "position": 2
+            },
+            {
+              "title": "I may not love every trend but I do love a trend when we ...",
+              "link": "https://www.instagram.com/p/DTi3rPZgcpH/",
+              "snippet": "Or did I say about damn time?! Either way, 2016 was the year we planned our wedding and our future together! And not only were we planning ...",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- The TikTok Dance Is Back, Thanks to Lizzo\u2019s \u2018About Damn Time\u2019: On the new episode of 'Don't Let This Flop', the hosts discuss why the TikTok dance seemed to die down and how Lizzo brought it back to...\n- Lizzo rocked the 'About Damn Time' TikTok trend at the BET Awards: The singer put her classical flute training to good use in a dazzling performance of her hit \"About Damn Time.\" She also performed part of the song's viral...\n- Lizzo Wants You to Know You\u2019re Doing The Viral \u2018About Damn Time\u2019 TikTok Dance Wrong: \u2018I\u2019m Tired Of Seeing It\u2019: Lizzo gave her own tutorial for the viral TikTok dance to her single \"About Damn Time,\" saying she's tired of seeing people do it wrong.\n\nControversy/Drama:\n- Lizzo Says She Has \u201cGood Genes\u201d Like Sydney Sweeney In New Song Snippet: Lizzo shared a song snippet where she referenced Sydney Sweeney's controversial American Eagle campaign. Check it out at Rap-Up.\n- Rhea Seehorn wins first Golden Globe for 'Pluribus' \u2014 and 'Better Call Saul' fans know it's about damn time!: Rhea Seehorn's moment has finally arrived, and let me just say, it's about damn time! During the 83rd Golden Globes on Sunday, January 11,...\n\nReddit Discussions:\n- Lizzo - About Damn Time : r/popheads\n- Lizzo - About Damn Time (Purple Disco Machine Remix)"
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.7117654327997007,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The 'About Damn Time' trend is declining due to a combination of factors, primarily driven by audience fatigue and a lack of original content. The trend's velocity and engagement rate have decreased significantly, indicating a decline in user interest and participation. Furthermore, the trend's fatigue level is high, suggesting that the audience is experiencing content saturation. The recent news and controversy surrounding Lizzo, such as her comments on the viral dance and her new song snippet, may have also contributed to the trend's decline. Additionally, the trend's content originality is low, which may have led to a lack of fresh and exciting content, further exacerbating the decline.\",\n    \n    \"The trend's decline can also be attributed to the 'competitor_replaced' detected pattern, which suggests that a new trend or challenge may have emerged, replacing 'About Damn Time' in popularity. The fact that Lizzo herself has commented on the trend, stating that she's tired of seeing people do the dance wrong, may have also contributed to the decline, as it could be perceived as a negative or critical comment.\",\n    \n    \"The real-world context, including the recent news and Reddit discussions, provides evidence of the trend's decline. The fact that Lizzo has moved on to new projects and is no longer actively promoting the trend may have also contributed to its decline. Overall, the decline of the 'About Damn Time' trend is a result of a combination of factors, including audience fatigue, lack of original content, and the emergence of new trends and challenges.\",\n    \n    \"confidence\": 0.85,\n    \n    \"key_factors\": [\"audience fatigue\", \"lack of original content\", \"competitor_replaced\", \"negative comments from Lizzo\"],\n    \n    \"recommendations\": [\"refresh the trend with new and original content\", \"encourage user-generated content to increase engagement\", \"collaborate with influencers or other artists to revitalize the trend\", \"monitor and respond to audience feedback and concerns\"],\n    \n    \"evidence\": [\"velocity: 0.672\", \"fatigue: 0.712\", \"content_originality: 0.447\", \"Lizzo's comments on the viral dance\", \"recent news and Reddit discussions\"]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    }
+  ]
+}

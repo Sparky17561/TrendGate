@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-02-08T05:16:28.801827",
+  "total_records": 386,
+  "unique_trends": 8,
+  "archetypes": {
+    "competitor_replaced": 68,
+    "slow_burn": 63,
+    "seasonal": 56,
+    "controversy_spike": 51,
+    "influencer_exodus": 47,
+    "saturated_death": 36,
+    "algorithm_killed": 34,
+    "viral_crash": 31
+  },
+  "platforms": {
+    "twitter": 158,
+    "tiktok": 145,
+    "instagram": 83
+  },
+  "date_range": {
+    "start": "2025-01-01T00:00:00",
+    "end": "2025-04-07T00:00:00"
+  },
+  "metrics_summary": {
+    "velocity": {
+      "mean": 0.3539831988701455,
+      "std": 0.33972493571483825,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "fatigue": {
+      "mean": 0.5517254395791824,
+      "std": 0.34985001462032844,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "retention": {
+      "mean": 0.4167216461870902,
+      "std": 0.31931588502774894,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "sentiment": {
+      "mean": 0.21858843796468247,
+      "std": 0.5239482965652602,
+      "min": -0.7898335397007648,
+      "max": 1.0
+    },
+    "engagement_rate": {
+      "mean": 0.09097254398004213,
+      "std": 0.05321658336465342,
+      "min": 0.01,
+      "max": 0.19759186968979486
+    }
+  }
+}

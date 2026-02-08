@@ -1,0 +1,990 @@
+{
+  "generated_at": "2026-02-08T05:14:56.411475",
+  "total_trends_analyzed": 5,
+  "trends_with_decline": 5,
+  "trends": [
+    {
+      "trend_name": "Mannequin Challenge",
+      "archetype": "viral_crash",
+      "total_days": 59,
+      "state_sequence_summary": {
+        "Growth": 4,
+        "Saturation": 3,
+        "Decline": 37,
+        "Peak": 7,
+        "Emerging": 8
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 19,
+        "date": "2025-02-16",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.5634220051602632,
+          "fatigue": 0.5799627325351908,
+          "retention": 0.5673346295542108
+        },
+        "extended_metrics": {
+          "sentiment": 0.9407532884797858,
+          "engagement_rate": 0.1292809857640943,
+          "content_originality": 0.6081545429292319
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Mannequin Challenge",
+        "decline_date": "2025-02-16",
+        "generated_at": "2026-02-08T05:14:05.091207",
+        "metrics_snapshot": {
+          "velocity": 0.5634220051602632,
+          "fatigue": 0.5799627325351908,
+          "retention": 0.5673346295542108,
+          "sentiment": 0.9407532884797858,
+          "engagement_rate": 0.1292809857640943,
+          "content_originality": 0.6081545429292319
+        },
+        "archetype": "viral_crash",
+        "web_context": {
+          "trend_name": "Mannequin Challenge",
+          "decline_date": "2025-02-16",
+          "investigated_at": "2026-02-08T05:14:05.091207",
+          "news_coverage": [
+            {
+              "title": "Which 2016 social media trend do you miss the most?",
+              "link": "https://www.prweek.com/article/1946325/2016-social-media-trend-miss-most",
+              "snippet": "2016 is back. Well, at least references to it are taking over social media. TikTok searches for \u201c2016\u201d spiked 452% in the first week of...",
+              "source": "PRWeek",
+              "date": "2 weeks ago"
+            },
+            {
+              "title": "It\u2019s 2026. Why Is 2016 Trending?",
+              "link": "https://www.vogue.com/article/its-2026-why-is-2016-trending",
+              "snippet": "Over the holidays, the first trend of 2026 emerged: the year 2016. \u201c2026 is the new 2016,\u201d users declared, in captions waxing poetic about...",
+              "source": "Vogue",
+              "date": "3 weeks ago"
+            },
+            {
+              "title": "Stop, don't move! Mannequin Challenge is the new viral video trend of the year",
+              "link": "https://www.stomp.sg/youthphoria/stop-dont-move-mannequin-challenge-is-the-new-viral-video-trend-of-the-year",
+              "snippet": "Have you heard? The Mannequin Challenge is social media's newest craze. The Mannequin Challenge is a viral Internet video trend where people remain...",
+              "source": "Stomp",
+              "date": "May 19, 2025"
+            },
+            {
+              "title": "5 sensational internet throwbacks you've probably done",
+              "link": "https://www.redandblack.com/culture/5-sensational-internet-throwbacks-youve-probably-done/article_9fbaf7fc-aabe-11e6-a0b9-5fd54f9e4a3d.html",
+              "snippet": "The Mannequin Challenge consists of a group of people freezing in strange and often challenging positions\u2014 as if they are literal mannequins\u2014...",
+              "source": "The Red & Black",
+              "date": "Nov 16, 2016"
+            },
+            {
+              "title": "The Library of Congress Mannequin Challenge and Emerging Traditions",
+              "link": "https://blogs.loc.gov/folklife/2016/12/library-of-congress-mannequin-challenge/",
+              "snippet": "The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.",
+              "source": "The Library of Congress (.gov)",
+              "date": "Dec 2, 2016"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "White Helmets backlash after Mannequin Challenge video",
+              "link": "https://www.bbc.com/news/world-middle-east-38066791",
+              "snippet": "The White Helmets face a backlash after video emerges of volunteers staging a Mannequin Challenge in Syria.",
+              "source": "BBC",
+              "date": "Nov 24, 2016"
+            },
+            {
+              "title": "The Library of Congress Mannequin Challenge and Emerging Traditions",
+              "link": "https://blogs.loc.gov/folklife/2016/12/library-of-congress-mannequin-challenge/",
+              "snippet": "The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.",
+              "source": "The Library of Congress (.gov)",
+              "date": "Dec 2, 2016"
+            },
+            {
+              "title": "Chinese period drama mannequin challenge is worth stopping to take a look at \u3010Video\u3011",
+              "link": "https://soranews24.com/2016/12/12/chinese-period-drama-mannequin-challenge-is-worth-stopping-to-take-a-look-at-%E3%80%90video%E3%80%91/",
+              "snippet": "The mannequin challenge features participants striking a pose as a camera weaves in, around and through the scene.",
+              "source": "SoraNews24",
+              "date": "Dec 12, 2016"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What is the Mannequin Challenge and where does it come ...",
+                "link": "https://www.reddit.com/r/OutOfTheLoop/comments/5bibro/what_is_the_mannequin_challenge_and_where_does_it/",
+                "snippet": "The mannequin challenge is when you take a group of people (it seems really popular among sports teams for whatever reason) and have them adopt complicated ...",
+                "position": 1
+              },
+              {
+                "title": "What is the mannequin challenge? : r/OutOfTheLoop",
+                "link": "https://www.reddit.com/r/OutOfTheLoop/comments/5ef2zn/what_is_the_mannequin_challenge/",
+                "snippet": "It's a trend that's growing in popularity on Twitter where a group of people freeze in place like mannequins, as if time was suddenly ...",
+                "position": 2
+              },
+              {
+                "title": "The mannequin challenge was just...so perfect",
+                "link": "https://www.reddit.com/r/TheCircleTV/comments/mw9wmu/the_mannequin_challenge_was_justso_perfect/",
+                "snippet": "It was quite entertaining. I think Jack was getting by a bit too easily until then. Just being passive and sweet isn't going to win you the game ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "\"#mannequinchallenge\" - Results on X | Live Posts & ...",
+                "link": "https://x.com/search?q=%23mannequinchallenge&src=typd",
+                "snippet": "Results for \"#mannequinchallenge\" on X (Twitter). Find the latest posts, discussions, and updates about #mannequinchallenge. 19 results found.",
+                "position": 1
+              },
+              {
+                "title": "grok and me making mannequin challenge videos like it's ...",
+                "link": "https://x.com/nonieengel/status/2013143069877768683",
+                "snippet": "Leonie Engel (@nonieengel). 24 likes 975 views. grok and me making mannequin challenge videos like it's 2016.",
+                "position": 2
+              },
+              {
+                "title": "Results for \"\"Mannequin Challenge\"\"",
+                "link": "https://x.com/search?q=%22Mannequin%20Challenge%22&src=tren",
+                "snippet": "Results for \"\"Mannequin Challenge\"\" on X (Twitter). Find the latest posts, discussions, and updates about \"Mannequin Challenge\". 19 results found.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "The Mannequin Challenge went viral in 2016, freezing people ...",
+                "link": "https://www.instagram.com/reel/DUbzxAUDcHf/",
+                "snippet": "In 2016, the Mannequin Challenge took over the internet, with groups of people freezing in place while a camera moved through the scene as ...",
+                "position": 1
+              },
+              {
+                "title": "Mannequin Challenge",
+                "link": "https://en.wikipedia.org/wiki/Mannequin_Challenge",
+                "snippet": "^ \"Pitt football team, packed plane take on Mannequin Challenge after win over Clemson\". WXPI News. November 13, 2016. Archived from the original on ...",
+                "position": 2
+              },
+              {
+                "title": "Is this what they call the mannequin challenge? : r/DeadSpace",
+                "link": "https://www.reddit.com/r/DeadSpace/comments/1qtji4n/is_this_what_they_call_the_mannequin_challenge/",
+                "snippet": "Is this what they call the mannequin challenge? Bug. This video cannot ... You can only enter this room after the cutscene is already over.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "Mannequin Challenge Returns in 2026: Join the Fun!",
+              "link": "https://www.tiktok.com/@raesremmurd/video/7590861897306524983",
+              "snippet": "This challenge really came back with us into 2026 #mannequinchallenge. Mannequin Challenge Returns in 2026: Join the Fun! Experience the ...",
+              "position": 1
+            },
+            {
+              "title": "The Mannequin Challenge was a viral trend that exploded ...",
+              "link": "https://www.instagram.com/reel/DTWvVtUjVUW/",
+              "snippet": "The Mannequin Challenge was a viral trend that exploded online in late 2016. It involved groups of people freezing in place like mannequins ...",
+              "position": 2
+            },
+            {
+              "title": "What happened to global scale challenges? Harlem Shake ...",
+              "link": "https://www.reddit.com/r/decadeology/comments/1crztxy/what_happened_to_global_scale_challenges_harlem/",
+              "snippet": "Boring TikTok trends that last for a week max replaced them. ... I remember the Ice Bucket/Mannequin Challenge, Floor Is Lava, Bottle Flip.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Which 2016 social media trend do you miss the most?: 2016 is back. Well, at least references to it are taking over social media. TikTok searches for \u201c2016\u201d spiked 452% in the first week of...\n- It\u2019s 2026. Why Is 2016 Trending?: Over the holidays, the first trend of 2026 emerged: the year 2016. \u201c2026 is the new 2016,\u201d users declared, in captions waxing poetic about...\n- Stop, don't move! Mannequin Challenge is the new viral video trend of the year: Have you heard? The Mannequin Challenge is social media's newest craze. The Mannequin Challenge is a viral Internet video trend where people remain...\n\nControversy/Drama:\n- White Helmets backlash after Mannequin Challenge video: The White Helmets face a backlash after video emerges of volunteers staging a Mannequin Challenge in Syria.\n- The Library of Congress Mannequin Challenge and Emerging Traditions: The Library of Congress has created its own Mannequin Challenge video featuring many staff members and Librarian of Congress Carla Hayden.\n\nReddit Discussions:\n- What is the Mannequin Challenge and where does it come ...\n- What is the mannequin challenge? : r/OutOfTheLoop"
+        },
+        "decline_signals": [],
+        "explanation": "The Mannequin Challenge trend is declining due to a combination of factors, including its relatively low velocity and high fatigue metrics. With a velocity of 0.563, the trend is not spreading as quickly as it once was, indicating a loss of momentum. Additionally, the fatigue metric of 0.580 suggests that users are becoming increasingly tired of the trend, leading to a decrease in engagement and participation. The recent controversy surrounding the White Helmets' Mannequin Challenge video has also likely contributed to the trend's decline, as it has led to a backlash against the trend and a perception that it is being used inappropriately. Furthermore, the trend's reliance on nostalgia for 2016, as evidenced by the recent surge in TikTok searches for '2016', may be wearing off, leading to a decline in interest and participation.",
+        "confidence_score": 0.85,
+        "recommendations": [
+          "Stakeholders should consider pivoting to new, related trends that can capitalize on the remaining interest in the Mannequin Challenge",
+          "Influencers and content creators should focus on creating fresh, original content that can help to revitalize the trend and attract new participants",
+          "Brands and organizations should be cautious when participating in the trend, ensuring that their involvement is respectful and sensitive to the controversy surrounding it"
+        ],
+        "evidence": [
+          "Velocity metric of 0.563, indicating a loss of momentum",
+          "Fatigue metric of 0.580, suggesting user tiredness with the trend",
+          "Recent controversy surrounding the White Helmets' Mannequin Challenge video",
+          "Surge in TikTok searches for '2016', indicating a reliance on nostalgia",
+          "Low engagement rate of 0.129, indicating a decline in user participation"
+        ]
+      }
+    },
+    {
+      "trend_name": "#WhatIEatInADay",
+      "archetype": "slow_burn",
+      "total_days": 84,
+      "state_sequence_summary": {
+        "Growth": 9,
+        "Saturation": 6,
+        "Decline": 22,
+        "Peak": 20,
+        "Emerging": 27
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 56,
+        "date": "2025-02-26",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.649243454442322,
+          "fatigue": 0.6380882678845503,
+          "retention": 0.7787562267733561
+        },
+        "extended_metrics": {
+          "sentiment": 0.6765131750971046,
+          "engagement_rate": 0.1217254629645966,
+          "content_originality": 0.4126818200100655
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#WhatIEatInADay",
+        "decline_date": "2025-02-26",
+        "generated_at": "2026-02-08T05:14:15.924758",
+        "metrics_snapshot": {
+          "velocity": 0.649243454442322,
+          "fatigue": 0.6380882678845503,
+          "retention": 0.7787562267733561,
+          "sentiment": 0.6765131750971046,
+          "engagement_rate": 0.1217254629645966,
+          "content_originality": 0.4126818200100655
+        },
+        "archetype": "slow_burn",
+        "web_context": {
+          "trend_name": "#WhatIEatInADay",
+          "decline_date": "2025-02-26",
+          "investigated_at": "2026-02-08T05:14:15.928819",
+          "news_coverage": [
+            {
+              "title": "Nutrition content is huge on TikTok, but a new study shows trends like #WhatIEatInADay may influence disordered eating behaviors",
+              "link": "https://www.cnbc.com/2022/11/09/tiktok-nutrition-related-content-may-contribute-to-disordered-eating.html",
+              "snippet": "Videos and hashtags like #WhatIEatInADay can actually help promote harmful eating behaviors in young adults, a new study published in PLOS One found.",
+              "source": "CNBC",
+              "date": "Nov 9, 2022"
+            },
+            {
+              "title": "Therapist Asks Who Women \u2018Want To Be Skinny For\u2019\u2014Her Theory Is Eye-Opening",
+              "link": "https://www.newsweek.com/therapist-sparks-debate-skinny-body-image-2070161",
+              "snippet": "Lucie Vall\u00e9e's viral video asked \"who\" women are really trying to be skinny for? Her answer is sparking fierce debate.",
+              "source": "Newsweek",
+              "date": "May 9, 2025"
+            },
+            {
+              "title": "\u2018What I Eat In A Day\u2019 Social Media Trend Presents Harmful Effects",
+              "link": "https://www.minnesotamonthly.com/general/what-i-eat-in-a-day-social-media-trend-presents-harmful-effects/",
+              "snippet": "Many dieticians are sounding the alarm, saying these unrealistic food presentations can negatively impact mental and physical health.",
+              "source": "Minnesota Monthly",
+              "date": "Mar 27, 2023"
+            },
+            {
+              "title": "5 TikTok health trends taking over Gen Z\u2019s For You page",
+              "link": "https://exclusive.multibriefs.com/content/5-tiktok-health-trends-taking-over-gen-zs-for-you-page",
+              "snippet": "With nearly one billion users worldwide, TikTok has become one of the most influential apps on the internet. It controls the latest trends...",
+              "source": "MultiBriefs",
+              "date": "Jul 14, 2023"
+            },
+            {
+              "title": "Why You Should Skip the 'What I Eat in a Day' Posts on Social Media",
+              "link": "https://health.usnews.com/health-news/blogs/eat-run/articles/why-what-i-eat-in-a-day-posts-are-dangerous",
+              "snippet": "TikTok has emerged as a major igniter of food trends \u2013 from mushroom coffee and pancake cereal to cloud bread and feta pasta.",
+              "source": "US News Health",
+              "date": "Oct 28, 2021"
+            }
+          ],
+          "controversy_signals": [],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "1/16/26 - What Drue eats in a day : r/Drueandgabe",
+                "link": "https://www.reddit.com/r/Drueandgabe/comments/1qeysu6/11626_what_drue_eats_in_a_day/",
+                "snippet": "I'm still proud of my choices I made while on the go!!! #reels #whatieatinaday #toddlermom. Upvote 210. Downvote 284 Go to comments. Share ...",
+                "position": 1
+              },
+              {
+                "title": "Fat people are allowed to eat without feeling guilty\ud83d\udc4d\ud83c\udffd#whatiate ...",
+                "link": "https://www.reddit.com/r/facepalm/comments/14zsbai/fat_people_are_allowed_to_eat_without_feeling/",
+                "snippet": "If you have to argue that you should feel guilty about eating habits it's almost definite that you have horrible eating habits and should feel guilty.",
+                "position": 2
+              },
+              {
+                "title": "Running as a fat guy | Running fasted #whatieatinaday #omad # ...",
+                "link": "https://www.reddit.com/r/runningmemes/comments/164xuqo/running_as_a_fat_guy_running_fasted/",
+                "snippet": "Running as a fat guy | Running fasted #whatieatinaday #omad #running #runningmotivation \u00b7 Comments Section \u00b7 Community Info Section \u00b7 More posts you may like.",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "\"#whatieatinaday\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/hashtag/whatieatinaday?src=hashtag_click",
+                "snippet": "Results for \"#whatieatinaday\" on X (Twitter). Find the latest posts, discussions, and updates about #whatieatinaday. 19 results found.",
+                "position": 1
+              },
+              {
+                "title": "Such an honor to see our paper about #WhatIEatInADay ...",
+                "link": "https://x.com/ChloeRoske/status/1836216446566715700",
+                "snippet": "Such an honor to see our paper about #WhatIEatInADay videos on TikTok cited in this interesting @WSJ article @HeatherDavisPhD @MeredithKells !!",
+                "position": 2
+              },
+              {
+                "title": "#whatieatinaday \ud83c\udf74 ! #TikTok",
+                "link": "https://twitter.com/SexyNatG/status/1644712565220466698?lang=bg",
+                "snippet": "Natalie \u2654 Gauvreau (@SexyNatG). 237 likes. #whatieatinaday ! #TikTok.",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "What I eat in a day on a calorie deficit down 80+ Ibs. 1841 ...",
+                "link": "https://www.instagram.com/reel/DUW20urj4HZ/",
+                "snippet": "This is what I eat in a day on a calorie deficit from someone who has lost over 80 pounds and has kept them off. For usual I started my day ...",
+                "position": 1
+              },
+              {
+                "title": "A reflexive thematic analysis of #WhatIEatInADay on TikTok",
+                "link": "https://www.sciencedirect.com/science/article/abs/pii/S1471015323000594",
+                "snippet": "by HA Davis \u00b7 2023 \u00b7 Cited by 61 \u2014 Over a third of TikTok users in the United States (U.S.) are between the ages of 10\u201319 years (Sherman, 2020), an age group also at high risk for eating ...",
+                "position": 2
+              },
+              {
+                "title": "WhatIEatInADay: Why This Social Media Trend Can Be So ...",
+                "link": "https://www.allianceforeatingdisorders.com/whatieatinaday-why-this-social-media-trend-can-be-so-harmful/",
+                "snippet": "At its core, #WhatIEatInADay reflects a desire to connect over food. But when that connection fosters shame, guilt, or obsessive tracking ...",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "6 biggest food mistakes Gen Z and Millennials are making",
+              "link": "https://nypost.com/2025/11/10/health/6-biggest-food-mistakes-gen-z-and-millennials-are-making/",
+              "snippet": "Prioritizing aesthetics over nourishment. \u201cMillennials and Gen Z grew up during the rise of clean eating and #WhatIEatInADay content,\u201d said ...",
+              "position": 1
+            },
+            {
+              "title": "TikTok's \u201cWhat I Eat In A Day\u201d: Controlling the Female Body ...",
+              "link": "https://www.researchgate.net/publication/391307127_TikTok's_What_I_Eat_In_A_Day_Controlling_the_Female_Body_Through_Media",
+              "snippet": "The following essay centers around the TikTok #WhatIEatInADay trend. It is a historical and cultural analysis of the ways that the trend ...",
+              "position": 2
+            },
+            {
+              "title": "The Impact of #whatIeatinaday Content on Disordered Eating ...",
+              "link": "https://bclabrowser.ca/index.php/ujp/article/download/7130/6130/27738",
+              "snippet": "Social media posts about everything a person has eaten in a day, called #whatIeatinaday videos, can lead to an increase in disordered eating behaviours.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Nutrition content is huge on TikTok, but a new study shows trends like #WhatIEatInADay may influence disordered eating behaviors: Videos and hashtags like #WhatIEatInADay can actually help promote harmful eating behaviors in young adults, a new study published in PLOS One found.\n- Therapist Asks Who Women \u2018Want To Be Skinny For\u2019\u2014Her Theory Is Eye-Opening: Lucie Vall\u00e9e's viral video asked \"who\" women are really trying to be skinny for? Her answer is sparking fierce debate.\n- \u2018What I Eat In A Day\u2019 Social Media Trend Presents Harmful Effects: Many dieticians are sounding the alarm, saying these unrealistic food presentations can negatively impact mental and physical health.\n\nReddit Discussions:\n- 1/16/26 - What Drue eats in a day : r/Drueandgabe\n- Fat people are allowed to eat without feeling guilty\ud83d\udc4d\ud83c\udffd#whatiate ..."
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "medium",
+            "value": 0.6380882678845503,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The #WhatIEatInADay trend is declining due to a combination of factors, primarily driven by the growing concern over its potential to promote disordered eating behaviors and unrealistic beauty standards. The recent study published in PLOS One, which found that trends like #WhatIEatInADay can contribute to harmful eating behaviors in young adults, has likely played a significant role in the decline. Additionally, the increasing fatigue and decreasing content originality metrics suggest that the audience is becoming saturated with the same type of content, leading to a decrease in engagement. The real-world context, including the viral video by Lucie Vall\u00e9e and the discussions on Reddit, further supports the idea that the trend is losing steam due to its potential negative impact on mental and physical health.\",\n    \n    \"The decline is also reflected in the metrics, with a velocity of 0.649 and a fatigue level of 0.638, indicating a slow but steady decline. The retention rate of 0.779 suggests that while some users are still engaged, the overall trend is losing momentum. The sentiment analysis, with a score of 0.677, indicates a slightly positive but declining sentiment, which may be due to the increasing criticism of the trend's potential negative effects.\",\n    \n    \"The key factors contributing to the decline are the growing concern over the trend's potential to promote disordered eating behaviors, the increasing fatigue and decreasing content originality, and the negative sentiment surrounding the trend. To mitigate the decline, stakeholders can take steps to promote more diverse and realistic content, and to raise awareness about the potential negative effects of the trend.\",\n    \n    \"confidence\": 0.85,\n    \n    \"key_factors\": [\"growing concern over disordered eating behaviors\", \"increasing fatigue and decreasing content originality\", \"negative sentiment surrounding the trend\"],\n    \n    \"recommendations\": [\"Promote more diverse and realistic content to reduce the risk of promoting disordered eating behaviors\", \"Encourage users to share their own experiences and struggles with food and body image to create a more supportive community\", \"Partner with mental health professionals and registered dietitians to provide educational content and resources on healthy eating habits and body positivity\"],\n    \n    \"evidence\": [\"Recent study published in PLOS One\", \"Viral video by Lucie Vall\u00e9e\", \"Reddit discussions on the topic\", \"Declining metrics such as velocity and fatigue\"]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "#GRWM",
+      "archetype": "controversy_spike",
+      "total_days": 55,
+      "state_sequence_summary": {
+        "Growth": 5,
+        "Saturation": 16,
+        "Decline": 14,
+        "Peak": 8,
+        "Emerging": 12
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 25,
+        "date": "2025-02-04",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.6819691546922728,
+          "fatigue": 0.4141372659256768,
+          "retention": 0.6106173006783259
+        },
+        "extended_metrics": {
+          "sentiment": 1.0,
+          "engagement_rate": 0.1367132865246058,
+          "content_originality": 0.4332693689586857
+        }
+      },
+      "investigation_report": {
+        "trend_name": "#GRWM",
+        "decline_date": "2025-02-04",
+        "generated_at": "2026-02-08T05:14:26.031970",
+        "metrics_snapshot": {
+          "velocity": 0.6819691546922728,
+          "fatigue": 0.4141372659256768,
+          "retention": 0.6106173006783259,
+          "sentiment": 1.0,
+          "engagement_rate": 0.1367132865246058,
+          "content_originality": 0.4332693689586857
+        },
+        "archetype": "controversy_spike",
+        "web_context": {
+          "trend_name": "#GRWM",
+          "decline_date": "2025-02-04",
+          "investigated_at": "2026-02-08T05:14:26.031970",
+          "news_coverage": [
+            {
+              "title": "TikTok Skin Care Routines Are Harmful and Expensive, Researchers Say",
+              "link": "https://www.healthline.com/health-news/tiktok-beauty-routines-may-cause-skin-allergies-irritation",
+              "snippet": "New research shows the potential health harms of TikTok skin care videos touting \"lighter, brighter skin\" marketed toward young girls ages 7...",
+              "source": "Healthline",
+              "date": "Jun 10, 2025"
+            },
+            {
+              "title": "\u2018Get Ready With Me\u2019 Videos Are a Comforting Phenomenon",
+              "link": "https://www.vogue.com/article/tiktok-get-ready-with-me-videos",
+              "snippet": "\u201cGet ready with me\u201d videos have taken over TikTok. Creators have been posting clips that invite complete strangers in on their getting-ready processes.",
+              "source": "Vogue",
+              "date": "Jan 4, 2023"
+            },
+            {
+              "title": "General Mills responds to #GRWM, maximalism trends with new cereal",
+              "link": "https://www.campaignlive.com/article/general-mills-responds-grwm-maximalism-trends-new-cereal/1860447",
+              "snippet": "General Mills has put its own twist on the viral #GRWM \u2014 \u201cget ready with me\u201d \u2014 trend on TikTok. The CPG giant is dropping limited-edition \u201cGet...",
+              "source": "Campaign US",
+              "date": "Feb 6, 2024"
+            },
+            {
+              "title": "Why you need to 'deinfluence' yourself",
+              "link": "https://www.indulgexpress.com/trends/2025/May/18/why-you-need-to-deinfluence-yourself",
+              "snippet": "Social media may sell you the idea of the \u201cperfect\u201d life, but here's why you need to unlearn what you've seen so far to stop comparing...",
+              "source": "Indulge Express",
+              "date": "May 18, 2025"
+            },
+            {
+              "title": "Viral TikTok Video Shows How Moms Do the \u2018Get Ready with Me\u2019 Trend",
+              "link": "https://www.purewow.com/family/get-ready-with-me-moms-tiktok",
+              "snippet": "In the video, a mom is seen \u201cgetting ready\u201d for various day-to-day family activities, including: \u201cget ready with me to make dinner that nobody's going to eat\u201d",
+              "source": "PureWow",
+              "date": "Mar 22, 2023"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "#GRWM: Check Out This Classy Makeup Transformation From Dimma Umeh | WATCH",
+              "link": "https://www.bellanaijastyle.com/classy-makeup-transition/",
+              "snippet": "Hey BellaStylistas,. If you need a classy and modern makeup routine that's easy to replicate, check out this full-face makeup tutorial...",
+              "source": "BN Style",
+              "date": "Oct 22, 2023"
+            },
+            {
+              "title": "Dresses over jeans are, unfortuanately, making a comback",
+              "link": "https://www.her.ie/fashion/back-from-the-90s-dresses-jeans-588968",
+              "snippet": "Some 90s trends should stay dead, like low rise denim, but dresses over jeans have decided to make a comeback no one wanted.",
+              "source": "Her.ie",
+              "date": "Sep 26, 2023"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What Does GRWM Mean? | Get Ready With Me. ...",
+                "link": "https://www.reddit.com/r/savedyouaclick/comments/12zjzl7/what_does_grwm_mean_get_ready_with_me_apparently/",
+                "snippet": "GRWM mean? Get ready with me. Apparently people make videos of themselves putting on makeup and other people watch them.",
+                "position": 1
+              },
+              {
+                "title": "Why is Grown Woman spelled like that (GRWM)? : r/lorde",
+                "link": "https://www.reddit.com/r/lorde/comments/1lll2gs/why_is_grown_woman_spelled_like_that_grwm/",
+                "snippet": "The song title was a bit of a bait and switch for me, but does anyone has speculations about why it's called that and not Grown Woman?",
+                "position": 2
+              },
+              {
+                "title": "Group GRWM?? : r/MakeupAddiction",
+                "link": "https://www.reddit.com/r/MakeupAddiction/comments/1l2jwr0/group_grwm/",
+                "snippet": "A way to connect with other makeup lovers and chit chat and get ready together on a designated day of the week, via zoom, FaceTime, or whatever other platform ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "GRWM Everyday Makeup Look * NEW Makeup * Chit Chat ...",
+                "link": "https://x.com/joylilacbeauty/status/2014431300443086943",
+                "snippet": "Let's do some makeup!! I haven't done a long form GRWM (Get Ready with Me) in a long time so I was really excited and a little nervous! Hope ...",
+                "position": 1
+              },
+              {
+                "title": "\"#GRWM\" - Results on X | Live Posts & Updates",
+                "link": "https://x.com/search?q=%23GR%EF%BC%B7%EF%BC%AD&src=hashtag_click&f=live",
+                "snippet": "Results for \"#GRWM\" on X (Twitter). Find the latest posts, discussions, and updates about #GRWM. 20 results found.",
+                "position": 2
+              },
+              {
+                "title": "Regular girl, pretty makeup #makeup #grwm #locs # ...",
+                "link": "https://x.com/jjuejjuejoe/status/2015657337751503013",
+                "snippet": "Regular girl, pretty makeup #makeup #grwm #locs #makeuptutorial. Enjoy the videos and music you love, upload original content, ...",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Trends that are dying in 2026 do you agree? #grwm ...",
+                "link": "https://www.instagram.com/reel/DUTUgmyEfTx/",
+                "snippet": "That I think are dying in twenty twenty-six. First thing is TikTok houses. I think that they're going to like kind of get a lot less popular ...",
+                "position": 1
+              },
+              {
+                "title": "Sick days over \ud83e\udd27Reset mode: ON \u2728 #grwm #grwmroutine ...",
+                "link": "https://www.instagram.com/reel/DUJMOH3CPlw/",
+                "snippet": "13 likes, 4 comments - sandra_salkic on January 30, 2026: \"Sick days over Reset mode: ON \u2728 #grwm #grwmroutine #grwmmakeup #makeup #glowup ...",
+                "position": 2
+              },
+              {
+                "title": "How to get over your fear of posting #grwm #contentcreator ...",
+                "link": "https://www.youtube.com/shorts/Ay7VXsfcYuY",
+                "snippet": "How to get over your fear of posting #grwm #contentcreator #contenttips #makeup #dayinthelife. 61. Dislike.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "Social Media Trends in 2024",
+              "link": "https://www.teamlewis.com/asia/magazine/social-media-trends-2024/",
+              "snippet": "An example is the #GRWM (Get Ready With Me) trend that saw beauty and fashion influencers get dolled and dressed up before heading out.",
+              "position": 1
+            },
+            {
+              "title": "Mastering GRWM: Transition Outfits for Every Mood",
+              "link": "https://www.lemon8-app.com/@kylieasutton/7389124718618460677?region=id",
+              "snippet": "Explore the ultimate guide to GRWM (Get Ready With Me) and find inspiration for your transitional outfits. Discover how to express yourself ...",
+              "position": 2
+            },
+            {
+              "title": "Pooof then she changed hahaha #transitions #grwm ...",
+              "link": "https://www.tiktok.com/@luseeyalu/video/7353281400357014830",
+              "snippet": "You're just like, poop, then she's gone. I know I'm a little bit late to the trend, but let's make this into a transition.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- TikTok Skin Care Routines Are Harmful and Expensive, Researchers Say: New research shows the potential health harms of TikTok skin care videos touting \"lighter, brighter skin\" marketed toward young girls ages 7...\n- \u2018Get Ready With Me\u2019 Videos Are a Comforting Phenomenon: \u201cGet ready with me\u201d videos have taken over TikTok. Creators have been posting clips that invite complete strangers in on their getting-ready processes.\n- General Mills responds to #GRWM, maximalism trends with new cereal: General Mills has put its own twist on the viral #GRWM \u2014 \u201cget ready with me\u201d \u2014 trend on TikTok. The CPG giant is dropping limited-edition \u201cGet...\n\nControversy/Drama:\n- #GRWM: Check Out This Classy Makeup Transformation From Dimma Umeh | WATCH: Hey BellaStylistas,. If you need a classy and modern makeup routine that's easy to replicate, check out this full-face makeup tutorial...\n- Dresses over jeans are, unfortuanately, making a comback: Some 90s trends should stay dead, like low rise denim, but dresses over jeans have decided to make a comeback no one wanted.\n\nReddit Discussions:\n- What Does GRWM Mean? | Get Ready With Me. ...\n- Why is Grown Woman spelled like that (GRWM)? : r/lorde"
+        },
+        "decline_signals": [],
+        "explanation": "{\n    \"explanation\": \"The #GRWM trend is declining due to a combination of factors, including a controversy spike and fatigue. The recent news about the potential health harms of TikTok skin care videos, which are often associated with the #GRWM trend, may have led to a backlash against the trend. Additionally, the trend's fatigue metric is at 0.414, indicating that the trend may be becoming stale and overused. The engagement rate is also relatively low at 0.137, suggesting that users are not interacting with #GRWM content as much as they used to. The sentiment metric is at 1.000, but this may be due to the trend's association with comforting and relatable content, rather than a genuine enthusiasm for the trend itself.\",\n    \n    \"The controversy spike may be attributed to the trend's focus on beauty and skincare routines, which can be perceived as promoting unrealistic beauty standards or expensive products. The fact that General Mills has responded to the trend with a limited-edition cereal may also be seen as a attempt to capitalize on the trend, which could be perceived as inauthentic. The Reddit discussions about the trend, including the question of what #GRWM means, may also indicate a lack of understanding or interest in the trend.\",\n    \n    \"The decline of the #GRWM trend may also be due to the cyclical nature of social media trends. As new trends emerge, older trends tend to fade away. The fact that dresses over jeans are making a comeback, a trend that is often associated with the 90s, may indicate that the #GRWM trend is being replaced by new and more nostalgic trends.\",\n    \n    \"confidence\": 0.8,\n    \n    \"key_factors\": [\"controversy spike\", \"fatigue\", \"low engagement rate\", \"cyclical nature of social media trends\"],\n    \n    \"recommendations\": [\"Rebrand the #GRWM trend to focus on more inclusive and diverse beauty standards\", \"Encourage creators to produce more original and engaging content\", \"Partner with influencers and brands to promote more authentic and relatable content\", \"Monitor and respond to controversy and backlash in a timely and transparent manner\"],\n    \n    \"evidence\": [\"TikTok Skin Care Routines Are Harmful and Expensive, Researchers Say\", \"Dresses over jeans are, unfortunately, making a comeback\", \"General Mills responds to #GRWM, maximalism trends with new cereal\", \"Reddit discussions about the trend, including the question of what #GRWM means\"]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "Its Corn Remix",
+      "archetype": "algorithm_killed",
+      "total_days": 39,
+      "state_sequence_summary": {
+        "Decline": 20,
+        "Peak": 5,
+        "Growth": 3,
+        "Emerging": 11
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 19,
+        "date": "2025-02-10",
+        "state": "Decline",
+        "metrics": {
+          "velocity": 0.1561458006513459,
+          "fatigue": 0.5119709867031186,
+          "retention": 0.0
+        },
+        "extended_metrics": {
+          "sentiment": -0.1831854331892717,
+          "engagement_rate": 0.0614199703217007,
+          "content_originality": 0.2623605884947609
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Its Corn Remix",
+        "decline_date": "2025-02-10",
+        "generated_at": "2026-02-08T05:14:35.851762",
+        "metrics_snapshot": {
+          "velocity": 0.1561458006513459,
+          "fatigue": 0.5119709867031186,
+          "retention": 0.0,
+          "sentiment": -0.1831854331892717,
+          "engagement_rate": 0.0614199703217007,
+          "content_originality": 0.2623605884947609
+        },
+        "archetype": "algorithm_killed",
+        "web_context": {
+          "trend_name": "Its Corn Remix",
+          "decline_date": "2025-02-10",
+          "investigated_at": "2026-02-08T05:14:35.851762",
+          "news_coverage": [
+            {
+              "title": "This 6-Ingredient Side Is the First Dish Gone at My Thanksgiving Every Year",
+              "link": "https://www.thekitchn.com/corn-casserole-22948834",
+              "snippet": "Learn to make the easiest corn casserole for Thanksgiving with a box of Jiffy corn muffin mix.",
+              "source": "The Kitchn",
+              "date": "Oct 10, 2025"
+            },
+            {
+              "title": "\u2018Drinking a beer and flicking my\u2026\u2019: Where the filthy viral country song on TikTok comes from",
+              "link": "https://thetab.com/2025/07/22/drinking-a-beer-and-flicking-my-where-the-filthy-viral-country-song-on-tiktok-comes-from",
+              "snippet": "TikTok viral filthy country song made by AI - explaining where it comes from \"drinking a beer and flicking my bean\".",
+              "source": "The Tab",
+              "date": "Jul 22, 2025"
+            },
+            {
+              "title": "The Best Cornbread Comes From a Box\u2014and It's Not Jiffy",
+              "link": "https://www.allrecipes.com/best-cornbread-box-mix-whole-foods-365-11721101",
+              "snippet": "If you're looking for the best cornbread mix you can buy, I've found it. Whole Foods 365 Cornbread & Muffin Mix offers homemade taste with...",
+              "source": "Allrecipes",
+              "date": "Jun 15, 2025"
+            },
+            {
+              "title": "Watch Kevin Bacon perform acoustic version of 'Corn Kid' remix",
+              "link": "https://www.today.com/video/watch-kevin-bacon-perform-acoustic-version-of-corn-kid-remix-147746885941",
+              "snippet": "Kevin Bacon can't stop listening to the viral TikTok \"Corn Kid\" remix, just like the rest of us! The actor picked up his guitar for an...",
+              "source": "TODAY.com",
+              "date": "Sep 5, 2022"
+            },
+            {
+              "title": "The top 5 TikTok trends of 2022",
+              "link": "https://adage.com/article/digital-marketing-ad-tech-news/biggest-tiktok-trends-2022/2458086/",
+              "snippet": "From the butter board craze to the catchy song \u201cIt's Corn!\u201d, TikTok gave us dozens of new trends this year.",
+              "source": "Ad Age",
+              "date": "Dec 15, 2022"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "75 years later, Thanksgiving staple Jiffy corn muffin mix still costs less than $1",
+              "link": "https://www.npr.org/2025/11/25/nx-s1-5599159/thanksgiving-jiffy-corn-muffin-mix",
+              "snippet": "Jiffy corn muffins are an iconic, low-cost pantry staple introduced during the Depression. Thanksgiving is peak season for the company,...",
+              "source": "NPR",
+              "date": "Nov 25, 2025"
+            },
+            {
+              "title": "\u2018Corn Kid\u2019 goes viral \u2013 and gets a remixed song!",
+              "link": "https://www.today.com/video/-corn-kid-goes-viral-and-gets-a-remixed-song-146965573576",
+              "snippet": "An adorable child named Tariq has captured the hearts of millions after going viral online for his love of corn.",
+              "source": "TODAY.com",
+              "date": "Aug 25, 2022"
+            },
+            {
+              "title": "What makes or breaks a TikTok sound? A look into the app\u2019s biggest bops and flops",
+              "link": "https://screenshot-media.com/culture/internet-culture/tiktok-viral-sounds/",
+              "snippet": "Since its inception, TikTok has provided us with tons of memes, viral dances and questionable beauty trends\u2014has anyone actually tried...",
+              "source": "SCREENSHOT Media",
+              "date": "Dec 27, 2022"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "[TOMT] [song] Similar to the TikTok viral \u201cit's corn\u201d song.",
+                "link": "https://www.reddit.com/r/tipofmytongue/comments/x4fvyo/tomt_song_similar_to_the_tiktok_viral_its_corn/",
+                "snippet": "Schmoyoho - It's Corn [pop rock] (2022) || Full Length Corn Kid Remix \u00b7 r/Music - Schmoyoho - It's Corn [pop rock] (2022) |. youtube.",
+                "position": 1
+              },
+              {
+                "title": "They made a full length Corn Kid Remix : r/videos",
+                "link": "https://www.reddit.com/r/videos/comments/x0b909/they_made_a_full_length_corn_kid_remix/",
+                "snippet": "And the next day, on the toilet, and you're once again reminded, \"It's CORN!!\"",
+                "position": 2
+              },
+              {
+                "title": "The \u201cit's corn\u201d song is the worst piece of media in the last ...",
+                "link": "https://www.reddit.com/r/rant/comments/zwj6h5/the_its_corn_song_is_the_worst_piece_of_media_in/",
+                "snippet": "The \u201cit's corn\u201d song is the worst piece of media in the last bicentennial. I really thought I fucking got away from that flat brained 'it's corn' song on tik ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "Chrisbrown is a corn \ud83c\udf3d\u2026.This is actually confusing",
+                "link": "https://x.com/oleru_victor/status/2012203428223520923",
+                "snippet": "This is actually confusing \u2014 how do you make a remix with Gunna, then turn around and use the original version with Burna Boy to promote it?",
+                "position": 1
+              },
+              {
+                "title": "CORN HALL GOT ITS SECOND RE-ARRANGEMENT",
+                "link": "https://x.com/SB2749/status/1992770634980667756",
+                "snippet": "CORN HALL GOT ITS SECOND RE-ARRANGEMENT. ShockHat734 profile. ShockHat734. ShockHat734. Nov 23. WHY THE FUCK IS THE GOURMET RACE REMIX 5 MINUTES LONG.",
+                "position": 2
+              },
+              {
+                "title": "KornArt (@KornArt3) / Posts / X",
+                "link": "https://x.com/KornArt3",
+                "snippet": "A cover/remix of I'm Here Revisited from Sonic Frontiers (The Final Horizon DLC) with Cori Adkins on vocals. Thank you Cori for featuring on this, thank you ...",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "Its corn!!!! (Remix)",
+                "link": "https://m.youtube.com/watch?v=PlqYs2UFxHA",
+                "snippet": "This content isn't available. Sub if you like corn https://store.playstat... Its corn!!!! (Remix) ... Over-Dramatic Animals Who Deserve an Oscar Funniest ...",
+                "position": 1
+              },
+              {
+                "title": "it's corn (TikTok Song) (Instrumental) \"it's corn, a big lump of ...",
+                "link": "https://www.youtube.com/watch?v=aZfOcnSV3Hk",
+                "snippet": "... its corn remix,its corn interview,its corn original,corn kid ... Over and Froze Him. The Great Ozz Stories\u2022760K views \u00b7 28:56. Go to ...",
+                "position": 2
+              },
+              {
+                "title": "Its Corn Remix Went West",
+                "link": "https://www.tiktok.com/discover/its-corn-remix-went-west",
+                "snippet": "... Its Corn Remix Mango, Cornbread Cupcakke Remix, Down Down Down Remix ... Its Corn Remix Went West ... Come over Remix East Rich \u00b7 Peanuts Theme Rap Remix.",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "Its Corn Remix Went West",
+              "link": "https://www.tiktok.com/discover/its-corn-remix-went-west",
+              "snippet": "187.9M posts. Discover videos related to Its Corn Remix Went West on TikTok. See more videos about It's Corn Mango Remix, Go West Remix, Popcorn Remix, ...",
+              "position": 1
+            },
+            {
+              "title": "Giorgos Katidis H*tlergruss #racism #football #soccer ...",
+              "link": "https://www.tiktok.com/@winston0410/video/7193007428152216838",
+              "snippet": "Germany New Goal Song \u00b7 Germany Military \u00b7 German Song about Bread \u00b7 East ... its corn #remix #song #viral #meme #funny \u00b7 Originalton - KFC ...",
+              "position": 2
+            }
+          ],
+          "summary_context": "Recent News:\n- This 6-Ingredient Side Is the First Dish Gone at My Thanksgiving Every Year: Learn to make the easiest corn casserole for Thanksgiving with a box of Jiffy corn muffin mix.\n- \u2018Drinking a beer and flicking my\u2026\u2019: Where the filthy viral country song on TikTok comes from: TikTok viral filthy country song made by AI - explaining where it comes from \"drinking a beer and flicking my bean\".\n- The Best Cornbread Comes From a Box\u2014and It's Not Jiffy: If you're looking for the best cornbread mix you can buy, I've found it. Whole Foods 365 Cornbread & Muffin Mix offers homemade taste with...\n\nControversy/Drama:\n- 75 years later, Thanksgiving staple Jiffy corn muffin mix still costs less than $1: Jiffy corn muffins are an iconic, low-cost pantry staple introduced during the Depression. Thanksgiving is peak season for the company,...\n- \u2018Corn Kid\u2019 goes viral \u2013 and gets a remixed song!: An adorable child named Tariq has captured the hearts of millions after going viral online for his love of corn.\n\nReddit Discussions:\n- [TOMT] [song] Similar to the TikTok viral \u201cit's corn\u201d song.\n- They made a full length Corn Kid Remix : r/videos"
+        },
+        "decline_signals": [
+          {
+            "signal": "LOW_VELOCITY",
+            "severity": "medium",
+            "value": 0.1561458006513459,
+            "description": "Engagement speed has dropped significantly"
+          },
+          {
+            "signal": "INFLUENCER_EXODUS",
+            "severity": "high",
+            "value": 0.0,
+            "description": "Key creators abandoning the trend"
+          },
+          {
+            "signal": "CONTENT_STAGNATION",
+            "severity": "medium",
+            "value": 0.2623605884947609,
+            "description": "Mostly reposts, lacking fresh content"
+          }
+        ],
+        "explanation": "{\n    \"explanation\": \"The 'It's Corn' remix trend is declining due to a combination of factors, including a significant drop in engagement speed (LOW_VELOCITY), key creators abandoning the trend (INFLUENCER_EXODUS), and a lack of fresh content (CONTENT_STAGNATION). The trend's velocity has dropped to 0.156, indicating a substantial decrease in user engagement. Furthermore, the sentiment surrounding the trend has turned negative, with a sentiment score of -0.183, suggesting that users are no longer enthusiastic about the trend. The real-world context, including the emergence of new trends and controversies, has also contributed to the decline of the 'It's Corn' remix trend. For instance, the recent news about corn-related topics, such as the 'Corn Kid' and cornbread recipes, may have shifted users' attention away from the remix trend.\",\n    \n    \"The trend's fatigue score of 0.512 also suggests that users are becoming tired of the same content being reposted and remixed. The lack of original content, with a content originality score of 0.262, has led to a stagnation of the trend, making it less appealing to users. The INFLUENCER_EXODUS signal, with a high confidence level, indicates that key creators are no longer participating in the trend, which can further accelerate its decline.\",\n    \n    \"To mitigate the decline, stakeholders can focus on creating fresh and original content, engaging with users, and collaborating with new creators to revitalize the trend. The emergence of new trends and controversies can also be leveraged to create new and interesting content, potentially attracting new users and reinvigorating the trend.\",\n    \n    \"confidence\": 0.8,\n    \n    \"key_factors\": [\n        \"LOW_VELOCITY\",\n        \"INFLUENCER_EXODUS\",\n        \"CONTENT_STAGNATION\",\n        \"NEGATIVE_SENTIMENT\"\n    ],\n    \n    \"recommendations\": [\n        \"Create fresh and original content to revitalize the trend\",\n        \"Engage with users and encourage user-generated content\",\n        \"Collaborate with new creators to bring new perspectives and ideas\",\n        \"Monitor and respond to real-world context and emerging trends\",\n        \"Analyze user feedback and sentiment to identify areas for improvement\"\n    ],\n    \n    \"evidence\": [\n        \"Velocity score of 0.156, indicating a significant drop in engagement speed\",\n        \"Sentiment score of -0.183, suggesting negative user sentiment\",\n        \"Content originality score of 0.262, indicating a lack of fresh content\",\n        \"INFLUENCER_EXODUS signal, indicating key creators are abandoning the trend\",\n        \"Recent news and trends, such as the 'Corn Kid' and cornbread recipes, potentially shifting users' attention away from the remix trend\"\n    ]\n}",
+        "confidence_score": 0.7,
+        "recommendations": [],
+        "evidence": []
+      }
+    },
+    {
+      "trend_name": "Roman Empire Thinking",
+      "archetype": "saturated_death",
+      "total_days": 66,
+      "state_sequence_summary": {
+        "Growth": 4,
+        "Saturation": 5,
+        "Decline": 22,
+        "Peak": 20,
+        "Emerging": 15
+      },
+      "decline_detected": true,
+      "decline_info": {
+        "detected": true,
+        "index": 39,
+        "date": "2025-02-20",
+        "state": "Saturation",
+        "metrics": {
+          "velocity": 0.6712630556182099,
+          "fatigue": 0.8213464544473835,
+          "retention": 0.8320275548248932
+        },
+        "extended_metrics": {
+          "sentiment": 0.8058492145578366,
+          "engagement_rate": 0.1159011959255147,
+          "content_originality": 0.4556790354837896
+        }
+      },
+      "investigation_report": {
+        "trend_name": "Roman Empire Thinking",
+        "decline_date": "2025-02-20",
+        "generated_at": "2026-02-08T05:14:46.024218",
+        "metrics_snapshot": {
+          "velocity": 0.6712630556182099,
+          "fatigue": 0.8213464544473835,
+          "retention": 0.8320275548248932,
+          "sentiment": 0.8058492145578366,
+          "engagement_rate": 0.1159011959255147,
+          "content_originality": 0.4556790354837896
+        },
+        "archetype": "saturated_death",
+        "web_context": {
+          "trend_name": "Roman Empire Thinking",
+          "decline_date": "2025-02-20",
+          "investigated_at": "2026-02-08T05:14:46.024218",
+          "news_coverage": [
+            {
+              "title": "Women are from Venus, men are from the Roman Empire? | Endless Thread",
+              "link": "https://www.wbur.org/endlessthread/2023/11/17/the-roman-empire",
+              "snippet": "Within a few months, the question \"how often do men think about the Roman Empire?\" conquered Instagram, TikTok and countless group chats...",
+              "source": "WBUR",
+              "date": "Nov 17, 2023"
+            },
+            {
+              "title": "TikTok says men think about Rome. Women's #RomanEmpire? Safety",
+              "link": "https://www.inman.com/2024/03/08/tiktok-says-men-cant-stop-thinking-about-rome-but-what-are-women-thinking-about/",
+              "snippet": "Women agents have to think about their safety on the daily. They don't have time for Julius Caesar and the lore of Rome.",
+              "source": "Inman Real Estate News",
+              "date": "Mar 8, 2024"
+            },
+            {
+              "title": "Your \u2018Roman Empire\u2019 is Not Mine",
+              "link": "https://berkeleybeacon.com/your-roman-empire-is-not-mine/",
+              "snippet": "Princess Diana. The Eras Tour. The War of 1812. Big Trucks. These are all things to think about that are not the Roman Empire\u2014so why do men...",
+              "source": "The Berkeley Beacon",
+              "date": "Oct 18, 2023"
+            }
+          ],
+          "controversy_signals": [
+            {
+              "title": "Female gladiators shocked the ancient Roman world \u2014 but not for the reason you think",
+              "link": "https://www.historyextra.com/period/roman/ancient-gladiators-female-role-and-reality/",
+              "snippet": "Though rare, female gladiators did appear in the Roman arena, challenging ancient Rome's expectations and revealing how spectacle,...",
+              "source": "HistoryExtra",
+              "date": "Dec 2, 2025"
+            },
+            {
+              "title": "Calibri\u2019s Run-In With Rubio Wasn\u2019t Its First Controversy",
+              "link": "https://www.nytimes.com/2025/12/11/us/calibri-font-history-rubio-times-new-roman.html",
+              "snippet": "The typeface, the target of the State Department's typographical about-face, has been entangled in politics before.",
+              "source": "The New York Times",
+              "date": "Dec 11, 2025"
+            },
+            {
+              "title": "'Every damn day': We asked a psychologist why boys think about the Roman Empire so much",
+              "link": "https://thetab.com/2023/09/14/roman-empire-men-tik-tok-trend",
+              "snippet": "TikTok recently discovered that men think about the Roman empire a LOT, so we asked a psychologist what's going on in their minds.",
+              "source": "The Tab",
+              "date": "Sep 14, 2023"
+            }
+          ],
+          "social_discussions": {
+            "reddit": [
+              {
+                "title": "What's up with the \u201cHow often do you think about ...",
+                "link": "https://www.reddit.com/r/OutOfTheLoop/comments/16lw6pl/whats_up_with_the_how_often_do_you_think_about/",
+                "snippet": "A series of 10 screenshots showing DMs and comments about how often men thought about the Roman empire interesting.",
+                "position": 1
+              },
+              {
+                "title": "Men, be honest \u2014 how often do you think about the Roman ...",
+                "link": "https://www.reddit.com/r/HistoryMemes/comments/16iu9qk/men_be_honest_how_often_do_you_think_about_the/",
+                "snippet": "It started with a Swedish influencer making videos about how she and her friends had noticed men think a lot about the roman empire.",
+                "position": 2
+              },
+              {
+                "title": "How often do you think of the Roman Empire in a week?",
+                "link": "https://www.reddit.com/r/ancientrome/comments/16i7jo9/tik_tok_trend_how_often_do_you_think_of_the_roman/",
+                "snippet": "On average once a day. I think the armor and language are cool and I love ancient military history. Less of a fan of Colonial Era onwards. Also ...",
+                "position": 3
+              }
+            ],
+            "twitter": [
+              {
+                "title": "Men think about the Roman Empire constantly because we' ...",
+                "link": "https://x.com/Cobratate/status/1702602482805842330",
+                "snippet": "The Roman Empire was extremely large and complicated yet brutally effective. Aesthetically beautiful. Militarily successful, economically brilliant.",
+                "position": 1
+              },
+              {
+                "title": "Common misconception. Thinking actually precedes ...",
+                "link": "https://x.com/besttrousers/status/2016648793106624754",
+                "snippet": "Thinking actually precedes the Roman Empire by centuries. Many people during the Roman Republic thought.",
+                "position": 2
+              },
+              {
+                "title": "that month where everyone pretended their stupid ...",
+                "link": "https://x.com/gracecamille_/status/1971249012310528263",
+                "snippet": "that month where everyone pretended their stupid boyfriends think about the Roman Empire..",
+                "position": 3
+              }
+            ],
+            "general": [
+              {
+                "title": "A compilation of BN women asking the men in their lives how ...",
+                "link": "https://www.reddit.com/r/thebachelor/comments/16l9y4p/a_compilation_of_bn_women_asking_the_men_in_their/",
+                "snippet": "because that's like not the Roman Empire\u2026\u2026 Edit: to clarify, concentrated power in the hands of the a few is the Roman Empire. Thinking of ...",
+                "position": 1
+              },
+              {
+                "title": "Is your \u201croman empire\u201d thinking at least once a day ...",
+                "link": "https://www.instagram.com/reel/Cy0MGfrPHcV/?next=%2Fabuatab333%2Ffeed%2F",
+                "snippet": "... likes, 20 comments - moniquecastrission on October 25, 2023: \"Is your \u201croman empire\u201d thinking ... over the years, you look down at the pictures ...",
+                "position": 2
+              },
+              {
+                "title": "Meme Shows Boyfriends' Obsession With the Roman Empire",
+                "link": "https://dailydot.com/roman-empire-boyfriends/",
+                "snippet": "In a TikTok with over 3.5 million views by Thursday, Ashley Lance ... \u201cI asked how much my husband thinks about the Roman Empire thinking ...",
+                "position": 3
+              }
+            ]
+          },
+          "competitor_trends": [
+            {
+              "title": "I dont get it : r/PeterExplainsTheJoke",
+              "link": "https://www.reddit.com/r/PeterExplainsTheJoke/comments/16t69j4/i_dont_get_it/",
+              "snippet": "Tik tok has started a trend that is basically the spiritual successor to that. ... This is joking about men in the Roman Empire thinking about ...",
+              "position": 1
+            },
+            {
+              "title": "What is the difference between the Roman Republic ...",
+              "link": "https://www.quora.com/What-is-the-difference-between-the-Roman-Republic-Roman-Empire-and-the-Holy-Roman-Empire",
+              "snippet": "The German kings, elected by the German prince-electors, always had the ambition to be the new emperor of the whole Roman empire. Thinking that ...",
+              "position": 2
+            },
+            {
+              "title": "How Often do You Think About the Roman Empire Rome",
+              "link": "https://www.amazon.com/Often-Think-About-Roman-Empire/dp/B0CL7YNT9C",
+              "snippet": "Amazon.com: How Often do You Think About the Roman Empire Thinking Rome Tote Bag : Clothing, Shoes & Jewelry.",
+              "position": 3
+            }
+          ],
+          "summary_context": "Recent News:\n- Women are from Venus, men are from the Roman Empire? | Endless Thread: Within a few months, the question \"how often do men think about the Roman Empire?\" conquered Instagram, TikTok and countless group chats...\n- TikTok says men think about Rome. Women's #RomanEmpire? Safety: Women agents have to think about their safety on the daily. They don't have time for Julius Caesar and the lore of Rome.\n- Your \u2018Roman Empire\u2019 is Not Mine: Princess Diana. The Eras Tour. The War of 1812. Big Trucks. These are all things to think about that are not the Roman Empire\u2014so why do men...\n\nControversy/Drama:\n- Female gladiators shocked the ancient Roman world \u2014 but not for the reason you think: Though rare, female gladiators did appear in the Roman arena, challenging ancient Rome's expectations and revealing how spectacle,...\n- Calibri\u2019s Run-In With Rubio Wasn\u2019t Its First Controversy: The typeface, the target of the State Department's typographical about-face, has been entangled in politics before.\n\nReddit Discussions:\n- What's up with the \u201cHow often do you think about ...\n- Men, be honest \u2014 how often do you think about the Roman ..."
+        },
+        "decline_signals": [
+          {
+            "signal": "HIGH_FATIGUE",
+            "severity": "high",
+            "value": 0.8213464544473835,
+            "description": "Audience showing signs of content saturation"
+          }
+        ],
+        "explanation": "The Roman Empire Thinking trend is declining due to a combination of factors, primarily driven by audience fatigue and content saturation. The trend's velocity of 0.671 and high fatigue level of 0.821 indicate that the topic has been overexplored, leading to a decrease in engagement and interest. Furthermore, the controversy and drama surrounding the trend, such as the perceived gender disparity in interest and the association with other contentious topics, have likely contributed to its decline. The real-world context, including news articles and Reddit discussions, suggests that the trend has become a meme and a symbol of internet culture, which can be a double-edged sword, as it may attract initial attention but ultimately lead to oversaturation and decline.",
+        "confidence_score": 0.85,
+        "recommendations": [
+          "Diversify content to avoid oversaturation and maintain audience interest",
+          "Address and acknowledge the controversy surrounding the trend to mitigate its negative impact",
+          "Explore new and related topics to revitalize engagement and attract new audiences",
+          "Monitor and analyze audience feedback to identify areas for improvement and optimize content strategy"
+        ],
+        "evidence": [
+          "Velocity of 0.671, indicating a decline in trend momentum",
+          "High fatigue level of 0.821, suggesting audience exhaustion with the topic",
+          "News articles and Reddit discussions highlighting the trend's controversy and memeification",
+          "Low engagement rate of 0.116, indicating a decline in audience participation and interest"
+        ]
+      }
+    }
+  ]
+}
