@@ -253,10 +253,6 @@ class TrendInvestigator:
                 "recommendations": [],
                 "evidence": []
             }
-                "confidence": 0.0,
-                "recommendations": [],
-                "evidence": []
-            }
     
     def _build_explanation_prompt(
         self,

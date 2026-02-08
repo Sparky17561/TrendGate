@@ -574,10 +574,24 @@ function StateDistributionChart({ distribution }) {
           </Pie>
           <Tooltip
             contentStyle={{
-              backgroundColor: '#141414',
-              border: '1px solid #2a2a2a',
+              backgroundColor: 'rgba(20, 20, 20, 0.9)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               borderRadius: '12px',
-              color: '#ffffff'
+              color: '#ffffff',
+              padding: '12px 16px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+            }}
+            itemStyle={{
+              color: '#ffffff',
+              fontSize: '14px',
+              fontWeight: '500'
+            }}
+            labelStyle={{
+              color: '#a3a3a3',
+              fontSize: '12px',
+              marginBottom: '4px'
             }}
           />
         </RechartsPie>
@@ -651,64 +665,82 @@ function TrendsDashboard() {
           </button>
         </div>
 
-        {/* Trend Selector Dropdown */}
-        <div className="relative mb-6">
+        {/* Trend Selector Dropdown - Enhanced */}
+        <div className="relative mb-6 group">
+          <div className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none z-10">
+            <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+          </div>
           <select
             value={selectedTrend || ''}
             onChange={(e) => handleTrendSelect(e.target.value)}
-            className="w-full px-6 py-5 rounded-xl bg-[#141414] border-2 border-[#2a2a2a] focus:border-white/30 text-white text-lg font-medium appearance-none cursor-pointer transition-all hover:bg-[#1a1a1a] focus:outline-none focus:ring-2 focus:ring-white/10"
+            className="w-full pl-10 pr-12 py-5 rounded-xl bg-[#181818] border-2 border-[#2a2a2a] focus:border-cyan-500/50 text-white text-base font-medium appearance-none cursor-pointer transition-all hover:bg-[#1f1f1f] hover:border-[#3a3a3a] focus:outline-none focus:ring-2 focus:ring-cyan-500/20 shadow-lg hover:shadow-cyan-500/10"
+            style={{ 
+              fontVariant: 'tabular-nums',
+            }}
           >
-            <option value="">🔍 Select a Trend/Meme to Analyze...</option>
+            <option value="" className="bg-[#141414]">Select a Trend/Meme to Analyze...</option>
             {trends.map((trend, idx) => (
-              <option key={idx} value={trend.trend_name}>
-                {trend.trend_name} {trend.archetype ? `(${trend.archetype})` : ''} — {trend.data_points} days
+              <option key={idx} value={trend.trend_name} className="bg-[#141414] py-3">
+                {trend.trend_name} • {trend.archetype ? `${trend.archetype.replace(/_/g, ' ')}` : 'Unknown'} • {trend.data_points} data points
               </option>
             ))}
           </select>
-          <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+          <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none transition-transform group-hover:text-cyan-400" />
         </div>
 
-        {/* Quick Stats */}
+        {/* Quick Stats - Subtle Colored Cards */}
         {trends.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] rounded-xl p-5 text-center border border-white/[0.08] hover-lift transition-all">
+            {/* Total Trends - Blue Tint */}
+            <div className="relative overflow-hidden rounded-xl p-5 text-center border border-cyan-500/10 hover-lift transition-all group cursor-default" 
+                 style={{ background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.02) 100%)' }}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <TrendingUp className="w-5 h-5 text-cyan-400" />
-                <div className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <div className="text-4xl font-bold text-white">
                   {trends.length}
                 </div>
               </div>
-              <div className="text-sm text-gray-400 uppercase tracking-wide">Total Trends</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Total Trends</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
 
-            <div className="bg-gradient-to-br from-red-500/10 to-red-500/5 rounded-xl p-5 text-center border border-red-500/20 hover-lift transition-all">
+            {/* Viral Crashes - Red Tint */}
+            <div className="relative overflow-hidden rounded-xl p-5 text-center border border-red-500/10 hover-lift transition-all group cursor-default"
+                 style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%)' }}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Zap className="w-5 h-5 text-red-400" />
-                <div className="text-3xl font-bold text-red-300">
+                <div className="text-4xl font-bold text-white">
                   {trends.filter(t => t.archetype === 'viral_crash').length}
                 </div>
               </div>
-              <div className="text-sm text-gray-400 uppercase tracking-wide">Viral Crashes</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Viral Crashes</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 text-center border border-amber-500/20 hover-lift transition-all">
+            {/* Controversies - Amber Tint */}
+            <div className="relative overflow-hidden rounded-xl p-5 text-center border border-amber-500/10 hover-lift transition-all group cursor-default"
+                 style={{ background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%)' }}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <AlertTriangle className="w-5 h-5 text-amber-400" />
-                <div className="text-3xl font-bold text-amber-300">
+                <div className="text-4xl font-bold text-white">
                   {trends.filter(t => t.archetype === 'controversy_spike').length}
                 </div>
               </div>
-              <div className="text-sm text-gray-400 uppercase tracking-wide">Controversies</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Controversies</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
 
-            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 text-center border border-emerald-500/20 hover-lift transition-all">
+            {/* Total Data Points - Green Tint */}
+            <div className="relative overflow-hidden rounded-xl p-5 text-center border border-emerald-500/10 hover-lift transition-all group cursor-default"
+                 style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%)' }}>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <BarChart3 className="w-5 h-5 text-emerald-400" />
-                <div className="text-3xl font-bold text-emerald-300">
+                <div className="text-4xl font-bold text-white">
                   {trends.reduce((sum, t) => sum + (t.data_points || 0), 0)}
                 </div>
               </div>
-              <div className="text-sm text-gray-400 uppercase tracking-wide">Total Data Points</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Total Data Points</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
           </div>
         )}

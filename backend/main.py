@@ -243,14 +243,18 @@ async def list_trends():
         pd = analyzer["pd"]
         
         # Use helper to find data file
-        data_file = get_data_file_path("data/trends_dataset.csv")
+        data_file = get_data_file_path("data/final_trends_dataset_v2.xlsx")
         if not os.path.exists(data_file):
             data_file = get_data_file_path("data/trend_data.csv")
         
         if not os.path.exists(data_file):
             return {"trends": [], "count": 0, "message": "No data files found"}
         
-        df = pd.read_csv(data_file)
+        # Read file based on extension
+        if data_file.endswith('.xlsx'):
+            df = pd.read_excel(data_file)
+        else:
+            df = pd.read_csv(data_file)
         
         if "trend_name" in df.columns:
             trends = df.groupby("trend_name").agg({
@@ -290,14 +294,18 @@ async def analyze_trend(input: TrendAnalysisInput):
         hmm = analyzer["hmm"]
         decoder = analyzer["decoder"]
         
-        data_file = get_data_file_path("data/trends_dataset.csv")
+        data_file = get_data_file_path("data/final_trends_dataset_v2.xlsx")
         if not os.path.exists(data_file):
             data_file = get_data_file_path("data/trend_data.csv")
         
         if not os.path.exists(data_file):
             raise HTTPException(status_code=404, detail="No trend data found")
         
-        df = pd.read_csv(data_file)
+        # Read file based on extension
+        if data_file.endswith('.xlsx'):
+            df = pd.read_excel(data_file)
+        else:
+            df = pd.read_csv(data_file)
         
         # Filter by trend name if specified
         if input.trend_name and "trend_name" in df.columns:
