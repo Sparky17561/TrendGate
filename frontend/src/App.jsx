@@ -164,28 +164,34 @@ function CampaignForm({ onSubmit, loading }) {
 //VIABILITY SCORE COMPONENT ---
 function ViabilityScore({ score }) {
   const getColor = () => {
-    if (score >= 70) return 'from-white to-gray-100';
-    if (score >= 40) return 'from-gray-300 to-gray-400';
-    return 'from-gray-500 to-gray-600';
+    if (score >= 75) return 'from-emerald-400 to-emerald-500';
+    if (score >= 40) return 'from-amber-400 to-amber-500';
+    return 'from-red-400 to-red-500';
   };
 
   const getLabel = () => {
-    if (score >= 70) return 'High Potential';
+    if (score >= 75) return 'High Potential';
     if (score >= 40) return 'Moderate Risk';
     return 'High Risk';
+  };
+
+  const getBgGlow = () => {
+    if (score >= 75) return 'shadow-[0_0_40px_rgba(16,185,129,0.05)]';
+    if (score >= 40) return 'shadow-[0_0_40px_rgba(245,158,11,0.05)]';
+    return 'shadow-[0_0_40px_rgba(239,68,68,0.05)]';
   };
 
   return (
     <div className="relative">
       <div className="text-center mb-4">
-        <div className={`text-6xl font-bold bg-gradient-to-r ${getColor()} bg-clip-text text-transparent`}>
+        <div className={`text-7xl font-bold bg-gradient-to-r ${getColor()} bg-clip-text text-transparent ${getBgGlow()}`}>
           {score}
         </div>
-        <div className="text-gray-400 text-sm uppercase tracking-wider mt-1">{getLabel()}</div>
+        <div className="text-gray-400 text-sm uppercase tracking-wider mt-2">{getLabel()}</div>
       </div>
-      <div className="h-3 bg-[#141414] rounded-full overflow-hidden">
+      <div className="h-3 bg-[#141414] rounded-full overflow-hidden border border-white/5">
         <div
-          className={`h-full bg-gradient-to-r ${getColor()} transition-all duration-1000`}
+          className={`h-full bg-gradient-to-r ${getColor()} transition-all duration-1000 shadow-lg`}
           style={{ width: `${score}%` }}
         />
       </div>
@@ -282,21 +288,39 @@ function AnalysisResults({ results }) {
 
       {/* Recommendations */}
       {results.recommendations && results.recommendations.length > 0 && (
-        <div className="glass rounded-2xl p-6 hover-lift">
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-            <Lightbulb className="w-5 h-5 text-white" />
+            <Lightbulb className="w-5 h-5 text-amber-400" />
             Recommendations
           </h3>
-          <ul className="space-y-3">
-            {results.recommendations.slice(0, 5).map((rec, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-gray-300">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 text-white text-sm flex items-center justify-center font-medium">
-                  {idx + 1}
-                </span>
-                {rec}
-              </li>
-            ))}
-          </ul>
+          <div className="grid gap-4">
+            {results.recommendations.slice(0, 5).map((rec, idx) => {
+              // Parse markdown-style bold text (**text**)
+              const parts = rec.split(/\*\*(.*?)\*\*/g);
+
+              return (
+                <div
+                  key={idx}
+                  className="glass rounded-xl p-5 hover-lift transition-all duration-300 border-l-4 border-amber-400/50"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-black text-sm flex items-center justify-center font-bold shadow-lg">
+                      {idx + 1}
+                    </span>
+                    <div className="flex-1 text-gray-300 leading-relaxed">
+                      {parts.map((part, i) =>
+                        i % 2 === 0 ? (
+                          <span key={i}>{part}</span>
+                        ) : (
+                          <strong key={i} className="text-white font-semibold">{part}</strong>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
 
@@ -609,29 +633,30 @@ function TrendsDashboard() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header with Trend Selector */}
-      <div className="glass rounded-2xl p-6 hover-lift">
-        <div className="flex items-center justify-between mb-4">
+      <div className="glass rounded-2xl p-8 hover-lift">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-white">Trend Analytics Dashboard</h2>
-            <p className="text-gray-400 mt-1">Select a meme or hashtag to analyze its lifecycle</p>
+            <h2 className="text-3xl font-bold text-white mb-2">Trend Analytics Dashboard</h2>
+            <p className="text-gray-400">Select a meme or hashtag to analyze its lifecycle and get AI-powered insights</p>
           </div>
           <button
             onClick={loadTrends}
             disabled={loadingList}
-            className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+            className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover-lift border border-white/5"
+            title="Refresh trends list"
           >
-            <RefreshCw className={`w-5 h-5 text-gray-400 ${loadingList ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`w-5 h-5 text-gray-300 ${loadingList ? 'animate-spin' : ''}`} />
           </button>
         </div>
 
         {/* Trend Selector Dropdown */}
-        <div className="relative">
+        <div className="relative mb-6">
           <select
             value={selectedTrend || ''}
             onChange={(e) => handleTrendSelect(e.target.value)}
-            className="w-full px-6 py-4 rounded-xl bg-[#141414] border border-[#2a2a2a] focus:border-white/20 text-white text-lg font-medium appearance-none cursor-pointer transition-all hover:bg-[#1a1a1a]"
+            className="w-full px-6 py-5 rounded-xl bg-[#141414] border-2 border-[#2a2a2a] focus:border-white/30 text-white text-lg font-medium appearance-none cursor-pointer transition-all hover:bg-[#1a1a1a] focus:outline-none focus:ring-2 focus:ring-white/10"
           >
             <option value="">🔍 Select a Trend/Meme to Analyze...</option>
             {trends.map((trend, idx) => (
@@ -640,33 +665,50 @@ function TrendsDashboard() {
               </option>
             ))}
           </select>
-          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+          <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
         </div>
 
         {/* Quick Stats */}
         {trends.length > 0 && (
-          <div className="grid grid-cols-4 gap-4 mt-6">
-            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
-              <div className="text-3xl font-bold text-white">{trends.length}</div>
-              <div className="text-sm text-gray-400 mt-1">Total Trends</div>
-            </div>
-            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
-              <div className="text-3xl font-bold text-white">
-                {trends.filter(t => t.archetype === 'viral_crash').length}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] rounded-xl p-5 text-center border border-white/[0.08] hover-lift transition-all">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <TrendingUp className="w-5 h-5 text-cyan-400" />
+                <div className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  {trends.length}
+                </div>
               </div>
-              <div className="text-sm text-gray-400 mt-1">Viral Crashes</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Total Trends</div>
             </div>
-            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
-              <div className="text-3xl font-bold text-white">
-                {trends.filter(t => t.archetype === 'controversy_spike').length}
+
+            <div className="bg-gradient-to-br from-red-500/10 to-red-500/5 rounded-xl p-5 text-center border border-red-500/20 hover-lift transition-all">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Zap className="w-5 h-5 text-red-400" />
+                <div className="text-3xl font-bold text-red-300">
+                  {trends.filter(t => t.archetype === 'viral_crash').length}
+                </div>
               </div>
-              <div className="text-sm text-gray-400 mt-1">Controversies</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Viral Crashes</div>
             </div>
-            <div className="bg-white/[0.02] rounded-xl p-4 text-center border border-white/[0.05]">
-              <div className="text-3xl font-bold text-white">
-                {trends.reduce((sum, t) => sum + (t.data_points || 0), 0)}
+
+            <div className="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 text-center border border-amber-500/20 hover-lift transition-all">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <AlertTriangle className="w-5 h-5 text-amber-400" />
+                <div className="text-3xl font-bold text-amber-300">
+                  {trends.filter(t => t.archetype === 'controversy_spike').length}
+                </div>
               </div>
-              <div className="text-sm text-gray-400 mt-1">Total Data Points</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Controversies</div>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 text-center border border-emerald-500/20 hover-lift transition-all">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <BarChart3 className="w-5 h-5 text-emerald-400" />
+                <div className="text-3xl font-bold text-emerald-300">
+                  {trends.reduce((sum, t) => sum + (t.data_points || 0), 0)}
+                </div>
+              </div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Total Data Points</div>
             </div>
           </div>
         )}
@@ -722,148 +764,185 @@ function TrendsDashboard() {
 
           {/* Decline Detection */}
           {trendAnalysis.decline_detected && trendAnalysis.decline_info && (
-            <div className="glass rounded-2xl p-6 lg:col-span-2 border-l-4 border-white/20 hover-lift">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <TrendingDown className="w-5 h-5 text-white" />
-                ⚠️ Decline Detected on {trendAnalysis.decline_info.date}
-              </h3>
+            <div className="glass rounded-2xl p-8 lg:col-span-2 border-l-4 border-red-500/50 hover-lift">
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white mb-2 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-red-500/20 border border-red-500/30">
+                      <TrendingDown className="w-6 h-6 text-red-400" />
+                    </div>
+                    Decline Detected
+                  </h3>
+                  <p className="text-gray-400 flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    {trendAnalysis.decline_info.date}
+                  </p>
+                </div>
+                <span className="px-4 py-2 rounded-full bg-red-500/20 text-red-300 text-sm font-medium border border-red-500/30">
+                  Alert Active
+                </span>
+              </div>
 
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
-                  <div className="text-sm text-gray-400 mb-1">State</div>
-                  <div className="text-xl font-bold" style={{ color: STATE_COLORS[trendAnalysis.decline_info.state] }}>
+              {/* Metrics Grid */}
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
+                <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] rounded-xl p-5 border border-white/[0.08]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-sm text-gray-400 uppercase tracking-wide">State</div>
+                    <BarChart3 className="w-4 h-4 text-gray-500" />
+                  </div>
+                  <div className="text-2xl font-bold" style={{ color: STATE_COLORS[trendAnalysis.decline_info.state] }}>
                     {trendAnalysis.decline_info.state}
                   </div>
                 </div>
-                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
-                  <div className="text-sm text-gray-400 mb-1">Velocity</div>
-                  <div className="text-xl font-bold text-white">
+
+                <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 rounded-xl p-5 border border-cyan-500/20">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-sm text-gray-400 uppercase tracking-wide">Velocity</div>
+                    <TrendingUp className="w-4 h-4 text-cyan-400" />
+                  </div>
+                  <div className="text-2xl font-bold text-cyan-300">
                     {(trendAnalysis.decline_info.metrics?.velocity * 100).toFixed(1)}%
                   </div>
                 </div>
-                <div className="bg-white/[0.02] rounded-xl p-4 border border-white/[0.05]">
-                  <div className="text-sm text-gray-400 mb-1">Fatigue</div>
-                  <div className="text-xl font-bold text-white">
+
+                <div className="bg-gradient-to-br from-amber-500/10 to-amber-500/5 rounded-xl p-5 border border-amber-500/20">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-sm text-gray-400 uppercase tracking-wide">Fatigue</div>
+                    <Activity className="w-4 h-4 text-amber-400" />
+                  </div>
+                  <div className="text-2xl font-bold text-amber-300">
                     {(trendAnalysis.decline_info.metrics?.fatigue * 100).toFixed(1)}%
                   </div>
                 </div>
               </div>
 
               {/* AI Metric Explanations - NEW */}
-              <div className="space-y-4 mt-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-                  <h4 className="font-semibold text-white">AI Metric Analysis</h4>
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-sm font-medium text-white">
-                    Detailed Insights
-                  </span>
-                </div>
-
-                {/* Velocity Analysis */}
-                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4 text-cyan-400" />
-                      <span className="font-medium text-white">Velocity</span>
+              <div className="space-y-6 mt-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg glass">
+                      <Sparkles className="w-5 h-5 text-white" />
                     </div>
-                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'bg-green-500/20 text-green-300' :
-                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'bg-yellow-500/20 text-yellow-300' :
-                          'bg-red-500/20 text-red-300'
-                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
-                      {(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'Strong' :
-                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'Moderate' : 'Weak'}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">
-                    Velocity measures the speed of trend adoption and growth. Current reading shows {
-                      (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'strong momentum' :
-                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'moderate pace' :
-                          'declining interest'
-                    }.
-                  </p>
-                  <div className="text-xs text-gray-500 mt-2">
-                    <strong>Cause:</strong> {
-                      (trendAnalysis.decline_info.metrics?.velocity || 0) < 0.3
-                        ? 'Reduced new user adoption and decreased content creation'
-                        : 'Active community engagement and content virality'
-                    }
+                    <div>
+                      <h4 className="text-xl font-semibold text-white">AI Metric Analysis</h4>
+                      <p className="text-sm text-gray-400">Detailed automated insights</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Fatigue Analysis */}
-                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <Activity className="w-4 h-4 text-amber-400" />
-                      <span className="font-medium text-white">Fatigue</span>
+                {/* Metrics Cards Grid */}
+                <div className="grid gap-5">
+                  {/* Velocity Analysis */}
+                  <div className="glass rounded-xl p-6 hover-lift">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                          <TrendingUp className="w-5 h-5 text-white" />
+                        </div>
+                        <span className="font-semibold text-white text-lg">Velocity</span>
+                      </div>
+                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
+                        {(trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'Strong' :
+                          (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'Moderate' : 'Weak'}
+                      </span>
                     </div>
-                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'bg-green-500/20 text-green-300' :
-                        (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'bg-yellow-500/20 text-yellow-300' :
-                          'bg-red-500/20 text-red-300'
-                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
-                      {(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'Low' :
-                        (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'Moderate' : 'High'}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">
-                    Fatigue indicates audience saturation and repetition aversion. {
-                      (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7 ? 'High fatigue suggests content oversaturation' :
-                        (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.4 ? 'Moderate fatigue indicates need for fresh content' :
-                          'Low fatigue means audience is still engaged'
-                    }.
-                  </p>
-                  <div className="text-xs text-gray-500 mt-2">
-                    <strong>Cause:</strong> {
-                      (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7
-                        ? 'Oversaturation of similar content, declining novelty, repetitive messaging'
-                        : 'Content remains fresh and engaging with audience'
-                    }
-                  </div>
-                  {(trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.6 && (
-                    <div className="text-xs text-green-400 mt-1">
-                      <strong>Action:</strong> Introduce new creative angles, collaborate with fresh creators, or pivot messaging
+                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                      Velocity measures the speed of trend adoption and growth. Current reading shows {
+                        (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.6 ? 'strong momentum' :
+                          (trendAnalysis.decline_info.metrics?.velocity || 0) > 0.3 ? 'moderate pace' :
+                            'declining interest'
+                      }.
+                    </p>
+                    <div className="pt-3 border-t border-white/10">
+                      <p className="text-xs text-gray-400">
+                        <strong className="text-gray-300">Cause:</strong> {
+                          (trendAnalysis.decline_info.metrics?.velocity || 0) < 0.3
+                            ? 'Reduced new user adoption and decreased content creation'
+                            : 'Active community engagement and content virality'
+                        }
+                      </p>
                     </div>
-                  )}
-                </div>
+                  </div>
 
-                {/* Retention Analysis */}
-                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <Shield className="w-4 h-4 text-emerald-400" />
-                      <span className="font-medium text-white">Retention</span>
+                  {/* Fatigue Analysis */}
+                  <div className="glass rounded-xl p-6 hover-lift">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                          <Activity className="w-5 h-5 text-white" />
+                        </div>
+                        <span className="font-semibold text-white text-lg">Fatigue</span>
+                      </div>
+                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
+                        {(trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.4 ? 'Low' :
+                          (trendAnalysis.decline_info.metrics?.fatigue || 0) < 0.7 ? 'Moderate' : 'High'}
+                      </span>
                     </div>
-                    <span className={`badge ${(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'bg-green-500/20 text-green-300' :
-                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'bg-yellow-500/20 text-yellow-300' :
-                          'bg-red-500/20 text-red-300'
-                      } px-3 py-1 rounded-full text-xs border border-white/10`}>
-                      {(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong' :
-                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair' : 'Poor'}
-                    </span>
+                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                      Fatigue indicates audience saturation and repetition aversion. {
+                        (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7 ? 'High fatigue suggests content oversaturation' :
+                          (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.4 ? 'Moderate fatigue indicates need for fresh content' :
+                            'Low fatigue means audience is still engaged'
+                      }.
+                    </p>
+                    <div className="pt-3 border-t border-white/10 space-y-2">
+                      <p className="text-xs text-gray-400">
+                        <strong className="text-gray-300">Cause:</strong> {
+                          (trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.7
+                            ? 'Oversaturation of similar content, declining novelty, repetitive messaging'
+                            : 'Content remains fresh and engaging with audience'
+                        }
+                      </p>
+                      {(trendAnalysis.decline_info.metrics?.fatigue || 0) > 0.6 && (
+                        <p className="text-xs text-white bg-white/10 px-3 py-2 rounded-lg border border-white/20">
+                          <strong>Action:</strong> Introduce new creative angles, collaborate with fresh creators, or pivot messaging
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-400 mb-2">
-                    Retention tracks how well the trend keeps audience attention. {
-                      (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong retention indicates loyal community' :
-                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair retention with room for improvement' :
-                          'Poor retention suggests audience drop-off'
-                    }.
-                  </p>
-                  <div className="text-xs text-gray-500 mt-2">
-                    <strong>Cause:</strong> {
-                      (trendAnalysis.decline_info.metrics?.retention || 0) < 0.4
-                        ? 'Weak community bonds, lack of ongoing value, or competing trends'
-                        : 'Strong community engagement and consistent value delivery'
-                    }
+
+                  {/* Retention Analysis */}
+                  <div className="glass rounded-xl p-6 hover-lift">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                          <Shield className="w-5 h-5 text-white" />
+                        </div>
+                        <span className="font-semibold text-white text-lg">Retention</span>
+                      </div>
+                      <span className="px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
+                        {(trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong' :
+                          (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair' : 'Poor'}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                      Retention tracks how well the trend keeps audience attention. {
+                        (trendAnalysis.decline_info.metrics?.retention || 0) > 0.7 ? 'Strong retention indicates loyal community' :
+                          (trendAnalysis.decline_info.metrics?.retention || 0) > 0.4 ? 'Fair retention with room for improvement' :
+                            'Poor retention suggests audience drop-off'
+                      }.
+                    </p>
+                    <div className="pt-3 border-t border-white/10">
+                      <p className="text-xs text-gray-400">
+                        <strong className="text-gray-300">Cause:</strong> {
+                          (trendAnalysis.decline_info.metrics?.retention || 0) < 0.4
+                            ? 'Weak community bonds, lack of ongoing value, or competing trends'
+                            : 'Strong community engagement and consistent value delivery'
+                        }
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Causal Chain */}
-                <div className="p-4 bg-white/[0.02] rounded-xl border border-white/[0.05]">
-                  <h5 className="text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-yellow-400" />
+                <div className="glass rounded-xl p-6 hover-lift">
+                  <h5 className="text-base font-semibold text-white mb-4 flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                      <Zap className="w-5 h-5 text-white" />
+                    </div>
                     Causal Chain Analysis
                   </h5>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-300 leading-relaxed">
                     {trendAnalysis.decline_info.state === 'Decline' ? (
                       <>
                         The trend entered decline due to a combination of factors:
@@ -887,26 +966,28 @@ function TrendsDashboard() {
 
                 {/* Recovery Actions */}
                 {(trendAnalysis.decline_info.metrics?.velocity || 0) < 0.5 && (
-                  <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
-                    <h5 className="text-sm font-medium text-green-300 mb-3 flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4" />
+                  <div className="glass rounded-xl p-6 border-l-4 border-white/30 hover-lift">
+                    <h5 className="text-base font-semibold text-white mb-4 flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                        <CheckCircle className="w-5 h-5 text-white" />
+                      </div>
                       Recovery Actions
                     </h5>
-                    <ul className="space-y-2">
-                      <li className="text-sm text-gray-300 flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                    <ul className="space-y-3">
+                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
                         Inject fresh creative angles - partner with new influencers or creators
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
                         Launch limited-time campaigns to create urgency and re-engage audience
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
                         Pivot messaging to address current audience interests and pain points
                       </li>
-                      <li className="text-sm text-gray-300 flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      <li className="text-sm text-gray-300 flex items-start gap-3 leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-white flex-shrink-0 mt-1" />
                         Reduce posting frequency to combat fatigue while maintaining quality
                       </li>
                     </ul>
@@ -1023,17 +1104,19 @@ function App() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">
         {activeTab === 'campaign' && (
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left: Form */}
-            <div className="glass rounded-2xl p-8 hover-lift">
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Pre-Launch Campaign Analysis</h2>
-                <p className="text-gray-400">Get AI-powered predictions before you launch. Our system uses real-time market data to forecast success.</p>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Left: Sticky Form Panel */}
+            <div className="lg:sticky lg:top-24">
+              <div className="glass rounded-2xl p-8 hover-lift">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-white mb-2">Pre-Launch Campaign Analysis</h2>
+                  <p className="text-gray-400">Get AI-powered predictions before you launch. Our system uses real-time market data to forecast success.</p>
+                </div>
+                <CampaignForm onSubmit={handleCampaignSubmit} loading={loading} />
               </div>
-              <CampaignForm onSubmit={handleCampaignSubmit} loading={loading} />
             </div>
 
-            {/* Right: Results */}
+            {/* Right: Scrollable Results */}
             <div>
               {error && (
                 <div className="glass rounded-2xl p-6 border-l-4 border-white/20 mb-6">
@@ -1054,9 +1137,9 @@ function App() {
 
               {!loading && !results && !error && (
                 <div className="glass rounded-2xl p-12 text-center">
-                  <Search className="w-16 h-16 mx-auto text-gray-600 mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Ready to Analyze</h3>
-                  <p className="text-gray-500">Fill out the campaign form to get AI-powered predictions</p>
+                  <Sparkles className="w-16 h-16 mx-auto mb-4 text-gray-600" />
+                  <h3 className="text-xl font-semibold text-white mb-2">Ready to Analyze</h3>
+                  <p className="text-gray-400">Fill out the form and submit to get AI-powered insights</p>
                 </div>
               )}
             </div>

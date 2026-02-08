@@ -34,7 +34,9 @@
 }
 
 body {
-  @apply bg-[#0a0a0a] min-h-screen text-white;
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  color: white;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-feature-settings: 'cv11', 'ss01';
   -webkit-font-smoothing: antialiased;
@@ -43,34 +45,57 @@ body {
 
 /* Glass Morphism - Premium Edition */
 .glass {
-  @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05];
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
 .glass:hover {
-  @apply bg-white/[0.03] border-white/[0.08];
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .glass-dark {
-  @apply bg-[#141414] backdrop-blur-xl border border-[#2a2a2a];
+  background-color: #141414;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid #2a2a2a;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 /* Gradient Text - Minimal Use */
 .gradient-text {
-  @apply bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent;
+  background: linear-gradient(to right, #ffffff, #e5e5e5, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* Card Styles */
 .card {
-  @apply glass rounded-2xl p-6 transition-all duration-300;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
 }
 
 .card-elevated {
-  @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-6;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 1rem;
+  padding: 1.5rem;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
 
@@ -128,71 +153,111 @@ body {
 
 /* Score Colors - Keep Gradients */
 .score-high {
-  @apply text-emerald-400;
+  color: rgb(52, 211, 153);
 }
 
 .score-medium {
-  @apply text-amber-400;
+  color: rgb(251, 191, 36);
 }
 
 .score-low {
-  @apply text-red-400;
+  color: rgb(248, 113, 113);
 }
 
 /* Risk Badges - Monochrome */
 .risk-high {
-  @apply bg-white/10 text-white border border-white/20;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .risk-medium {
-  @apply bg-white/5 text-gray-300 border border-white/10;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgb(209, 213, 219);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .risk-low {
-  @apply bg-white/5 text-gray-400 border border-white/10;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgb(156, 163, 175);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Button Styles */
 .btn-primary {
-  @apply px-6 py-3 rounded-xl bg-[#6366f1] hover:bg-[#4f46e5] text-white font-medium;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #6366f1;
+  color: white;
+  font-weight: 500;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .btn-primary:hover {
+  background-color: #4f46e5;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
 }
 
 .btn-secondary {
-  @apply px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Input Styles */
 input,
 textarea,
 select {
-  @apply bg-[#141414] border border-[#2a2a2a] text-white placeholder-gray-500;
-  @apply focus:border-white/20 focus:ring-2 focus:ring-white/10;
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  color: white;
   transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(107, 114, 128);
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  @apply bg-[#1a1a1a];
+  background-color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
 /* Tooltip */
 .tooltip {
-  @apply absolute z-50 px-3 py-2 text-sm bg-white text-black rounded-lg shadow-lg;
-  @apply invisible opacity-0 transition-all duration-200;
+  position: absolute;
+  z-index: 50;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: white;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 .has-tooltip:hover .tooltip {
-  @apply visible opacity-100;
+  visibility: visible;
+  opacity: 100;
 }
+
 
 /* Scrollbar - Monochrome */
 ::-webkit-scrollbar {
@@ -201,51 +266,109 @@ select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#141414] rounded-full;
+  background-color: #141414;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full hover:bg-white/20;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Thin scrollbar for sticky panels */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 
 /* Selection */
 ::selection {
-  @apply bg-white/20 text-white;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 /* Focus Visible */
 :focus-visible {
-  @apply outline-none ring-2 ring-white/20 ring-offset-2 ring-offset-black;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2), 0 0 0 4px black;
 }
 
 /* Metric Cards */
 .metric-card {
-  @apply glass rounded-xl p-4;
-  @apply transition-all duration-300 hover:scale-[1.02];
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s;
+}
+
+.metric-card:hover {
+  transform: scale(1.02);
 }
 
 .metric-value {
-  @apply text-2xl font-bold text-white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
 }
 
 .metric-label {
-  @apply text-sm text-gray-400 uppercase tracking-wide;
+  font-size: 0.875rem;
+  color: rgb(156, 163, 175);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Divider */
 .divider {
-  @apply border-t border-white/10 my-6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.5rem 0;
 }
 
 /* Loading States */
 .loading-spinner {
-  @apply w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 9999px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Badge */
 .badge {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
-  @apply bg-white/10 text-white border border-white/20;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Premium Hover Effects */
