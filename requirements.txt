@@ -3,7 +3,7 @@ numpy
 scipy
 plotly
 langchain
-langchain-groq
+langchain-openai
 langchain-community
 google-search-results
 python-dotenv

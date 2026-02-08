@@ -1,6 +1,6 @@
 import os
 import logging
-from groq import Groq
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 # Setup simple logging (replaces the complex logger from the old project)
@@ -11,18 +11,22 @@ load_dotenv()
 
 class GroqExplainer:
     """
-    Direct Groq API client for generating trend explanations.
-    Useful as a fallback if LangChain/Search is unavailable.
+    Featherless AI client for generating trend explanations using DeepSeek-V3.2.
+    Uses LangChain's ChatOpenAI interface for compatibility.
     """
     
-    def __init__(self, model: str = "llama-3.3-70b-versatile"):
-        api_key = os.getenv("GROQ_API_KEY")
+    def __init__(self, model: str = "deepseek-ai/DeepSeek-V3"):
+        api_key = os.getenv("FEATHERLESS_API_KEY")
         if not api_key:
-            raise ValueError("GROQ_API_KEY not found in .env")
+            raise ValueError("FEATHERLESS_API_KEY not found in .env")
             
-        self.client = Groq(api_key=api_key)
+        self.client = ChatOpenAI(
+            api_key=api_key,
+            base_url="https://api.featherless.ai/v1",
+            model=model
+        )
         self.model = model
-        logger.info(f"Initialized GroqExplainer with model: {model}")
+        logger.info(f"Initialized Featherless AI Explainer with model: {model}")
     
     def explain_trend(self, topic: str, decline_date: str, metrics: dict) -> str:
         """
@@ -34,27 +38,23 @@ class GroqExplainer:
         prompt = self._build_prompt(topic, decline_date, metrics)
         
         try:
-            # 2. Call Groq
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {
-                        "role": "system", 
-                        "content": "You are a senior Data Analyst for a social media agency. Be concise, professional, and brutal."
-                    },
-                    {
-                        "role": "user", 
-                        "content": prompt
-                    }
-                ],
-                temperature=0.7,
-                max_tokens=1000
-            )
+            # 2. Call Featherless AI via LangChain
+            messages = [
+                (
+                    "system", 
+                    "You are a senior Data Analyst for a social media agency. Be concise, professional, and brutal."
+                ),
+                (
+                    "human", 
+                    prompt
+                )
+            ]
             
-            return response.choices[0].message.content
+            response = self.client.invoke(messages)
+            return response.content
             
         except Exception as e:
-            logger.error(f"Groq API Error: {e}")
+            logger.error(f"Featherless AI API Error: {e}")
             return f"Error generating explanation: {str(e)}"
 
     def _build_prompt(self, topic, date, metrics):

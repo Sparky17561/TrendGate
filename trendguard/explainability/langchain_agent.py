@@ -2,14 +2,14 @@
 TrendInvestigator - Explainable AI for Trend Decline Analysis
 =============================================================
 Combines HMM predictions with real-world context from Serper API
-and Groq AI for comprehensive, explainable decline predictions.
+and Featherless AI for comprehensive, explainable decline predictions.
 """
 
 import os
 import json
 from datetime import datetime
 from typing import Dict, List, Optional
-from groq import Groq
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 from .serper_client import SerperClient
@@ -21,16 +21,20 @@ class TrendInvestigator:
     """
     Main explainability engine that combines:
     1. Serper API - Real-time web search for news/context
-    2. Groq AI - Intelligent analysis and explanation generation
+    2. Featherless AI - Intelligent analysis and explanation generation using DeepSeek-V3
     """
     
     def __init__(self):
-        # Initialize Groq client
-        groq_key = os.getenv("GROQ_API_KEY")
-        if not groq_key:
-            raise ValueError("GROQ_API_KEY environment variable not set")
-        self.groq = Groq(api_key=groq_key)
-        self.model = "llama-3.3-70b-versatile"
+        # Initialize Featherless AI client via LangChain
+        featherless_key = os.getenv("FEATHERLESS_API_KEY")
+        if not featherless_key:
+            raise ValueError("FEATHERLESS_API_KEY environment variable not set")
+        
+        self.llm = ChatOpenAI(
+            api_key=featherless_key,
+            base_url="https://api.featherless.ai/v1",
+            model="deepseek-ai/DeepSeek-V3"
+        )
         
         # Initialize Serper client (optional - graceful degradation)
         try:
@@ -181,7 +185,7 @@ class TrendInvestigator:
         web_context: Optional[Dict],
         archetype: Optional[str]
     ) -> Dict:
-        """Generate AI-powered explanation using Groq."""
+        """Generate AI-powered explanation using Featherless AI via LangChain."""
         
         # Build context prompt
         prompt = self._build_explanation_prompt(
@@ -189,37 +193,34 @@ class TrendInvestigator:
         )
         
         try:
-            response = self.groq.chat.completions.create(
-                model=self.model,
-                messages=[
+            # Use LangChain's invoke method
+            messages = [
+                (
+                    "system",
+                    """You are an expert social media trend analyst specializing in 
+                    decline prediction and explainability. Your analysis should be:
+                    1. Data-driven - cite specific metrics
+                    2. Context-aware - incorporate real-world news when available
+                    3. Actionable - provide concrete recommendations
+                    4. Clear - explain in business-friendly language
+                    
+                    Always structure your response in this JSON format:
                     {
-                        "role": "system",
-                        "content": """You are an expert social media trend analyst specializing in 
-                        decline prediction and explainability. Your analysis should be:
-                        1. Data-driven - cite specific metrics
-                        2. Context-aware - incorporate real-world news when available
-                        3. Actionable - provide concrete recommendations
-                        4. Clear - explain in business-friendly language
-                        
-                        Always structure your response in this JSON format:
-                        {
-                            "explanation": "2-3 paragraph analysis of why the trend is declining",
-                            "confidence": 0.0-1.0,
-                            "key_factors": ["factor1", "factor2", ...],
-                            "recommendations": ["action1", "action2", ...],
-                            "evidence": ["evidence1", "evidence2", ...]
-                        }"""
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                temperature=0.3,  # Lower for more consistent analysis
-                max_tokens=2000
-            )
+                        "explanation": "2-3 paragraph analysis of why the trend is declining",
+                        "confidence": 0.0-1.0,
+                        "key_factors": ["factor1", "factor2", ...],
+                        "recommendations": ["action1", "action2", ...],
+                        "evidence": ["evidence1", "evidence2", ...]
+                    }"""
+                ),
+                (
+                    "human",
+                    prompt
+                )
+            ]
             
-            content = response.choices[0].message.content
+            response = self.llm.invoke(messages)
+            content = response.content
             
             # Try to parse as JSON
             try:
@@ -248,6 +249,10 @@ class TrendInvestigator:
         except Exception as e:
             return {
                 "explanation": f"Error generating explanation: {str(e)}",
+                "confidence": 0.0,
+                "recommendations": [],
+                "evidence": []
+            }
                 "confidence": 0.0,
                 "recommendations": [],
                 "evidence": []

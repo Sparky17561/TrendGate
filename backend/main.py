@@ -179,7 +179,7 @@ async def health_check():
         "timestamp": datetime.now().isoformat(),
         "services": {
             "gemini": os.getenv("GEMINI_API_KEY") is not None,
-            "groq": os.getenv("GROQ_API_KEY") is not None,
+            "featherless": os.getenv("FEATHERLESS_API_KEY") is not None,
             "serper": os.getenv("SERPER_API_KEY") is not None
         }
     }
