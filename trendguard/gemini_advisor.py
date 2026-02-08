@@ -112,7 +112,7 @@ class CampaignAdvisor:
         
         hashtag_str = ", ".join(hashtags)
         
-        prompt = f"""You are an expert social media strategist and trend analyst. Analyze this upcoming campaign and provide detailed predictions.
+        prompt = f"""You are an expert social media strategist and trend analyst with deep knowledge of platform algorithms, market dynamics, and behavioral psychology. Analyze this upcoming campaign and provide detailed, data-driven predictions.
 
 ## CAMPAIGN DETAILS
 - **Topic:** {topic}
@@ -123,57 +123,116 @@ class CampaignAdvisor:
 - **Planned Duration:** {planned_duration_days} days
 {f"- **Additional Context:** {additional_context}" if additional_context else ""}
 
-## YOUR TASK
-Using real-time Google Search data, analyze:
+## CRITICAL INSTRUCTIONS
+**DO NOT provide generic marketing advice. For EVERY risk factor and recommendation, you MUST:**
+1. Explain the UNDERLYING REASONS and market dynamics (not just surface-level advice)
+2. Cite SPECIFIC EVIDENCE from your Google Search results
+3. Reference RECENT DATA, algorithm changes, or platform updates with dates when possible
+4. Provide QUANTIFIABLE insights where available
+5. Attribute claims to sources (URLs, reports, studies) when available
 
-1. **Current Market Status**: Search for these hashtags and similar trends. Are they currently hot, declining, or saturated?
+## YOUR ANALYSIS TASKS
 
-2. **Competitive Landscape**: What similar campaigns or trends are currently active? Who are the key players?
+### 1. Real-Time Market Research
+Search for and analyze:
+- Current performance of similar hashtags and trends
+- Recent platform algorithm changes affecting this content type
+- Competitive landscape and key players
+- Audience sentiment and fatigue indicators
+- Recent success/failure cases
 
-3. **Viability Score (0-100)**: Rate this campaign's likely success based on:
-   - Market saturation level
-   - Audience fatigue indicators
-   - Platform algorithm favorability
-   - Timing appropriateness
+### 2. Viability Score (0-100)
+Rate based on quantifiable factors:
+- Market saturation metrics
+- Audience engagement trends
+- Platform algorithm favorability (cite recent changes)
+- Timing and seasonality data
 
-4. **Predicted Lifecycle**: Estimate how long this trend/campaign will stay relevant before decline signals appear.
+### 3. Predicted Lifecycle
+Estimate duration with reasoning based on:
+- Historical data from similar trends
+- Current growth/decline rates
+- Seasonal factors
+- Platform-specific trend lifespan data
 
-5. **Top 5 Risk Factors**: What could cause this campaign to fail or decline prematurely?
-   Examples: Content Saturation, Event Expiry, Controversy Fatigue, Algorithm Shift, Influencer Exodus
+### 4. Top 5 Risk Factors
+For EACH risk factor, you MUST provide:
+- **risk**: Name of the risk
+- **severity**: high|medium|low
+- **reasoning**: WHY is this a risk? What are the underlying market dynamics, algorithmic factors, or behavioral patterns?
+- **evidence**: Array of specific data points, sources, or search results supporting this claim
+- **underlying_causes**: Root causes, not just symptoms
+- **mitigation**: How to address this with specific tactics
 
-6. **Optimization Recommendations**: 5 actionable strategies to maximize success and extend lifecycle.
+### 5. Optimization Recommendations  
+For EACH recommendation, you MUST provide:
+- **action**: The recommendation
+- **reasoning**: WHY does this work? What algorithmic, psychological, or market factors make this effective?
+- **evidence**: Recent data, platform changes, or case studies supporting this
+- **expected_impact**: Quantified prediction if possible
+- **implementation_details**: Specific HOW-TO steps
 
-7. **Optimal Launch Window**: When is the best time to launch this campaign?
-
-8. **Similar Past Trends**: Reference 2-3 similar trends from the past and what happened to them.
+### 6. Additional Analysis
+- Optimal launch timing with behavioral/algorithmic reasons
+- Similar past trends with specific outcomes and data
+- Platform-specific insights with recent algorithm details
 
 ## RESPONSE FORMAT
-Return a JSON object with this structure:
+Return a JSON object with this EXACT structure:
 {{
     "viability_score": 75,
     "market_status": "growing|saturated|declining|emerging",
     "predicted_lifecycle_days": 45,
     "competitive_analysis": {{
-        "active_competitors": ["...", "..."],
+        "active_competitors": ["Competitor 1", "Competitor 2"],
         "market_saturation": "low|medium|high",
-        "key_players": ["...", "..."]
+        "key_players": ["Player 1", "Player 2"],
+        "saturation_evidence": ["Data point 1", "Data point 2"]
     }},
     "risk_factors": [
-        {{"risk": "Content Saturation", "severity": "high|medium|low", "mitigation": "..."}},
-        ...
+        {{
+            "risk": "Content Saturation & Audience Fatigue",
+            "severity": "high",
+            "reasoning": "Detailed explanation of WHY this is a risk based on real market data, algorithmic changes, or behavioral patterns",
+            "evidence": ["Source 1 with specific data", "Platform announcement from DATE", "Study showing X% decline"],
+            "underlying_causes": ["Root cause 1", "Root cause 2"],
+            "mitigation": "Specific actionable strategy"
+        }}
     ],
-    "recommendations": ["...", "...", "...", "...", "..."],
-    "optimal_launch_window": "Description of best timing",
+    "recommendations": [
+        {{
+            "action": "Prioritize interactive meme formats",
+            "reasoning": "WHY this works - cite specific algorithmic preferences, user behavior data, or platform changes",
+            "evidence": ["Instagram algorithm update from DATE prioritizing X", "Study showing Y% increase in engagement"],
+            "expected_impact": "Quantified prediction (e.g., '30-50% higher engagement' or 'extends lifecycle by 2x')",
+            "implementation_details": "Step-by-step how to execute this"
+        }}
+    ],
+    "optimal_launch_window": {{
+        "timing": "Description of best timing",
+        "reasoning": "WHY this timing works based on behavioral patterns, algorithm schedules, or seasonal data",
+        "evidence": ["Peak engagement data", "Historical performance"]
+    }},
     "similar_past_trends": [
-        {{"name": "...", "outcome": "...", "lesson": "..."}}
+        {{
+            "name": "Specific trend name",
+            "outcome": "What happened with data",
+            "lesson": "Key takeaway",
+            "evidence": "Source or data"
+        }}
     ],
     "platform_insights": {{
         "algorithm_favorability": "high|medium|low",
-        "trending_formats": ["...", "..."],
-        "avoid_formats": ["...", "..."]
+        "trending_formats": ["Format with reason WHY it's trending"],
+        "avoid_formats": ["Format with reason WHY to avoid"],
+        "recent_changes": ["Specific algorithm update from DATE and its impact"]
     }},
-    "summary": "2-3 sentence executive summary"
+    "summary": "2-3 sentence executive summary with key data points",
+    "search_queries_used": ["Query 1", "Query 2", "..."],
+    "sources_consulted": ["URL or source description"]
 }}
+
+**REMEMBER: Every claim must have underlying reasons and evidence. No generic advice.**
 """
 
         try:

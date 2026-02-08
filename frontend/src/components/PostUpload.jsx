@@ -105,10 +105,10 @@ export function PostUpload({ onPostExtracted, className = '' }) {
             {!file ? (
                 <div
                     className={`
-            border-2 border-dashed rounded-xl p-8 text-center transition-all cursor-pointer
+            border-2 border-dashed rounded-2xl p-10 text-center transition-all cursor-pointer group
             ${isDragging
-                            ? 'border-white bg-white/5'
-                            : 'border-white/20 hover:border-white/40 hover:bg-white/[0.02]'
+                            ? 'border-cyan-400 bg-cyan-500/10 scale-[1.02]'
+                            : 'border-white/30 hover:border-cyan-400/60 hover:bg-gradient-to-br hover:from-cyan-500/5 hover:to-transparent'
                         }
           `}
                     onDragEnter={handleDragEnter}
@@ -117,29 +117,29 @@ export function PostUpload({ onPostExtracted, className = '' }) {
                     onDrop={handleDrop}
                     onClick={() => document.getElementById('post-file-input').click()}
                 >
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center">
-                            <Upload className="w-8 h-8 text-gray-400" />
+                    <div className="flex flex-col items-center gap-5">
+                        <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 flex items-center justify-center border border-cyan-500/30 transition-transform ${isDragging ? 'scale-110' : 'group-hover:scale-105'}`}>
+                            <Upload className="w-10 h-10 text-cyan-400" />
                         </div>
 
                         <div>
-                            <p className="text-white font-medium mb-1">Upload Post for Analysis</p>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-white font-bold text-lg mb-2">Upload Post for Analysis</p>
+                            <p className="text-base text-gray-300 mb-1">
                                 Drag & drop or click to upload
                             </p>
-                            <p className="text-xs text-gray-500 mt-2">
+                            <p className="text-sm text-gray-400 mt-3 bg-white/5 px-4 py-2 rounded-lg inline-block border border-white/10">
                                 Supports: Images (PNG, JPG, WEBP) or Text files
                             </p>
                         </div>
 
-                        <div className="flex gap-4 text-xs text-gray-500">
-                            <div className="flex items-center gap-1">
-                                <ImageIcon className="w-4 h-4" />
-                                <span>Image Post</span>
+                        <div className="flex gap-6 mt-2">
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                                <ImageIcon className="w-5 h-5 text-purple-400" />
+                                <span className="text-sm text-purple-300 font-medium">Image Post</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <FileText className="w-4 h-4" />
-                                <span>Text Post</span>
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">
+                                <FileText className="w-5 h-5 text-blue-400" />
+                                <span className="text-sm text-blue-300 font-medium">Text Post</span>
                             </div>
                         </div>
                     </div>
@@ -153,47 +153,52 @@ export function PostUpload({ onPostExtracted, className = '' }) {
                     />
                 </div>
             ) : (
-                <div className="border border-white/10 rounded-xl p-6 bg-white/[0.02]">
+                <div className="border border-cyan-500/30 rounded-2xl p-6 bg-gradient-to-br from-cyan-500/5 to-transparent">
                     <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                            {isProcessing ? (
-                                <Loader className="w-5 h-5 text-white animate-spin" />
-                            ) : (
-                                <Check className="w-5 h-5 text-white" />
-                            )}
+                        <div className="flex items-center gap-4">
+                            <div className={`p-3 rounded-xl ${isProcessing ? 'bg-amber-500/20 border border-amber-500/30' : 'bg-emerald-500/20 border border-emerald-500/30'}`}>
+                                {isProcessing ? (
+                                    <Loader className="w-6 h-6 text-amber-400 animate-spin" />
+                                ) : (
+                                    <Check className="w-6 h-6 text-emerald-400" />
+                                )}
+                            </div>
                             <div>
-                                <p className="text-white font-medium">
-                                    {isProcessing ? 'Processing...' : 'Post Uploaded'}
+                                <p className="text-white font-bold text-lg">
+                                    {isProcessing ? 'Processing...' : '✓ Post Uploaded Successfully'}
                                 </p>
-                                <p className="text-sm text-gray-400">{file.name}</p>
+                                <p className="text-sm text-gray-300 mt-1">{file.name}</p>
                             </div>
                         </div>
 
                         <button
                             onClick={handleClear}
-                            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                            className="p-2.5 hover:bg-red-500/20 rounded-xl transition-all border border-transparent hover:border-red-500/30 group"
                         >
-                            <X className="w-5 h-5 text-gray-400" />
+                            <X className="w-5 h-5 text-gray-400 group-hover:text-red-400" />
                         </button>
                     </div>
 
                     {/* Preview */}
                     {preview && (
-                        <div className="mb-4">
+                        <div className="mb-4 p-2 bg-black/20 rounded-xl border border-white/10">
                             <img
                                 src={preview}
                                 alt="Post preview"
-                                className="max-w-full h-auto rounded-lg border border-white/10"
-                                style={{ maxHeight: '300px' }}
+                                className="w-full h-auto rounded-lg"
+                                style={{ maxHeight: '300px', objectFit: 'contain' }}
                             />
                         </div>
                     )}
 
                     {/* Extracted Text */}
                     {extractedText && !isProcessing && (
-                        <div className="p-4 bg-black/20 rounded-lg border border-white/5">
-                            <div className="text-xs text-gray-400 mb-2">Content to Analyze:</div>
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                        <div className="p-5 bg-gradient-to-br from-purple-500/10 to-transparent rounded-xl border border-purple-500/20">
+                            <div className="flex items-center gap-2 text-sm text-purple-300 mb-3 font-semibold">
+                                <FileText className="w-4 h-4" />
+                                Content to Analyze:
+                            </div>
+                            <p className="text-base text-gray-200 leading-relaxed">
                                 {extractedText.length > 200
                                     ? extractedText.substring(0, 200) + '...'
                                     : extractedText
@@ -202,8 +207,9 @@ export function PostUpload({ onPostExtracted, className = '' }) {
                         </div>
                     )}
 
-                    <div className="mt-4 text-xs text-gray-500">
-                        ✨ This post will be analyzed by Gemini AI along with your campaign data
+                    <div className="mt-5 p-4 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl border border-cyan-500/20 flex items-center gap-2 text-sm text-cyan-300">
+                        <span className="text-lg">✨</span>
+                        <span>This post will be analyzed by Gemini AI along with your campaign data</span>
                     </div>
                 </div>
             )}
